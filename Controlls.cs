@@ -12,8 +12,8 @@ namespace swd_endaufgabe
 
             switch(input)
             {
-                case "n || north":
-                    
+                case ("n || north"):
+
                 break;
             }
 
