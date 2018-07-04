@@ -49,6 +49,11 @@ namespace swd_endaufgabe
             //Büro Rektor
             r7.west = r6;
             Room.description = "Du befindest dich im Büro des Rektors";
+
+            for(;;)
+            {
+                Controls.gameControls();
+            }
         }
     }
 }

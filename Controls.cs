@@ -5,8 +5,9 @@ namespace swd_endaufgabe
 {
     class Controls
     {
-        public Controls()
+        public static void gameControls()
         {
+            Console.WriteLine();
             Console.Write("Was wollen sie tun?: ");
             string input = Console.ReadLine();
 
