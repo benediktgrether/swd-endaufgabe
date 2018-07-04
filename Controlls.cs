@@ -10,6 +10,13 @@ namespace swd_endaufgabe
             Console.Write("Was wollen sie tun?: ");
             string input = Console.ReadLine();
 
+            switch(input)
+            {
+                case "n || north":
+                    
+                break;
+            }
+
         }
     }
 
