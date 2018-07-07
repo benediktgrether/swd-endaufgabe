@@ -67,7 +67,7 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                         takeItem(currentLocation);
+                        takeItem(currentLocation);
                         break;
                     case "drop":
                     case "d":
@@ -94,26 +94,21 @@ namespace swd_endaufgabe
                         break;
                 }
             }
-
-            // if (input == "n" || input =="north")
-            // {
-            //     Console.WriteLine("Test");
-            // }
         }
         public static void takeItem(Location location)
         {
-            string item ="";
-            foreach(var i in location.items)
+            string item = "";
+            foreach (var i in location.items)
             {
                 item = i;
                 Chloe.inventory.Add(i);
             }
-                location.items.Remove(item);
+            location.items.Remove(item);
         }
 
         public static void showInventory()
         {
-            foreach(var i in Chloe.inventory)
+            foreach (var i in Chloe.inventory)
             {
                 Console.WriteLine("Inventar: " + i);
             }
@@ -124,8 +119,8 @@ namespace swd_endaufgabe
             showInventory();
             Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
             string drop = Console.ReadLine();
-            string item ="";
-            foreach(var i in Chloe.inventory)
+            string item = "";
+            foreach (var i in Chloe.inventory)
             {
                 if (drop == i)
                 {
@@ -134,7 +129,11 @@ namespace swd_endaufgabe
                     location.items.Add(item);
                 }
             }
-                Chloe.inventory.Remove(item);
+            if(item != drop)
+            {
+                Console.WriteLine("Falsche Eingabe");
+            }
+            Chloe.inventory.Remove(item);
         }
     }
 
