@@ -71,7 +71,8 @@ namespace swd_endaufgabe
                         break;
                     case "drop":
                     case "d":
-                        // dropItem();
+                        showInventory();
+                        dropItem(currentLocation);
                         break;
                     case "inventory":
                     case "i":
@@ -102,23 +103,33 @@ namespace swd_endaufgabe
         }
         public static void takeItem(Location location)
         {
-            string remove ="";
+            string item ="";
             foreach(var i in location.items)
             {
-                remove = i;
+                item = i;
                 Chloe.inventory.Add(i);
             }
-                location.items.Remove(remove);
-            // var test = currentLocation.Location.items;
+                location.items.Remove(item);
         }
 
-        // public static void showInventory(Chloe inventory)
-        // {
-        //     foreach(var i in inventory.inventory )
-        //     {
-        //         Console.WriteLine(inventory.inventory);
-        //     }
-        // }
+        public static void showInventory()
+        {
+            foreach(var i in Chloe.inventory)
+            {
+                Console.WriteLine("Inventar: " + i);
+            }
+        }
+
+        public static void dropItem(Location location)
+        {
+            string item ="";
+            foreach(var i in Chloe.inventory)
+            {
+                item = i;
+                location.items.Add(i);
+            }
+                Chloe.inventory.Remove(item);
+        }
     }
 
 }
