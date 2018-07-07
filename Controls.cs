@@ -119,35 +119,23 @@ namespace swd_endaufgabe
             }
         }
 
-        // public static void dropItem(Location location, List<string> result = null)
-        // {
-        //     showInventory();
-        //     Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
-        //     if (result == null)
-        //     {
-        //         result = new List<string>();
-        //     }
-        //     string test = Console.ReadLine();
-        //     string item ="";
-        //     if (Chloe.inventory.Equals(test))
-        //     {
-        //         result.Add(test);
-        //         Console.WriteLine("Test");
-        //     }
-            
-        //     foreach(var i in Chloe.inventory)
-        //     {
-        //         Console.WriteLine(Chloe.inventory.Find(result));
-        //         // item = i;
-        //         // location.items.Add(i);
-        //     }
-        //         // Chloe.inventory.Remove(item);
-        //     // else
-        //     // {
-        //     //     Console.WriteLine("Nichts fallen gelassen");
-        //     // }
-
-        // }
+        public static void dropItem(Location location)
+        {
+            showInventory();
+            Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
+            string drop = Console.ReadLine();
+            string item ="";
+            foreach(var i in Chloe.inventory)
+            {
+                if (drop == i)
+                {
+                    item = drop;
+                    Console.WriteLine("test");
+                    location.items.Add(item);
+                }
+            }
+                Chloe.inventory.Remove(item);
+        }
     }
 
 }
