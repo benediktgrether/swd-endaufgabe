@@ -5,7 +5,7 @@ namespace swd_endaufgabe
 {
     class GameChar
     {
-        public static List <String> inventory = new List <String>();
+        public static List <string> inventory = new List <string>();
         public static int health; 
     }
 

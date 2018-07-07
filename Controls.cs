@@ -8,12 +8,15 @@ namespace swd_endaufgabe
         public static void gameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule. Du sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
+            // Console.WriteLine(Location.items);
             Location currentLocation = Location.MapSetUp();
             string input = "";
 
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
+                // Location.DescribeLocation(currentLocation.north);
+                Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
 
                 switch (input)
@@ -64,7 +67,7 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                        // takeItem();
+                         takeItem(currentLocation);
                         break;
                     case "drop":
                     case "d":
@@ -72,7 +75,7 @@ namespace swd_endaufgabe
                         break;
                     case "inventory":
                     case "i":
-                        // myInventory();
+                        showInventory();
                         break;
                     case "look":
                     case "l":
@@ -96,8 +99,26 @@ namespace swd_endaufgabe
             // {
             //     Console.WriteLine("Test");
             // }
-
         }
+        public static void takeItem(Location location)
+        {
+            string remove ="";
+            foreach(var i in location.items)
+            {
+                remove = i;
+                Chloe.inventory.Add(i);
+            }
+                location.items.Remove(remove);
+            // var test = currentLocation.Location.items;
+        }
+
+        // public static void showInventory(Chloe inventory)
+        // {
+        //     foreach(var i in inventory.inventory )
+        //     {
+        //         Console.WriteLine(inventory.inventory);
+        //     }
+        // }
     }
 
 }
