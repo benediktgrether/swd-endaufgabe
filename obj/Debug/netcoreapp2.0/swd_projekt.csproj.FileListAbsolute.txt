@@ -1,0 +1,11 @@
+/Users/benediktgrether/Desktop/berdan_text/bin/Debug/netcoreapp2.0/swd_projekt.deps.json
+/Users/benediktgrether/Desktop/berdan_text/bin/Debug/netcoreapp2.0/swd_projekt.runtimeconfig.json
+/Users/benediktgrether/Desktop/berdan_text/bin/Debug/netcoreapp2.0/swd_projekt.runtimeconfig.dev.json
+/Users/benediktgrether/Desktop/berdan_text/bin/Debug/netcoreapp2.0/swd_projekt.dll
+/Users/benediktgrether/Desktop/berdan_text/bin/Debug/netcoreapp2.0/swd_projekt.pdb
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.csprojResolveAssemblyReference.cache
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.csproj.CoreCompileInputs.cache
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.AssemblyInfoInputs.cache
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.AssemblyInfo.cs
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.dll
+/Users/benediktgrether/Desktop/berdan_text/obj/Debug/netcoreapp2.0/swd_projekt.pdb
