@@ -9,22 +9,17 @@ namespace swd_endaufgabe
         {
             Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
             string value = Console.ReadLine();
-            string item ="";
-            foreach (var i in location.items)
+            if(location.items.Contains(value))
             {
-                if(value == i)
-                {
-                    item = value;
-                    Max.inventory.Add(item);
-                }
+                Max.inventory.Add(value);
+                location.items.Remove(value);
             }
-            if (item != value)
+            else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Falsche Eingabe");
                 Console.ResetColor();
             }
-            location.items.Remove(item);
         }
 
         public static void showInventory()
@@ -40,23 +35,17 @@ namespace swd_endaufgabe
             showInventory();
             Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
             string value = Console.ReadLine();
-            string item = "";
-            foreach (var i in Max.inventory)
+            if(Max.inventory.Contains(value))
             {
-                if (value == i)
-                {
-                    item = value;
-                    Console.WriteLine("test");
-                    location.items.Add(item);
-                }
+                location.items.Add(value);
+                Max.inventory.Remove(value);
             }
-            if (item != value)
+            else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Falsche Eingabe");
                 Console.ResetColor();
             }
-            Max.inventory.Remove(item);
         }
     }
 
