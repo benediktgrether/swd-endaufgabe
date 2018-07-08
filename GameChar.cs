@@ -9,9 +9,16 @@ namespace swd_endaufgabe
         public static int health; 
     }
 
-    class Chloe : GameChar
+    class Max : GameChar
     {
         // public static string currentRoom;
+        private static int _currentRoom;
+
+        public static void setMaxRoom(Location location)
+        {
+            _currentRoom = location.roomNumber;
+            Console.WriteLine(_currentRoom);
+        }
     } 
 
     class Security : GameChar

@@ -8,6 +8,8 @@ namespace swd_endaufgabe
         public string title;
         public string description;
 
+        public int roomNumber;
+
         public Location north;
         public Location east;
         public Location south;
@@ -15,50 +17,58 @@ namespace swd_endaufgabe
 
         public List<string> items = new List<string>();
 
-        public Location(string _title, string _description)
+        public Location(int _roomNumber, string _title, string _description)
         {
             title = _title;
             description = _description;
+            roomNumber = _roomNumber;
         }
         public static Location MapSetUp()
         {
             Location Aula = new Location
             (
+                0,
                 "Aula",
                 "Du befindest dich gerade in der Aula"
             );
             
             Location WC = new Location
             (
+                1,
                 "WC",
                 "Du Befindest dich in der Toilette"
             );
 
             Location Seitengang = new Location
             (
+                2,
                 "Seitengang", 
                 "Du befindest dich im Seitengang"
             );
             
             Location Chemielabor = new Location
             (
+                3,
                 "Chemielabor", 
                 "Du befindest dich im Chemielabor"
             );
             Location Security = new Location
             (
+                4,
                 "Security", 
                 "Du befindest dich im Security"
             );
             Location Sekretariat = new Location
             (
+                5,
                 "Sekretariat", 
                 "Du befindest dich im Sekretariat"
             );
             Location BueroRektor = new Location
             (
+                6,
                 "Büro Rektor", 
-                "Du befindest dich im Büro Rektor"
+                "Du befindest dich im Büro des Rektors"
             );
 
             Aula.north = WC;
@@ -72,6 +82,7 @@ namespace swd_endaufgabe
             WC.items.Add("Anleitung");
 
             Seitengang.north = Chemielabor;
+            Seitengang.east = Aula;
             Seitengang.south = Security;
 
             Chemielabor.south = Seitengang;
@@ -103,7 +114,7 @@ namespace swd_endaufgabe
         public static void DescribeLocation(Location location)
         {
             Console.WriteLine();
-            Console.WriteLine(location.title);
+            Console.WriteLine(location.title + " " + location.roomNumber);
             Console.WriteLine();
             Console.WriteLine(location.description);
             Console.WriteLine();
