@@ -22,6 +22,7 @@ namespace swd_endaufgabe
             title = _title;
             description = _description;
             roomNumber = _roomNumber;
+            
         }
         public static Location MapSetUp()
         {

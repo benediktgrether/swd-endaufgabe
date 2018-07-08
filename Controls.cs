@@ -18,7 +18,7 @@ namespace swd_endaufgabe
                 Console.WriteLine("Counter: " + controlcounter);
                 Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
-                Security.randomRoom();
+                // Security.randomRoom();
 
                 switch (input)
                 {
