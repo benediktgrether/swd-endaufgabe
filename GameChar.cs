@@ -23,8 +23,21 @@ namespace swd_endaufgabe
 
     class Security : GameChar
     {
-        public static int randomRoom;
+        // public static int randomRoom;
         public static string currentRoom;
         public static bool Key = true;
+
+        public static void randomRoom()
+        {
+            int counter = 0;
+            if(Controls.controlcounter > 5)
+            {
+                if (counter == 0)
+                {
+                    Console.WriteLine("Die Tür des Security Raum öffnet sich und der Wachman tritt heraus.");
+                    counter ++;
+                }
+            }
+        }
     }
 }

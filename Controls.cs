@@ -5,19 +5,20 @@ namespace swd_endaufgabe
 {
     class Controls
     {
+        public static int controlcounter = 0;
         public static void gameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule. Du sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
-            // Console.WriteLine(Location.items);
             Location currentLocation = Location.MapSetUp();
             string input = "";
-            // Location.DescribeLocation(currentLocation);
 
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
+                Console.WriteLine("Counter: " + controlcounter);
                 Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
+                Security.randomRoom();
 
                 switch (input)
                 {
@@ -27,6 +28,7 @@ namespace swd_endaufgabe
                         {
                             currentLocation = currentLocation.north;
                             Max.setMaxRoom(currentLocation);
+                            controlcounter ++;
                         }
                         else
                         {
@@ -39,6 +41,7 @@ namespace swd_endaufgabe
                         {
                             currentLocation = currentLocation.east;
                             Max.setMaxRoom(currentLocation);
+                            controlcounter ++;
                         }
                         else
                         {
@@ -51,6 +54,7 @@ namespace swd_endaufgabe
                         {
                             currentLocation = currentLocation.south;
                             Max.setMaxRoom(currentLocation);
+                            controlcounter ++;
                         }
                         else
                         {
@@ -63,6 +67,7 @@ namespace swd_endaufgabe
                         {
                             currentLocation = currentLocation.west;
                             Max.setMaxRoom(currentLocation);
+                            controlcounter ++;
                         }
                         else
                         {
@@ -99,7 +104,7 @@ namespace swd_endaufgabe
                 }
             }
         }
-        
+
     }
 
 }
