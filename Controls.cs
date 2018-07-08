@@ -90,6 +90,7 @@ namespace swd_endaufgabe
                         break;
                     case "look":
                     case "l":
+                        Location.showRoomInformation(currentLocation);
                         // Location.DescribeLocation(currentLocation);
                         break;
                     case "commands":

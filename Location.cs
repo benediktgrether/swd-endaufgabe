@@ -135,6 +135,14 @@ namespace swd_endaufgabe
         {
             Console.WriteLine("");
         }
+
+        public static void showRoomInformation(Location location)
+        {
+            foreach(var i in location.items)
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 }
 
