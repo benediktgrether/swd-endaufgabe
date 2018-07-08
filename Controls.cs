@@ -16,8 +16,10 @@ namespace swd_endaufgabe
             {
                 Location.DescribeLocation(currentLocation);
                 Console.WriteLine("Counter: " + controlcounter);
+                Console.BackgroundColor = ConsoleColor.DarkGray;
                 Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
+                Console.ResetColor();
                 // Security.randomRoom();
 
                 switch (input)

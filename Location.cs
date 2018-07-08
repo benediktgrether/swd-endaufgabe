@@ -22,7 +22,7 @@ namespace swd_endaufgabe
             title = _title;
             description = _description;
             roomNumber = _roomNumber;
-            
+
         }
         public static Location MapSetUp()
         {
@@ -114,16 +114,21 @@ namespace swd_endaufgabe
 
         public static void DescribeLocation(Location location)
         {
-            Console.WriteLine();
-            Console.WriteLine(location.title + " " + location.roomNumber);
-            Console.WriteLine();
+            // Console.WriteLine();
+            // Console.WriteLine(location.title + " " + location.roomNumber);
+            // Console.WriteLine();
+            // Console.WriteLine(location.description);
+            // Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("___________________________________________________________");
             Console.WriteLine(location.description);
-            Console.WriteLine();
 
-            foreach(var i in location.items)
-            {
-                Console.WriteLine(i);
-            }
+            // foreach(var i in location.items)
+            // {
+            //     Console.WriteLine(i);
+            // }
+            Console.WriteLine("___________________________________________________________");
+            Console.ResetColor();
         }
 
         public static void NeighborRoom(Location location)

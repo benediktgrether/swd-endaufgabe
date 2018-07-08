@@ -35,13 +35,6 @@ namespace swd_endaufgabe
         {
             Random rnd = new Random();
             int enemyRandomRoom = rnd.Next(0, 6);
-            // _currentRoom = 2 ;
-
-            // if (_currentRoom == location.roomNumber)
-            // {
-            //     _currentRoomName = location.title;
-            // }
-
             if(Controls.controlcounter > 2)
             {
                 if (counter == 0)
