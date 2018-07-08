@@ -11,11 +11,11 @@ namespace swd_endaufgabe
             // Console.WriteLine(Location.items);
             Location currentLocation = Location.MapSetUp();
             string input = "";
+            // Location.DescribeLocation(currentLocation);
 
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
-                // Location.DescribeLocation(currentLocation.north);
                 Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
 
@@ -26,6 +26,7 @@ namespace swd_endaufgabe
                         if (currentLocation.north != null)
                         {
                             currentLocation = currentLocation.north;
+                            Max.setMaxRoom(currentLocation);
                         }
                         else
                         {
@@ -37,6 +38,7 @@ namespace swd_endaufgabe
                         if (currentLocation.east != null)
                         {
                             currentLocation = currentLocation.east;
+                            Max.setMaxRoom(currentLocation);
                         }
                         else
                         {
@@ -48,6 +50,7 @@ namespace swd_endaufgabe
                         if (currentLocation.south != null)
                         {
                             currentLocation = currentLocation.south;
+                            Max.setMaxRoom(currentLocation);
                         }
                         else
                         {
@@ -59,6 +62,7 @@ namespace swd_endaufgabe
                         if (currentLocation.west != null)
                         {
                             currentLocation = currentLocation.west;
+                            Max.setMaxRoom(currentLocation);
                         }
                         else
                         {
@@ -79,7 +83,7 @@ namespace swd_endaufgabe
                         break;
                     case "look":
                     case "l":
-                        Location.DescribeLocation(currentLocation);
+                        // Location.DescribeLocation(currentLocation);
                         break;
                     case "commands":
                     case "c":

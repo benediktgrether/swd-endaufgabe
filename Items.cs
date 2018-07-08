@@ -7,18 +7,29 @@ namespace swd_endaufgabe
     {
         public static void takeItem(Location location)
         {
-            string item = "";
+            Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
+            string value = Console.ReadLine();
+            string item ="";
             foreach (var i in location.items)
             {
-                item = i;
-                Chloe.inventory.Add(i);
+                if(value == i)
+                {
+                    item = value;
+                    Max.inventory.Add(item);
+                }
+            }
+            if (item != value)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Falsche Eingabe");
+                Console.ResetColor();
             }
             location.items.Remove(item);
         }
 
         public static void showInventory()
         {
-            foreach (var i in Chloe.inventory)
+            foreach (var i in Max.inventory)
             {
                 Console.WriteLine("Inventar: " + i);
             }
@@ -28,22 +39,24 @@ namespace swd_endaufgabe
         {
             showInventory();
             Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
-            string drop = Console.ReadLine();
+            string value = Console.ReadLine();
             string item = "";
-            foreach (var i in Chloe.inventory)
+            foreach (var i in Max.inventory)
             {
-                if (drop == i)
+                if (value == i)
                 {
-                    item = drop;
+                    item = value;
                     Console.WriteLine("test");
                     location.items.Add(item);
                 }
             }
-            if (item != drop)
+            if (item != value)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Falsche Eingabe");
+                Console.ResetColor();
             }
-            Chloe.inventory.Remove(item);
+            Max.inventory.Remove(item);
         }
     }
 
