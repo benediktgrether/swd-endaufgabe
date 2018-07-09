@@ -18,7 +18,7 @@ namespace swd_endaufgabe
         public static int setMaxRoom(Location location)
         {
             _currentRoom = location.roomNumber;
-            Console.WriteLine(_currentRoom);
+            Console.WriteLine("Ich bin gerade im " + _currentRoom + " Raum");
             Security.randomRoom(location);
             return _currentRoom;
         }
@@ -33,23 +33,33 @@ namespace swd_endaufgabe
 
         public static int randomRoom(Location location)
         {
-            Random rnd = new Random();
-            int enemyRandomRoom = rnd.Next(0, 6);
+            // Random rnd = new Random();
+            // int enemyRandomRoom = rnd.Next(0, 6);
+            List <int> roomVisited = new List<int>();
+
+            // In dem Raum wo er schon drin war, darf er nicht mehr rein.
             if(Controls.controlcounter > 2)
             {
                 if (counter == 0)
                 {
-                    Console.WriteLine("Die Tür des Security Raum öffnet sich und der Wachman tritt heraus. Er befindet sich nun im Seitengang");
+                    _currentRoom = 2;
+                    Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
                 }
                 else
                 {    
-                    _currentRoom = enemyRandomRoom;
-                    Console.WriteLine("Security is in Room :" + _currentRoom);
-
-                    if (_currentRoom == Max._currentRoom)
+                    if(roomVisited.Contains(_currentRoom))
+                    {  
+                        _currentRoom = RandomNumber.getEnemyRandonRoom();
+                    }
+                    else
                     {
-                        Attack.EnemyAttack();
-                    } 
+                        _currentRoom = RandomNumber.getEnemyRandonRoom();
+                        Console.WriteLine("Security is in Room :" + _currentRoom);
+                    }
+                    // if (_currentRoom == Max._currentRoom)
+                    // {
+                    //     Attack.EnemyAttack();
+                    // } 
 
                 }
                 return counter ++; 

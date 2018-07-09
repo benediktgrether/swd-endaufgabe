@@ -8,14 +8,13 @@ namespace swd_endaufgabe
         public static int controlcounter = 0;
         public static void gameControls()
         {
-            Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule. Du sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
+            Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();
             string input = "";
 
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
-                Console.WriteLine("Counter: " + controlcounter);
                 Console.BackgroundColor = ConsoleColor.DarkGray;
                 Console.Write("Was willst du tun : ");
                 input = Console.ReadLine().ToLower();
