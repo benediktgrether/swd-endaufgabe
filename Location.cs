@@ -138,7 +138,7 @@ namespace swd_endaufgabe
 
         public static void showRoomInformation(Location location)
         {
-            Console.WriteLine("In der {0} siehst du", location.title);
+            Console.WriteLine("Du befindest dich {0} siehst du", location.title);
             foreach(var i in location.items)
             {
                 Console.WriteLine(i);

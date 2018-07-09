@@ -6,18 +6,17 @@ namespace swd_endaufgabe
     class Controls
     {
         public static int controlcounter = 0;
+        public static string input = "";
         public static void gameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();
-            string input = "";
 
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
                 Console.BackgroundColor = ConsoleColor.DarkGray;
-                Console.Write("Was willst du tun : ");
-                input = Console.ReadLine().ToLower();
+                giveInput();
                 Console.ResetColor();
                 // Security.randomRoom();
 
@@ -105,7 +104,13 @@ namespace swd_endaufgabe
                         break;
                 }
             }
+
         }
+            public static string giveInput()
+            {
+                Console.Write("Was willst du tun : ");
+                return input = Console.ReadLine().ToLower();
+            }
 
     }
 

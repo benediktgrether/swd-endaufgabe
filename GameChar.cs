@@ -6,7 +6,8 @@ namespace swd_endaufgabe
     class GameChar
     {
         public static List <string> inventory = new List <string>();
-        public static int health; 
+        public static int health1; 
+        public static int health2; 
         public static int counter = 0;
     }
 
@@ -29,40 +30,36 @@ namespace swd_endaufgabe
         // public static int randomRoom;
         private static string _currentRoomName;
         private static int _currentRoom;
+        public static bool active = true;
         public static bool Key = true;
 
         public static int randomRoom(Location location)
         {
-            // Random rnd = new Random();
-            // int enemyRandomRoom = rnd.Next(0, 6);
-            List <int> roomVisited = new List<int>();
-
-            // In dem Raum wo er schon drin war, darf er nicht mehr rein.
-            if(Controls.controlcounter > 2)
-            {
-                if (counter == 0)
+            if(active == true)
+            { 
+                Random rnd = new Random();
+                int enemyRandomRoom = rnd.Next(0, 6);
+                // In dem Raum wo er schon drin war, darf er nicht mehr rein.
+                if(Controls.controlcounter > 2)
                 {
-                    _currentRoom = 2;
-                    Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
-                }
-                else
-                {    
-                    if(roomVisited.Contains(_currentRoom))
-                    {  
-                        _currentRoom = RandomNumber.getEnemyRandonRoom();
+                    if (counter == 0)
+                    {
+                        _currentRoom = 2;
+                        Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
                     }
                     else
-                    {
-                        _currentRoom = RandomNumber.getEnemyRandonRoom();
+                    {    
+                        _currentRoom = enemyRandomRoom;
                         Console.WriteLine("Security is in Room :" + _currentRoom);
-                    }
-                    // if (_currentRoom == Max._currentRoom)
-                    // {
-                    //     Attack.EnemyAttack();
-                    // } 
 
+                        if (_currentRoom == Max._currentRoom)
+                        {
+                            Attack.EnemyAttack();
+                        } 
+
+                    }
+                    return counter ++; 
                 }
-                return counter ++; 
             }
             return counter = 0 ;
         }
