@@ -31,15 +31,44 @@ namespace swd_endaufgabe
         public static void AttackNow(){
             Max.health1 = 100;
             Security.health2 = 100;
-            string []arr = new string[]{"Schere","Stein","Papier"};
-            for(int i = 0; i == RandomNumber.getAttackRandomNumber(); i++)
-            {
-                if(Controls.input == arr[i])
-                {
-                    
-                }
-            }
+            string []arr = new string[]{"schere","papier","stein"};
             
+            for(;;)
+            {
+                int i = RandomNumber.getAttackRandomNumber();
+                Console.WriteLine("Randomnumber: " +i);
+                Console.WriteLine("Dieser Kampf basiert auf Schere,Papier,Stein.\nWähle weisse: ");
+                string input = Console.ReadLine().ToLower();
+                // for(int i = 0; i == RandomNumber.getAttackRandomNumber(); i++)
+                // {
+                    if(input == arr[i])
+                    {
+                        Console.WriteLine("Draw");
+                    }
+                    else if(input == arr[0] && arr[1] == arr[i])
+                    {
+                        Security.health2 = Security.health2 - 33;
+                        Console.WriteLine("Schere schlägt " + arr[1]);
+                    }
+                    else if(input == arr[1] && arr[2] == arr[i])
+                    {
+                        Security.health2 = Security.health2 - 33;
+                        Console.WriteLine("Papier schlägt " + arr[2]);
+                    }
+                    else if(input == arr[2] && arr[0] == arr[i])
+                    {
+                        Security.health2 = Security.health2 - 33;
+                        Console.WriteLine("Stein schlägt " + arr[0]);
+                    }
+                    else
+                    {
+                        Max.health1 = Max.health1 - 33;
+                        Console.WriteLine("You lost " + arr[i]);
+                    }
+                    Console.WriteLine("Enemy Health: " +Security.health2);
+                    Console.WriteLine("Max health : " + Max.health1);
+                // }
+            }
         }
     }
 }
