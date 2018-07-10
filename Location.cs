@@ -114,6 +114,7 @@ namespace swd_endaufgabe
 
         public static void DescribeLocation(Location location)
         {
+            
             // Console.WriteLine();
             // Console.WriteLine(location.title + " " + location.roomNumber);
             // Console.WriteLine();

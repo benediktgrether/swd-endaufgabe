@@ -5,7 +5,7 @@ namespace swd_endaufgabe
 {
     class Attack
     {
-        public static void EnemyAttack()
+        public static void EnemyAttack(Avatar avatar, Enemy enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Die Tür öffnet sich und der Wachman steht nun bei dir im Raum. Was willst du machen?");
@@ -18,7 +18,7 @@ namespace swd_endaufgabe
                 {
                     case "attack":
                     case "a":
-                        AttackNow();
+                        AttackNow(avatar, enemy);
                     break;
                     case "g":
                     case "give up":
@@ -28,9 +28,8 @@ namespace swd_endaufgabe
                 }
             }
         }
-        public static void AttackNow(){
-            int maxhealth = Max.setMaxHealth(100);
-            int securityhealth = Security.setSecurityHealth(100);
+        public static void AttackNow(Avatar avatar, Enemy enemy){
+            // int securityhealth = Security.setSecurityHealth(100);
             string []arr = new string[]{"schere","papier","stein"};
             Console.WriteLine("Dieser Kampf basiert auf Schere,Papier,Stein.");
             for(;;)
@@ -45,34 +44,34 @@ namespace swd_endaufgabe
                     }
                     else if(input == arr[0] && arr[1] == arr[i])
                     {
-                        securityhealth  = securityhealth  - 33;
+                        enemy.health  = enemy.health  - 33;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(input.ToUpper() + " schlägt " + arr[1].ToUpper());
                         Console.ResetColor();
                     }
                     else if(input == arr[1] && arr[2] == arr[i])
                     {
-                        securityhealth  = securityhealth  - 33;
+                        enemy.health  = enemy.health  - 33;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(input.ToUpper() + " schlägt " + arr[2].ToUpper());
                         Console.ResetColor();
                     }
                     else if(input == arr[2] && arr[0] == arr[i])
                     {
-                        securityhealth  = securityhealth  - 33;
+                        enemy.health  = enemy.health  - 33;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Stein schlägt " + arr[0].ToUpper());
                         Console.ResetColor();
                     }
                     else
                     {
-                        maxhealth   = maxhealth   - 33;
+                        avatar.health   = avatar.health   - 33;
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
-                    Console.WriteLine("Enemy Health: " + securityhealth );
-                    Console.WriteLine("Max health : " + maxhealth  );
+                    Console.WriteLine("Enemy Health: " + enemy.health );
+                    Console.WriteLine("Max health : " + avatar.health  );
             }
         }
     }

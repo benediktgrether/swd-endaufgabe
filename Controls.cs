@@ -11,6 +11,8 @@ namespace swd_endaufgabe
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();
+            Avatar avatar = Avatar.setupAvatar();
+            Enemy enemy = Enemy.setupEnemy();
 
             while (input != "q")
             {
@@ -27,7 +29,7 @@ namespace swd_endaufgabe
                         if (currentLocation.north != null)
                         {
                             currentLocation = currentLocation.north;
-                            Max.setMaxRoom(currentLocation);
+                            avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                         }
                         else
@@ -40,7 +42,7 @@ namespace swd_endaufgabe
                         if (currentLocation.east != null)
                         {
                             currentLocation = currentLocation.east;
-                            Max.setMaxRoom(currentLocation);
+                            avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                         }
                         else
@@ -53,7 +55,7 @@ namespace swd_endaufgabe
                         if (currentLocation.south != null)
                         {
                             currentLocation = currentLocation.south;
-                            Max.setMaxRoom(currentLocation);
+                            avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                         }
                         else
@@ -66,7 +68,7 @@ namespace swd_endaufgabe
                         if (currentLocation.west != null)
                         {
                             currentLocation = currentLocation.west;
-                            Max.setMaxRoom(currentLocation);
+                            avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                         }
                         else
@@ -76,15 +78,15 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                        Items.takeItem(currentLocation);
+                        Items.takeItem(currentLocation, avatar);
                         break;
                     case "drop":
                     case "d":
-                        Items.dropItem(currentLocation);
+                        Items.dropItem(currentLocation, avatar);
                         break;
                     case "inventory":
                     case "i":
-                        Items.showInventory();
+                        Items.showInventory(avatar);
                         break;
                     case "look":
                     case "l":

@@ -5,13 +5,14 @@ namespace swd_endaufgabe
 {
     class Items
     {
-        public static void takeItem(Location location)
+        
+        public static void takeItem(Location location, Avatar avatar)
         {
             Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
             string value = Console.ReadLine();
             if(location.items.Contains(value))
             {
-                Max.inventory.Add(value);
+                avatar.inventory.Add(value);
                 location.items.Remove(value);
             }
             else
@@ -22,23 +23,23 @@ namespace swd_endaufgabe
             }
         }
 
-        public static void showInventory()
+        public static void showInventory(Avatar avatar)
         {
-            foreach (var i in Max.inventory)
+            foreach (var i in avatar.inventory)
             {
                 Console.WriteLine("Inventar: " + i);
             }
         }
 
-        public static void dropItem(Location location)
+        public static void dropItem(Location location, Avatar avatar)
         {
-            showInventory();
+            showInventory(avatar);
             Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
             string value = Console.ReadLine();
-            if(Max.inventory.Contains(value))
+            if(avatar.inventory.Contains(value))
             {
                 location.items.Add(value);
-                Max.inventory.Remove(value);
+                avatar.inventory.Remove(value);
             }
             else
             {
