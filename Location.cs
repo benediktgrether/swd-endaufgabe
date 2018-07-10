@@ -10,6 +10,8 @@ namespace swd_endaufgabe
 
         public int roomNumber;
 
+        public bool closed;
+
         public Location north;
         public Location east;
         public Location south;
@@ -17,11 +19,12 @@ namespace swd_endaufgabe
 
         public List<string> items = new List<string>();
 
-        public Location(int _roomNumber, string _title, string _description)
+        public Location(int _roomNumber, string _title, string _description, bool _closed)
         {
             title = _title;
             description = _description;
             roomNumber = _roomNumber;
+            closed = _closed;
 
         }
         public static Location MapSetUp()
@@ -30,46 +33,47 @@ namespace swd_endaufgabe
             (
                 0,
                 "Aula",
-                "Du befindest dich gerade in der Aula"
+                "Du befindest dich gerade in der Aula",
+                true
             );
             
             Location WC = new Location
             (
                 1,
                 "WC",
-                "Du Befindest dich in der Toilette"
+                "Du Befindest dich in der Toilette", true
             );
 
             Location Seitengang = new Location
             (
                 2,
                 "Seitengang", 
-                "Du befindest dich im Seitengang"
+                "Du befindest dich im Seitengang", true
             );
             
             Location Chemielabor = new Location
             (
                 3,
                 "Chemielabor", 
-                "Du befindest dich im Chemielabor"
+                "Du befindest dich im Chemielabor", true
             );
             Location Security = new Location
             (
                 4,
                 "Security", 
-                "Du befindest dich im Security"
+                "Du befindest dich im Security", true
             );
             Location Sekretariat = new Location
             (
                 5,
                 "Sekretariat", 
-                "Du befindest dich im Sekretariat"
+                "Du befindest dich im Sekretariat", true
             );
             Location BueroRektor = new Location
             (
                 6,
                 "Büro Rektor", 
-                "Du befindest dich im Büro des Rektors"
+                "Du befindest dich im Büro des Rektors", false
             );
 
             Aula.north = WC;
@@ -114,7 +118,7 @@ namespace swd_endaufgabe
 
         public static void DescribeLocation(Location location)
         {
-            
+
             // Console.WriteLine();
             // Console.WriteLine(location.title + " " + location.roomNumber);
             // Console.WriteLine();
@@ -139,7 +143,7 @@ namespace swd_endaufgabe
 
         public static void showRoomInformation(Location location)
         {
-            Console.WriteLine("Du befindest dich {0} siehst du", location.title);
+            Console.WriteLine(location.description);
             foreach(var i in location.items)
             {
                 Console.WriteLine(i);

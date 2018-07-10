@@ -34,7 +34,7 @@ namespace swd_endaufgabe
             // avatar.currentRoom = location.roomNumber;
             currentRoom = location.roomNumber;
             currentRoom = location.roomNumber;
-            Console.WriteLine("Ich bin gerade im " + currentRoom + " Raum");
+            // Console.WriteLine("Ich bin gerade im " + currentRoom + " Raum");
             enemy.randomRoom(location, avatar, enemy);
             // Security.randomRoom(location);
             
@@ -70,24 +70,27 @@ namespace swd_endaufgabe
         {
 
             int randomnumber = RandomNumber.getEnemyRandonRoom();
-            if(Controls.controlcounter > 2)
+            if(life == true)
             {
-                if(counter == 0)
+                if(Controls.controlcounter > 2)
                 {
-                    currentRoom = 2;
-                    Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
-                }
-                else
-                {
-                    currentRoom = randomnumber;
-                    Console.WriteLine("Security is in Room :" + currentRoom);
-
-                    if(currentRoom == avatar.currentRoom)
+                    if(counter == 0)
                     {
-                        Attack.EnemyAttack(avatar, enemy);
+                        currentRoom = 2;
+                        Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
                     }
+                    else
+                    {
+                        currentRoom = randomnumber;
+                        Console.WriteLine("Security is in Room :" + currentRoom);
+
+                        if(currentRoom == avatar.currentRoom)
+                        {
+                            Attack.EnemyAttack(avatar, enemy);
+                        }
+                    }
+                    return counter ++;
                 }
-                return counter ++;
             }
             return counter = 0;
         }

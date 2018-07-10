@@ -101,6 +101,18 @@ namespace swd_endaufgabe
                     case "q":
                         Environment.Exit(0);
                         break;
+                    case "attack":
+                    case "a":
+                        if(enemy.currentRoom == avatar.currentRoom)
+                        {
+                            Attack.AttackNow(avatar, enemy);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
+                            break;
+                        }
+                        break;
                     default:
                         Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
                         break;
