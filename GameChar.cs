@@ -6,8 +6,7 @@ namespace swd_endaufgabe
     class GameChar
     {
         public static List <string> inventory = new List <string>();
-        public static int health1; 
-        public static int health2; 
+        public int health;
         public static int counter = 0;
     }
 
@@ -23,16 +22,25 @@ namespace swd_endaufgabe
             Security.randomRoom(location);
             return _currentRoom;
         }
+
+        public static int setMaxHealth(int health)
+        {
+            // avatar.health;
+            return health;
+        }
     } 
 
     class Security : GameChar
     {
         // public static int randomRoom;
-        private static string _currentRoomName;
         private static int _currentRoom;
         public static bool active = true;
         public static bool Key = true;
-
+        
+        public static int setSecurityHealth(int health)
+        {
+            return health;
+        }
         public static int randomRoom(Location location)
         {
             if(active == true)
