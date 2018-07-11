@@ -7,6 +7,7 @@ namespace swd_endaufgabe
     {
         public static int controlcounter = 0;
         public static string input = "";
+
         public static void gameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
@@ -20,7 +21,6 @@ namespace swd_endaufgabe
                 Console.BackgroundColor = ConsoleColor.DarkGray;
                 giveInput();
                 Console.ResetColor();
-                // Security.randomRoom();
 
                 switch (input)
                 {
@@ -28,9 +28,16 @@ namespace swd_endaufgabe
                     case "n":
                         if (currentLocation.north != null)
                         {
+                            if(Location.setDirection(currentLocation) == false)
+                            {
+                                break;
+                            }
+                            else
+                            {
                             currentLocation = currentLocation.north;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
+                            }
                         }
                         else
                         {
@@ -41,9 +48,17 @@ namespace swd_endaufgabe
                     case "e":
                         if (currentLocation.east != null)
                         {
-                            currentLocation = currentLocation.east;
-                            avatar.setMaxRoom(currentLocation, avatar, enemy);
-                            controlcounter ++;
+                            if(Location.setDirection(currentLocation) == false)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Location.setDirection(currentLocation.east);
+                                currentLocation = currentLocation.east;
+                                avatar.setMaxRoom(currentLocation, avatar, enemy);
+                                controlcounter ++;
+                            }
                         }
                         else
                         {
@@ -54,9 +69,16 @@ namespace swd_endaufgabe
                     case "s":
                         if (currentLocation.south != null)
                         {
+                            if(Location.setDirection(currentLocation) == false)
+                            {
+                                break;
+                            }
+                            else
+                            {
                             currentLocation = currentLocation.south;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
+                            }
                         }
                         else
                         {
@@ -67,9 +89,16 @@ namespace swd_endaufgabe
                     case "w":
                         if (currentLocation.west != null)
                         {
+                            if(Location.setDirection(currentLocation) == false)
+                            {
+                                break;
+                            }
+                            else
+                            {
                             currentLocation = currentLocation.west;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
+                            }
                         }
                         else
                         {

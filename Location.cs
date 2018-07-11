@@ -10,7 +10,7 @@ namespace swd_endaufgabe
 
         public int roomNumber;
 
-        public bool closed;
+        public bool open;
 
         public Location north;
         public Location east;
@@ -19,12 +19,12 @@ namespace swd_endaufgabe
 
         public List<string> items = new List<string>();
 
-        public Location(int _roomNumber, string _title, string _description, bool _closed)
+        public Location(int _roomNumber, string _title, string _description, bool _open)
         {
             title = _title;
             description = _description;
             roomNumber = _roomNumber;
-            closed = _closed;
+            open = _open;
 
         }
         public static Location MapSetUp()
@@ -148,6 +148,15 @@ namespace swd_endaufgabe
             {
                 Console.WriteLine(i);
             }
+        }
+        public static bool setDirection(Location location)
+        {
+            if(location.open == false)
+            {
+                Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                return false;
+            }
+            return true;
         }
     }
 }
