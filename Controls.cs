@@ -28,7 +28,7 @@ namespace swd_endaufgabe
                     case "n":
                         if (currentLocation.north != null)
                         {
-                            if(Location.setDirection(currentLocation) == false)
+                            if(Location.setDirection(currentLocation.north, avatar) == false)
                             {
                                 break;
                             }
@@ -48,13 +48,13 @@ namespace swd_endaufgabe
                     case "e":
                         if (currentLocation.east != null)
                         {
-                            if(Location.setDirection(currentLocation) == false)
+                            if(Location.setDirection(currentLocation.east, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
-                                Location.setDirection(currentLocation.east);
+                                // Location.setDirection(currentLocation.east);
                                 currentLocation = currentLocation.east;
                                 avatar.setMaxRoom(currentLocation, avatar, enemy);
                                 controlcounter ++;
@@ -69,7 +69,7 @@ namespace swd_endaufgabe
                     case "s":
                         if (currentLocation.south != null)
                         {
-                            if(Location.setDirection(currentLocation) == false)
+                            if(Location.setDirection(currentLocation.south, avatar) == false)
                             {
                                 break;
                             }
@@ -89,7 +89,7 @@ namespace swd_endaufgabe
                     case "w":
                         if (currentLocation.west != null)
                         {
-                            if(Location.setDirection(currentLocation) == false)
+                            if(Location.setDirection(currentLocation.west, avatar) == false)
                             {
                                 break;
                             }

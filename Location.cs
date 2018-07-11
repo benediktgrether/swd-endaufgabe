@@ -102,7 +102,7 @@ namespace swd_endaufgabe
             Sekretariat.east = BueroRektor;
             Sekretariat.items.AddRange(new List<string>
             {
-                "Zucker", "1€"
+                "Zucker", "1€", "Schlüssel"
             });
 
             BueroRektor.west = Sekretariat;
@@ -149,10 +149,14 @@ namespace swd_endaufgabe
                 Console.WriteLine(i);
             }
         }
-        public static bool setDirection(Location location)
+        public static bool setDirection(Location location, Avatar avatar)
         {
             if(location.open == false)
             {
+                if(avatar.inventory.Contains("Schlüssel"))
+                {
+                    return location.open = true;
+                }
                 Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
                 return false;
             }
