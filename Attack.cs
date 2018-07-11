@@ -38,7 +38,11 @@ namespace swd_endaufgabe
                 // Console.WriteLine("Randomnumber: " +i);
                 Console.WriteLine("Wähle weise: ");
                 string input = Console.ReadLine().ToLower();
-                if(input == arr[i])
+                if(input != arr[0] && input != arr[1] && input != arr[2])
+                {
+                    Console.WriteLine("Wrong Input.");
+                }
+                else if(input == arr[i])
                 {
                     Console.WriteLine("Draw");
                 }
