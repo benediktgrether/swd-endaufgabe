@@ -162,6 +162,11 @@ namespace swd_endaufgabe
             }
             return true;
         }
+
+        public static void usedItems()
+        {
+            
+        }
     }
 }
 
