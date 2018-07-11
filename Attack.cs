@@ -35,7 +35,7 @@ namespace swd_endaufgabe
             for(;;)
             {
                 int i = RandomNumber.getAttackRandomNumber();
-                Console.WriteLine("Randomnumber: " +i);
+                // Console.WriteLine("Randomnumber: " +i);
                 Console.WriteLine("Wähle weise: ");
                 string input = Console.ReadLine().ToLower();
                 if(input == arr[i])
