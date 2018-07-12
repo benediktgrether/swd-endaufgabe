@@ -12,6 +12,8 @@ namespace swd_endaufgabe
 
         public bool open;
 
+        public bool gameFinished;
+
         public Location north;
         public Location east;
         public Location south;
@@ -19,12 +21,13 @@ namespace swd_endaufgabe
 
         public List<Items> items = new List<Items>();
 
-        public Location(int _roomNumber, string _title, string _description, bool _open)
+        public Location(int _roomNumber, string _title, string _description, bool _open, bool _gameFinished)
         {
             title = _title;
             description = _description;
             roomNumber = _roomNumber;
             open = _open;
+            gameFinished = _gameFinished;
 
         }
         public static Location MapSetUp()
@@ -34,7 +37,7 @@ namespace swd_endaufgabe
                 0,
                 "Aula",
                 "Du befindest dich gerade in der Aula",
-                true
+                true, true
             );
 
             Items soda = new Items
@@ -46,7 +49,7 @@ namespace swd_endaufgabe
             (
                 1,
                 "WC",
-                "Du Befindest dich in der Toilette", true
+                "Du Befindest dich in der Toilette", true ,true
             );
             Items anleitung = new Items
             (
@@ -59,14 +62,14 @@ namespace swd_endaufgabe
             (
                 2,
                 "Seitengang", 
-                "Du befindest dich im Seitengang", true
+                "Du befindest dich im Seitengang", true, true
             );
             
             Location Chemielabor = new Location
             (
                 3,
                 "Chemielabor", 
-                "Du befindest dich im Chemielabor", true
+                "Du befindest dich im Chemielabor", true, true
             );
             Items klebeband = new Items
             (
@@ -81,13 +84,13 @@ namespace swd_endaufgabe
             (
                 4,
                 "Security", 
-                "Du befindest dich im Security", true
+                "Du befindest dich im Security", true, true
             );
             Location Sekretariat = new Location
             (
                 5,
                 "Sekretariat", 
-                "Du befindest dich im Sekretariat", true
+                "Du befindest dich im Sekretariat", true, true
             );
             Items suggar = new Items
             (
@@ -106,32 +109,42 @@ namespace swd_endaufgabe
             (
                 6,
                 "Büro Rektor", 
-                "Du befindest dich im Büro des Rektors", false
+                "Du befindest dich im Büro des Rektors", false , true
             );
             Items fileRachel = new Items
             (
-                "Akte 1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true
+                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true
             );
             Items fileChloe = new Items
             (
-                "Akte 2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true
+                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true
             );
             Items fileMax = new Items
             (
-                "Akte 3", "Akte über die Schullaufbahn von Max", true
+                "Akte3", "Akte über die Schullaufbahn von Max", true
             );
             Items fileWarren = new Items
             (
-                "Akte 4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true
+                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true
             );
             Items fileKate = new Items
             (
-                "Akte 5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true
+                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true
+            );
+
+            Location Exit = new Location
+            (
+                7, 
+                "Exit", 
+                "Game Finsihed", 
+                false, 
+                false
             );
 
             Aula.north = WC;
             Aula.east = Sekretariat;
             Aula.west = Seitengang;
+            Aula.south = Exit;
             // Aula.items.AddRange(new List<string>
             // {"Soda", "Taschentücher"});
             Aula.items.Add(soda);
@@ -163,6 +176,8 @@ namespace swd_endaufgabe
             {
                 fileRachel, fileKate, fileChloe, fileMax, fileWarren
             });
+
+            Exit.north = Aula;
 
             return Aula;
         }
@@ -204,6 +219,7 @@ namespace swd_endaufgabe
         }
         public static bool setDirection(Location location, Avatar avatar)
         {
+            isGameFinsihed(location, avatar);
             if(location.open == false)
             {
                 // Items findItem = avatar.inventory.Exist(x => x.title == "key");
@@ -211,7 +227,26 @@ namespace swd_endaufgabe
                 {
                     return location.open = true;
                 }
-                Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                if(avatar.currentRoom != 0)
+                {
+                    Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                }
+                return location.open = false;
+            }
+            return location.open = true;
+        }
+        public static bool isGameFinsihed(Location location, Avatar avatar)
+        {
+
+            if(location.gameFinished == false)
+            {
+                if(avatar.inventory.Exists(x => x.title == "Akte1"))
+                {
+                    Console.WriteLine("test");
+                    return location.gameFinished = true;
+                    // Environment.ExitCode(0);
+                }
+                Console.WriteLine("Du kannst hier noch nicht lang gehen.\nFinde die richtige Schulakte");
                 return false;
             }
             return true;

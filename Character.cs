@@ -41,7 +41,7 @@ namespace swd_endaufgabe
         private int counter;
         public bool life;
         public string title; 
-        public List<Items> loot = new List<Items>();
+        public List<Items> loot = new List<Items>(); // Liste Inventory verwenden
 
         public Enemy(string _name, int _health, int _currentRoom, bool _life, string _titel)
         {
@@ -54,16 +54,26 @@ namespace swd_endaufgabe
 
         public static Enemy setupEnemy()
         {
-            Enemy davide = new Enemy(
-                "Davide", 100, 5, true, "Wachmann"
+            Enemy david = new Enemy(
+                "David", 100, 5, true, "Wachmann"
             );
             Items centralKey = new Items
             (
                 "Zentralschlüssel", "Zentralschlüssel der Zugang zu allen Räumen bietet.", true
             );
-            // davide.loot.Add("key1234");
-            davide.loot.Add(centralKey);
-            return davide;
+            Items mobilePhone = new Items
+            (
+                "Handy", "Davids Handy", true
+            );
+            Items carKey = new Items
+            (
+                "Autoschlüssel", "David fährt einen Blauen Ford Mustang Boss 429 (1969)", false
+            );
+            david.loot.AddRange(new List<Items>
+            {
+                centralKey, mobilePhone, carKey
+            });
+            return david;
         }
         public int randomRoom(Location location, Avatar avatar, Enemy enemy)
         {

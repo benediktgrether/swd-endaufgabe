@@ -28,7 +28,7 @@ namespace swd_endaufgabe
             //     }
             // }
         }
-        public static void AttackNow(Avatar avatar, Enemy enemy){
+        public static void AttackNow(Location location, Avatar avatar, Enemy enemy){
             // int securityhealth = Security.setSecurityHealth(100);
             string []arr = new string[]{"schere","papier","stein"};
             Console.WriteLine("Dieser Kampf basiert auf Schere,Papier,Stein.");
@@ -80,6 +80,7 @@ namespace swd_endaufgabe
                 {
                     enemy.life = false;
                     Console.WriteLine("Du hast den Wachmann besiegt.");
+                    LootEnemy(location, enemy);
                     break;
                 }
                 else if (avatar.health == 1)
@@ -88,6 +89,39 @@ namespace swd_endaufgabe
                     Environment.Exit(1);
                 }
             }
+        }
+        public static void LootEnemy(Location location, Enemy enemy)
+        {
+            Console.WriteLine("Der Gegener hat einige Items droppen lassen");
+            foreach(var i in enemy.loot)
+            {
+                location.items.Add(i);
+            }
+            // enemy.loot.Remove(items);
+            
+            
+            // Console.WriteLine("In Davids Taschen befinden sich");
+            // foreach(var i in enemy.loot)
+            // {
+            //     Console.WriteLine(i.title);
+            // }
+            // Console.WriteLine("Was möchten sie Looten?: ");
+            // string input = Console.ReadLine();
+            // Items findItem = enemy.loot.Find(x => x.title.Contains(input));
+            // if (findItem != null)
+            // {
+            //     avatar.inventory.Add(findItem);
+            //     enemy.loot.Remove(findItem);
+            // }
+
+            
+
+            // Items showLoot = enemy.loot.Find(x => x.title == "Zentralschlüssel");
+            // Console.WriteLine("Loot enemy");
+            // Console.WriteLine(showLoot.title);
+            // Console.WriteLine();
+            // avatar.inventory.Add(showLoot);
+
         }
     }
 }

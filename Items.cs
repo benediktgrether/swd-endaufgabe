@@ -30,6 +30,7 @@ namespace swd_endaufgabe
             {
                 Console.WriteLine("Nothing find");
             }
+            itemFinish(location, avatar);
         }
 
         public static void showInventory(Avatar avatar)
@@ -54,6 +55,16 @@ namespace swd_endaufgabe
             else
             {
                 Console.WriteLine("Nothing find");
+            }
+        }
+
+        public static void itemFinish(Location location, Avatar avatar)
+        {
+            Items findItem = avatar.inventory.Find(x => x.title.Contains("fileRachel"));
+            if(avatar.inventory.Exists(x => x.title == "fileRachel"))
+            {
+                Console.WriteLine("Du hast die Richtige Akte gefunden");
+                Console.WriteLine(findItem.description);
             }
         }
     }

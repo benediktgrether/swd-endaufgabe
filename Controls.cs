@@ -169,7 +169,7 @@ namespace swd_endaufgabe
                     case "a":
                         if(enemy.currentRoom == avatar.currentRoom)
                         {
-                            Attack.AttackNow(avatar, enemy);
+                            Attack.AttackNow(currentLocation, avatar, enemy);
                         }
                         else
                         {
@@ -179,6 +179,10 @@ namespace swd_endaufgabe
                         break;
                     default:
                         Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
+                        break;
+
+                    case "test":
+                        Attack.LootEnemy(currentLocation, enemy);
                         break;
                 }
             }
