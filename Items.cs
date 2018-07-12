@@ -18,9 +18,7 @@ namespace swd_endaufgabe
         
         public static void takeItem(string _words, Location location, Avatar avatar)
         {
-            Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
-            string value = _words;
-            Items findItem = location.items.Find(x => x.title.Contains(value));
+            Items findItem = location.items.Find(x => x.title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
             if(findItem != null)
             {

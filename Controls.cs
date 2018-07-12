@@ -15,7 +15,9 @@ namespace swd_endaufgabe
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
             Enemy enemy = Enemy.setupEnemy();
-            while (input != "q")
+            // SplitInput();
+            // while (words[0] != "q")
+            for(;;)
             {
                 Location.DescribeLocation(currentLocation);
                 Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -107,7 +109,14 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                        Items.takeItem(words[1],currentLocation, avatar);
+                        if(words [0] == null)
+                        {
+                            Console.WriteLine("Fehler");
+                        }          
+                        else
+                        {              
+                            Items.takeItem(words[1],currentLocation, avatar);
+                        }
                         break;
                     case "drop":
                     case "d":
