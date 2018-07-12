@@ -16,11 +16,12 @@ namespace swd_endaufgabe
             used = _used;
         }
         
-        public static void takeItem(Location location, Avatar avatar)
+        public static void takeItem(string _words, Location location, Avatar avatar)
         {
             Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
-            string value = Console.ReadLine();
+            string value = _words;
             Items findItem = location.items.Find(x => x.title.Contains(value));
+            // Items findSpecialItem = location.items.Find(x => x.title.Contains());
             if(findItem != null)
             {
                 Console.WriteLine("Find:" + findItem.title);

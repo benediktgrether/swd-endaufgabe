@@ -7,6 +7,7 @@ namespace swd_endaufgabe
     {
         public static int controlcounter = 0;
         public static string input = "";
+        public static string[] words;
 
         public static void gameControls()
         {
@@ -14,15 +15,14 @@ namespace swd_endaufgabe
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
             Enemy enemy = Enemy.setupEnemy();
-
             while (input != "q")
             {
                 Location.DescribeLocation(currentLocation);
                 Console.BackgroundColor = ConsoleColor.DarkGray;
-                giveInput();
+                SplitInput();
                 Console.ResetColor();
 
-                switch (input)
+                switch (words[0])
                 {
                     case "north":
                     case "n":
@@ -107,7 +107,7 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                        Items.takeItem(currentLocation, avatar);
+                        Items.takeItem(words[1],currentLocation, avatar);
                         break;
                     case "drop":
                     case "d":
@@ -153,10 +153,11 @@ namespace swd_endaufgabe
             }
 
         }
-            public static string giveInput()
+            public static Array SplitInput()
             {
-                Console.Write("Was willst du tun : ");
-                return input = Console.ReadLine().ToLower();
+                string _input = Console.ReadLine();
+                words = _input.Split(' ');
+                return words;
             }
 
     }
