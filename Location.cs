@@ -36,6 +36,7 @@ namespace swd_endaufgabe
                 "Du befindest dich gerade in der Aula",
                 true
             );
+
             Items soda = new Items
             (
                 "Soda", "xxx", true
@@ -198,32 +199,32 @@ namespace swd_endaufgabe
             Console.WriteLine(location.description);
             foreach(var i in location.items)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(i.title);
             }
         }
         public static bool setDirection(Location location, Avatar avatar)
         {
             if(location.open == false)
             {
-                if(avatar.inventory.Contains("Schlüssel"))
-                {
-                    return location.open = true;
-                }
-                Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
-                return false;
+                // if(avatar.inventory.Contains(key))
+                // {
+                //     return location.open = true;
+                // }
+                // Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                // return false;
             }
             return true;
         }
 
         public static void usedItems(Location location, Avatar avatar)
         {
-            if(location.open == false)// Geht nicht
-            {
-                if(avatar.inventory.Contains("Schlüssel"))
-                {
+            // if(location.open == false)// Geht nicht
+            // {
+            //     if(avatar.inventory.Contains("Schlüssel"))
+            //     {
                     
-                }
-            }
+            //     }
+            // }
         }
     }
 }

@@ -7,7 +7,7 @@ namespace swd_endaufgabe
     {
         public string name;
         public int health;
-        public List<string> inventory = new List<string>();
+        public List<Items> inventory = new List<Items>();
         public int currentRoom;
     }
 

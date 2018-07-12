@@ -7,13 +7,12 @@ namespace swd_endaufgabe
     {
         public string description;
         public string title;
-
         public bool used;
 
-        public Items(string _description, string _title, bool _used)
+        public Items(string _title, string _description, bool _used)
         {
-            description = _description;
             title = _title;
+            description = _description;
             used = _used;
         }
         
@@ -21,24 +20,36 @@ namespace swd_endaufgabe
         {
             Console.WriteLine("Welches Item möchten Sie aufnehmen?: ");
             string value = Console.ReadLine();
-            if(location.items.Contains(value))
+            Items findItem = location.items.Find(x => x.title.Contains(value));
+            if(findItem != null)
             {
-                avatar.inventory.Add(value);
-                location.items.Remove(value);
+                Console.WriteLine("Find:" + findItem.title);
+                avatar.inventory.Add(findItem);
+                location.items.Remove(findItem);
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Falsche Eingabe");
-                Console.ResetColor();
+                Console.WriteLine("Nothing find");
             }
+
+            // if(location.items.Contains(value))
+            // {
+            //     avatar.inventory.Add(value);
+            //     location.items.Remove(value);
+            // }
+            // else
+            // {
+            //     Console.ForegroundColor = ConsoleColor.Red;
+            //     Console.WriteLine("Falsche Eingabe");
+            //     Console.ResetColor();
+            // }
         }
 
         public static void showInventory(Avatar avatar)
         {
             foreach (var i in avatar.inventory)
             {
-                Console.WriteLine("Inventar: " + i);
+                Console.WriteLine("Inventar: " + i.title);
             }
         }
 
@@ -46,18 +57,18 @@ namespace swd_endaufgabe
         {
             showInventory(avatar);
             Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
-            string value = Console.ReadLine();
-            if(avatar.inventory.Contains(value))
-            {
-                location.items.Add(value);
-                avatar.inventory.Remove(value);
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Falsche Eingabe");
-                Console.ResetColor();
-            }
+            // string value = Console.ReadLine();
+            // if(avatar.inventory.Contains(value))
+            // {
+            //     location.items.Add(value);
+            //     avatar.inventory.Remove(value);
+            // }
+            // else
+            // {
+            //     Console.ForegroundColor = ConsoleColor.Red;
+            //     Console.WriteLine("Falsche Eingabe");
+            //     Console.ResetColor();
+            // }
         }
     }
 
