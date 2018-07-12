@@ -163,9 +163,15 @@ namespace swd_endaufgabe
             return true;
         }
 
-        public static void usedItems()
+        public static void usedItems(Location location, Avatar avatar)
         {
-            
+            if(location.open == false)// Geht nicht
+            {
+                if(avatar.inventory.Contains("Schlüssel"))
+                {
+                    
+                }
+            }
         }
     }
 }

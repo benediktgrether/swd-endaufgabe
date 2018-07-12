@@ -124,7 +124,7 @@ namespace swd_endaufgabe
                         break;
                     case "used":
                     case "u":
-                        Location.usedItems();
+                        Location.usedItems(currentLocation, avatar);
                         break;
                     case "help":
                     case "h":
