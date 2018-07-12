@@ -206,25 +206,23 @@ namespace swd_endaufgabe
         {
             if(location.open == false)
             {
-                // if(avatar.inventory.Contains(key))
-                // {
-                //     return location.open = true;
-                // }
-                // Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
-                // return false;
+                // Items findItem = avatar.inventory.Exist(x => x.title == "key");
+                if(avatar.inventory.Exists(x => x.title == "Zentralschlüssel"))
+                {
+                    return location.open = true;
+                }
+                Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                return false;
             }
             return true;
         }
 
         public static void usedItems(Location location, Avatar avatar)
         {
-            // if(location.open == false)// Geht nicht
-            // {
-            //     if(avatar.inventory.Contains("Schlüssel"))
-            //     {
-                    
-            //     }
-            // }
+            if(location.open == false)// Geht nicht
+            {
+
+            }
         }
     }
 }

@@ -30,18 +30,6 @@ namespace swd_endaufgabe
             {
                 Console.WriteLine("Nothing find");
             }
-
-            // if(location.items.Contains(value))
-            // {
-            //     avatar.inventory.Add(value);
-            //     location.items.Remove(value);
-            // }
-            // else
-            // {
-            //     Console.ForegroundColor = ConsoleColor.Red;
-            //     Console.WriteLine("Falsche Eingabe");
-            //     Console.ResetColor();
-            // }
         }
 
         public static void showInventory(Avatar avatar)
@@ -52,25 +40,23 @@ namespace swd_endaufgabe
             }
         }
 
-        public static void dropItem(Location location, Avatar avatar)
+        public static void dropItem(string _words, Location location, Avatar avatar)
         {
             showInventory(avatar);
-            Console.WriteLine("Welches Item möchtest du fallen lassen?: ");
-            // string value = Console.ReadLine();
-            // if(avatar.inventory.Contains(value))
-            // {
-            //     location.items.Add(value);
-            //     avatar.inventory.Remove(value);
-            // }
-            // else
-            // {
-            //     Console.ForegroundColor = ConsoleColor.Red;
-            //     Console.WriteLine("Falsche Eingabe");
-            //     Console.ResetColor();
-            // }
+            Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
+            // Items findSpecialItem = location.items.Find(x => x.title.Contains());
+            if(findItem != null)
+            {
+                Console.WriteLine("Find:" + findItem.title);
+                location.items.Add(findItem);
+                avatar.inventory.Remove(findItem);
+            }
+            else
+            {
+                Console.WriteLine("Nothing find");
+            }
         }
     }
-
 }
 
 

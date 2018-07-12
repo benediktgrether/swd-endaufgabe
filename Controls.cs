@@ -109,18 +109,40 @@ namespace swd_endaufgabe
                         break;
                     case "take":
                     case "t":
-                        if(words [0] == null)
+                        try
                         {
-                            Console.WriteLine("Fehler");
-                        }          
-                        else
-                        {              
-                            Items.takeItem(words[1],currentLocation, avatar);
+                            if(words[1] != "")
+                            {
+                                Items.takeItem(words[1],currentLocation, avatar);
+                            }
+                            else
+                            {
+                                // Items.takeItem(words[1],currentLocation, avatar);
+                                Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
                         }
                         break;
                     case "drop":
                     case "d":
-                        Items.dropItem(currentLocation, avatar);
+                        try
+                        {
+                            if(words[1] != "")
+                            {
+                                Items.dropItem(words[1],currentLocation, avatar);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.");
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Falsche Eingabe");
+                        }
                         break;
                     case "inventory":
                     case "i":

@@ -29,14 +29,8 @@ namespace swd_endaufgabe
         }
         public int setMaxRoom(Location location, Avatar avatar, Enemy enemy)
         {
-            // Avatar avatar = Avatar.setupAvatar();
-            // Enemy enemy = Enemy.setupEnemy();
-            // avatar.currentRoom = location.roomNumber;
-            // currentRoom = location.roomNumber;
             currentRoom = location.roomNumber;
-            // Console.WriteLine("Ich bin gerade im " + currentRoom + " Raum");
             enemy.randomRoom(location, avatar, enemy);
-            // Security.randomRoom(location);
             
             return currentRoom;
         }
@@ -47,7 +41,7 @@ namespace swd_endaufgabe
         private int counter;
         public bool life;
         public string title; 
-        public List<string> loot = new List<string>();
+        public List<Items> loot = new List<Items>();
 
         public Enemy(string _name, int _health, int _currentRoom, bool _life, string _titel)
         {
@@ -63,7 +57,12 @@ namespace swd_endaufgabe
             Enemy davide = new Enemy(
                 "Davide", 100, 5, true, "Wachmann"
             );
-            davide.loot.Add("key1234");
+            Items centralKey = new Items
+            (
+                "Zentralschlüssel", "Zentralschlüssel der Zugang zu allen Räumen bietet.", true
+            );
+            // davide.loot.Add("key1234");
+            davide.loot.Add(centralKey);
             return davide;
         }
         public int randomRoom(Location location, Avatar avatar, Enemy enemy)
