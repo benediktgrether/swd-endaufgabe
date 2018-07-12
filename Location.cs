@@ -109,7 +109,7 @@ namespace swd_endaufgabe
             (
                 6,
                 "Büro Rektor", 
-                "Du befindest dich im Büro des Rektors", false , true
+                "Du befindest dich im Büro des Rektors", false , false
             );
             Items fileRachel = new Items
             (
@@ -140,6 +140,7 @@ namespace swd_endaufgabe
                 false, 
                 false
             );
+
 
             Aula.north = WC;
             Aula.east = Sekretariat;
@@ -220,12 +221,15 @@ namespace swd_endaufgabe
         public static bool setDirection(Location location, Avatar avatar)
         {
             isGameFinsihed(location, avatar);
-            if(location.open == false)
+            if(location.open == false && location.gameFinished == false)
             {
                 // Items findItem = avatar.inventory.Exist(x => x.title == "key");
                 if(avatar.inventory.Exists(x => x.title == "Zentralschlüssel"))
                 {
-                    return location.open = true;
+                    if (avatar.currentRoom == 5)
+                    {
+                        return location.open = true;
+                    }
                 }
                 if(avatar.currentRoom != 0)
                 {
@@ -237,16 +241,18 @@ namespace swd_endaufgabe
         }
         public static bool isGameFinsihed(Location location, Avatar avatar)
         {
-
             if(location.gameFinished == false)
             {
                 if(avatar.inventory.Exists(x => x.title == "Akte1"))
                 {
-                    Console.WriteLine("test");
+                    Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     return location.gameFinished = true;
                     // Environment.ExitCode(0);
                 }
-                Console.WriteLine("Du kannst hier noch nicht lang gehen.\nFinde die richtige Schulakte");
+                if(avatar.currentRoom == 0)
+                {
+                    Console.WriteLine("Du kannst hier noch nicht lang gehen.\nFinde die richtige Schulakte");
+                }
                 return false;
             }
             return true;
