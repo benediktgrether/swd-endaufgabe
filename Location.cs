@@ -17,7 +17,7 @@ namespace swd_endaufgabe
         public Location south;
         public Location west;
 
-        public List<string> items = new List<string>();
+        public List<Items> items = new List<Items>();
 
         public Location(int _roomNumber, string _title, string _description, bool _open)
         {
@@ -36,12 +36,22 @@ namespace swd_endaufgabe
                 "Du befindest dich gerade in der Aula",
                 true
             );
-            
+            Items soda = new Items
+            (
+                "Soda", "xxx", true
+            ); 
+
             Location WC = new Location
             (
                 1,
                 "WC",
                 "Du Befindest dich in der Toilette", true
+            );
+            Items anleitung = new Items
+            (
+                "Anleitung", 
+                "Hier ist eine Anleitung zum Bauen einer Bombe.\nDu benötigtst dafür\nZucker\nSoda Can\nPanzertape\nNatriumchlorat\n", 
+                true
             );
 
             Location Seitengang = new Location
@@ -57,6 +67,15 @@ namespace swd_endaufgabe
                 "Chemielabor", 
                 "Du befindest dich im Chemielabor", true
             );
+            Items klebeband = new Items
+            (
+                "Klebeband", "xxx", true
+            );
+            Items sodiumChlorate = new Items
+            (
+                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true
+            );
+
             Location Security = new Location
             (
                 4,
@@ -69,11 +88,44 @@ namespace swd_endaufgabe
                 "Sekretariat", 
                 "Du befindest dich im Sekretariat", true
             );
+            Items suggar = new Items
+            (
+                "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
+                true
+            );
+            Items money = new Items
+            (
+                "1€", "Geldmünze mit dem Wert von 1 €", true
+            );
+            Items key = new Items
+            (
+                "Schlüssel", "Schlüssel", true
+            );
             Location BueroRektor = new Location
             (
                 6,
                 "Büro Rektor", 
                 "Du befindest dich im Büro des Rektors", false
+            );
+            Items fileRachel = new Items
+            (
+                "Akte 1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true
+            );
+            Items fileChloe = new Items
+            (
+                "Akte 2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true
+            );
+            Items fileMax = new Items
+            (
+                "Akte 3", "Akte über die Schullaufbahn von Max", true
+            );
+            Items fileWarren = new Items
+            (
+                "Akte 4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true
+            );
+            Items fileKate = new Items
+            (
+                "Akte 5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true
             );
 
             Aula.north = WC;
@@ -81,34 +133,34 @@ namespace swd_endaufgabe
             Aula.west = Seitengang;
             // Aula.items.AddRange(new List<string>
             // {"Soda", "Taschentücher"});
-            Aula.items.Add("Soda");
+            Aula.items.Add(soda);
 
             WC.south = Aula;
-            WC.items.Add("Anleitung");
+            WC.items.Add(anleitung);
 
             Seitengang.north = Chemielabor;
             Seitengang.east = Aula;
             Seitengang.south = Security;
 
             Chemielabor.south = Seitengang;
-            Chemielabor.items.AddRange(new List<string>
+            Chemielabor.items.AddRange(new List<Items>
             {
-                "Panzertape", "Sodium Chlorate"
+                klebeband, sodiumChlorate
             });
 
             Security.north = Seitengang;
 
             Sekretariat.west = Aula;
             Sekretariat.east = BueroRektor;
-            Sekretariat.items.AddRange(new List<string>
+            Sekretariat.items.AddRange(new List<Items>
             {
-                "Zucker", "1€", "Schlüssel"
+                suggar, money, key
             });
 
             BueroRektor.west = Sekretariat;
-            BueroRektor.items.AddRange(new List<string>
+            BueroRektor.items.AddRange(new List<Items>
             {
-                "Akte1", "Akte2", "Akte3", "Akte4", "Akte5"
+                fileRachel, fileKate, fileChloe, fileMax, fileWarren
             });
 
             return Aula;

@@ -32,7 +32,7 @@ namespace swd_endaufgabe
             // Avatar avatar = Avatar.setupAvatar();
             // Enemy enemy = Enemy.setupEnemy();
             // avatar.currentRoom = location.roomNumber;
-            currentRoom = location.roomNumber;
+            // currentRoom = location.roomNumber;
             currentRoom = location.roomNumber;
             // Console.WriteLine("Ich bin gerade im " + currentRoom + " Raum");
             enemy.randomRoom(location, avatar, enemy);

@@ -5,6 +5,17 @@ namespace swd_endaufgabe
 {
     class Items
     {
+        public string description;
+        public string title;
+
+        public bool used;
+
+        public Items(string _description, string _title, bool _used)
+        {
+            description = _description;
+            title = _title;
+            used = _used;
+        }
         
         public static void takeItem(Location location, Avatar avatar)
         {
