@@ -42,7 +42,7 @@ namespace swd_endaufgabe
 
             Items soda = new Items
             (
-                "Soda", "xxx", true
+                "Soda", "xxx", true, true
             ); 
 
             Location WC = new Location
@@ -55,7 +55,7 @@ namespace swd_endaufgabe
             (
                 "Anleitung", 
                 "Hier ist eine Anleitung zum Bauen einer Bombe.\nDu benötigtst dafür\nZucker\nSoda Can\nPanzertape\nNatriumchlorat\n", 
-                true
+                true, false
             );
 
             Location Seitengang = new Location
@@ -73,11 +73,11 @@ namespace swd_endaufgabe
             );
             Items klebeband = new Items
             (
-                "Klebeband", "xxx", true
+                "Klebeband", "xxx", true, true
             );
             Items sodiumChlorate = new Items
             (
-                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true
+                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true , true
             );
 
             Location Security = new Location
@@ -95,15 +95,15 @@ namespace swd_endaufgabe
             Items suggar = new Items
             (
                 "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
-                true
+                true, true
             );
             Items money = new Items
             (
-                "1€", "Geldmünze mit dem Wert von 1 €", true
+                "1€", "Geldmünze mit dem Wert von 1 €", true , false
             );
             Items key = new Items
             (
-                "Schlüssel", "Schlüssel", true
+                "Schlüssel", "Schlüssel", true , false
             );
             Location BueroRektor = new Location
             (
@@ -113,23 +113,23 @@ namespace swd_endaufgabe
             );
             Items fileRachel = new Items
             (
-                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true
+                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
             );
             Items fileChloe = new Items
             (
-                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true
+                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
             );
             Items fileMax = new Items
             (
-                "Akte3", "Akte über die Schullaufbahn von Max", true
+                "Akte3", "Akte über die Schullaufbahn von Max", true, false
             );
             Items fileWarren = new Items
             (
-                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true
+                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
             );
             Items fileKate = new Items
             (
-                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true
+                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
             );
 
             Location Exit = new Location
@@ -258,8 +258,30 @@ namespace swd_endaufgabe
             return true;
         }
 
-        public static void usedItems(Location location, Avatar avatar)
-        {
+        public static void usedItems(Location location, Avatar avatar, string _words)
+        {  
+            List<Items> needForBomb = new List<Items>();
+            Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
+            foreach(var i in avatar.inventory)
+            {
+                if(i.bomb == true)
+                {
+                    needForBomb.Add(i);
+                }
+            }
+            foreach(var i in needForBomb)
+            {
+                if (i.bomb == findItem.bomb)
+                {
+                    avatar.inventory.Remove(findItem);
+                }
+            }
+            int sizeOfList = needForBomb.Count;
+            Console.WriteLine(sizeOfList);
+            if(sizeOfList == 5)
+            {
+                Console.WriteLine("Boomb");
+            }
             if(location.open == false)// Geht nicht
             {
 

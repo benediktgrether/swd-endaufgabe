@@ -8,12 +8,14 @@ namespace swd_endaufgabe
         public string description;
         public string title;
         public bool used;
+        public bool bomb;
 
-        public Items(string _title, string _description, bool _used)
+        public Items(string _title, string _description, bool _used, bool _bomb)
         {
             title = _title;
             description = _description;
             used = _used;
+            bomb = _bomb;
         }
         
         public static void takeItem(string _words, Location location, Avatar avatar)
@@ -43,6 +45,11 @@ namespace swd_endaufgabe
 
         public static void dropItem(string _words, Location location, Avatar avatar)
         {
+
+            // To Do 
+            // Überprüfen ob die Bombe gebaut werden kann. 
+            // Schauen ob die Tür dann aufgeht. 
+            // Wo soll die Items abgelegt werden ? 
             showInventory(avatar);
             Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());

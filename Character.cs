@@ -59,15 +59,15 @@ namespace swd_endaufgabe
             );
             Items centralKey = new Items
             (
-                "Zentralschlüssel", "Zentralschlüssel der Zugang zu allen Räumen bietet.", true
+                "Zentralschlüssel", "Zentralschlüssel der Zugang zu allen Räumen bietet.", true, false
             );
             Items mobilePhone = new Items
             (
-                "Handy", "Davids Handy", true
+                "Handy", "Davids Handy", true , false
             );
             Items carKey = new Items
             (
-                "Autoschlüssel", "David fährt einen Blauen Ford Mustang Boss 429 (1969)", false
+                "Autoschlüssel", "David fährt einen Blauen Ford Mustang Boss 429 (1969)", false, false
             );
             david.loot.AddRange(new List<Items>
             {
