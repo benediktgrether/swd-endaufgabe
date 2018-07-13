@@ -267,30 +267,41 @@ namespace swd_endaufgabe
             // Wo soll die Items abgelegt werden ? 
             List<Items> needForBomb = new List<Items>();
             Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
-            foreach(var i in avatar.inventory)
+            if(findItem != null)
             {
-                if(i.bomb == true)
+                if (avatar.currentRoom == 5)
                 {
-                    needForBomb.Add(i);
+                    foreach(var i in avatar.inventory)
+                    {
+                        if(i.bomb == true)
+                        {
+                            needForBomb.Add(i);
+                        }
+                    }
+                    foreach(var i in needForBomb)
+                    {
+                        if (i.bomb == findItem.bomb)
+                        {
+                            avatar.inventory.Remove(findItem);
+                        }
+                    }
+                    int sizeOfList = needForBomb.Count;
+                    Console.WriteLine(sizeOfList);
+                    if(sizeOfList == 1)
+                    {
+                        Console.WriteLine("Boomb");
+                        foreach(var i in location.title)
+                        {
+                            Console.WriteLine(i);
+                            // if (i == "Sekretariat")
+                        }
+                    }
                 }
             }
-            foreach(var i in needForBomb)
-            {
-                if (i.bomb == findItem.bomb)
-                {
-                    avatar.inventory.Remove(findItem);
-                }
-            }
-            int sizeOfList = needForBomb.Count;
-            Console.WriteLine(sizeOfList);
-            if(sizeOfList == 5)
-            {
-                Console.WriteLine("Boomb");
-            }
-            if(location.open == false)// Geht nicht
-            {
+            // if(location.open == false)// Geht nicht
+            // {
 
-            }
+            // }
         }
     }
 }

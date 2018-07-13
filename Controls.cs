@@ -155,7 +155,20 @@ namespace swd_endaufgabe
                         break;
                     case "used":
                     case "u":
-                        Location.usedItems(currentLocation, avatar, words[1]);
+                    try{
+                        if(words[1] != "")
+                        {
+                            Location.usedItems(currentLocation, avatar, words[1]);
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Bitte Eintragen was Sie gerne benützen wollen. Mit i können Sie schauen was in Ihrem Inventar drin ist.");
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Falsche Eingabe");
+                    }
                         break;
                     case "help":
                     case "h":
