@@ -37,7 +37,7 @@ namespace swd_endaufgabe
         public int setMaxRoom(Location location, Avatar avatar, Enemy enemy)
         {
             // currentRoom = characters["Max"].currentRoom;
-            currentRoom = location.roomNumber;
+            currentRoom = location.RoomNumber;
             Location.DescribeLocation(location);
             enemy.randomRoom(location, avatar, enemy);
             

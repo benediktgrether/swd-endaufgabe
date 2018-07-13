@@ -30,15 +30,15 @@ namespace swd_endaufgabe
                     case "north":
                     case "n":
                         // testMethod(direction, avatar, enemy);
-                        if (currentLocation.north != null)
+                        if (currentLocation.North!= null)
                         {
-                            if(Location.setDirection(currentLocation.north, avatar) == false)
+                            if(Location.setDirection(currentLocation.North, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
-                            currentLocation = currentLocation.north;
+                            currentLocation = currentLocation.North;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                             }
@@ -50,15 +50,15 @@ namespace swd_endaufgabe
                         break;
                     case "east":
                     case "e":
-                        if (currentLocation.east != null)
+                        if (currentLocation.East!= null)
                         {
-                            if(Location.setDirection(currentLocation.east, avatar) == false)
+                            if(Location.setDirection(currentLocation.East, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
-                                currentLocation = currentLocation.east;
+                                currentLocation = currentLocation.East;
                                 avatar.setMaxRoom(currentLocation, avatar, enemy);
                                 controlcounter ++;
                             }
@@ -70,15 +70,15 @@ namespace swd_endaufgabe
                         break;
                     case "south":
                     case "s":
-                        if (currentLocation.south != null)
+                        if (currentLocation.South!= null)
                         {
-                            if(Location.setDirection(currentLocation.south, avatar) == false)
+                            if(Location.setDirection(currentLocation.South, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
-                            currentLocation = currentLocation.south;
+                            currentLocation = currentLocation.South;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                             }
@@ -90,15 +90,15 @@ namespace swd_endaufgabe
                         break;
                     case "west":
                     case "w":
-                        if (currentLocation.west != null)
+                        if (currentLocation.West != null)
                         {
-                            if(Location.setDirection(currentLocation.west, avatar) == false)
+                            if(Location.setDirection(currentLocation.West, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
-                            currentLocation = currentLocation.west;
+                            currentLocation = currentLocation.West;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
                             controlcounter ++;
                             }
@@ -151,7 +151,7 @@ namespace swd_endaufgabe
                         break;
                     case "look":
                     case "l":
-                        // Location.showRoomInformation(currentLocation);
+                        // Location.ShowRoomInformation(currentLocation);
                         Location.DescribeLocation(currentLocation);
                         break;
                     case "used":

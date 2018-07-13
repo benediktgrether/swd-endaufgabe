@@ -5,35 +5,35 @@ namespace swd_endaufgabe
 {
     class Location
     {
-        public string title;
-        public string description;
+        public string Title;
+        public string Description;
 
-        public int roomNumber;
+        public int RoomNumber;
 
-        public bool open;
+        public bool Open;
 
-        public bool gameFinished;
+        public bool GameFinished;
 
-        public Location north;
-        public Location east;
-        public Location south;
-        public Location west;
+        public Location North;
+        public Location East;
+        public Location South;
+        public Location West;
 
         public List<Items> items = new List<Items>();
         public static Dictionary<string, Location> rooms;
 
-        public Location(int _roomNumber, string _title, string _description, bool _open, bool _gameFinished)
+        public Location(int _roomNumber, string _title, string _description, bool _open, bool _GameFinished)
         {
-            roomNumber = _roomNumber;
-            title = _title;
-            description = _description;
-            open = _open;
-            gameFinished = _gameFinished;
+            RoomNumber = _roomNumber;
+            Title = _title;
+            Description = _description;
+            Open = _open;
+            GameFinished = _GameFinished;
 
         }
         public static Location MapSetUp()
         {
-            Location Aula = new Location
+            Location aula = new Location
             (
                 0,
                 "Aula",
@@ -46,7 +46,7 @@ namespace swd_endaufgabe
                 "Soda", "xxx", true, true
             ); 
 
-            Location WC = new Location
+            Location wc = new Location
             (
                 1,
                 "WC",
@@ -59,14 +59,14 @@ namespace swd_endaufgabe
                 true, false
             );
 
-            Location Seitengang = new Location
+            Location seitengang = new Location
             (
                 2,
                 "Seitengang", 
                 "Du befindest dich im Seitengang", true, true
             );
             
-            Location Chemielabor = new Location
+            Location chemielabor = new Location
             (
                 3,
                 "Chemielabor", 
@@ -81,13 +81,13 @@ namespace swd_endaufgabe
                 "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true , true
             );
 
-            Location Security = new Location
+            Location security = new Location
             (
                 4,
                 "Security", 
                 "Du befindest dich im Security", true, true
             );
-            Location Sekretariat = new Location
+            Location sekretariat = new Location
             (
                 5,
                 "Sekretariat", 
@@ -106,7 +106,7 @@ namespace swd_endaufgabe
             (
                 "Schlüssel", "Schlüssel", true , false
             );
-            Location BueroRektor = new Location
+            Location bueroRektor = new Location
             (
                 6,
                 "Büro Rektor", 
@@ -133,7 +133,7 @@ namespace swd_endaufgabe
                 "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
             );
 
-            Location Exit = new Location
+            Location exit = new Location
             (
                 7, 
                 "Exit", 
@@ -143,54 +143,54 @@ namespace swd_endaufgabe
             );
 
 
-            Aula.north = WC;
-            Aula.east = Sekretariat;
-            Aula.west = Seitengang;
-            Aula.south = Exit;
+            aula.North= wc;
+            aula.East= sekretariat;
+            aula.West = seitengang;
+            aula.South= exit;
             // Aula.items.AddRange(new List<string>
             // {"Soda", "Taschentücher"});
-            Aula.items.Add(soda);
+            aula.items.Add(soda);
 
-            WC.south = Aula;
-            WC.items.Add(anleitung);
+            wc.South= aula;
+            wc.items.Add(anleitung);
 
-            Seitengang.north = Chemielabor;
-            Seitengang.east = Aula;
-            Seitengang.south = Security;
+            seitengang.North= chemielabor;
+            seitengang.East= aula;
+            seitengang.South= security;
 
-            Chemielabor.south = Seitengang;
-            Chemielabor.items.AddRange(new List<Items>
+            chemielabor.South= seitengang;
+            chemielabor.items.AddRange(new List<Items>
             {
                 klebeband, sodiumChlorate
             });
 
-            Security.north = Seitengang;
+            security.North= seitengang;
 
-            Sekretariat.west = Aula;
-            Sekretariat.east = BueroRektor;
-            Sekretariat.items.AddRange(new List<Items>
+            sekretariat.West = aula;
+            sekretariat.East= bueroRektor;
+            sekretariat.items.AddRange(new List<Items>
             {
                 suggar, money, key
             });
 
-            BueroRektor.west = Sekretariat;
-            BueroRektor.items.AddRange(new List<Items>
+            bueroRektor.West = sekretariat;
+            bueroRektor.items.AddRange(new List<Items>
             {
                 fileRachel, fileKate, fileChloe, fileMax, fileWarren
             });
 
-            Exit.north = Aula;
+            exit.North= aula;
 
             rooms = new Dictionary<string, Location>();
-            rooms["Aula"] = Aula;
-            rooms["WC"] = WC;
-            rooms["Seitengang"] = Seitengang;
-            rooms["Chemielabor"] = Chemielabor;
-            rooms["Sekretariat"] = Sekretariat;
-            rooms["Büro Rektor"] = BueroRektor;
-            rooms["Exit"] = Exit;
+            rooms["Aula"] = aula;
+            rooms["WC"] = wc;
+            rooms["Seitengang"] = seitengang;
+            rooms["Chemielabor"] = chemielabor;
+            rooms["Sekretariat"] = sekretariat;
+            rooms["Büro Rektor"] = bueroRektor;
+            rooms["Exit"] = exit;
 
-            return Aula;
+            return aula;
         }
 
 
@@ -199,7 +199,7 @@ namespace swd_endaufgabe
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("_______________________________________________________________________________________________________________________");
-            Console.WriteLine(location.description);
+            Console.WriteLine(location.Description);
 
             foreach(var i in location.items)
             {
@@ -214,9 +214,9 @@ namespace swd_endaufgabe
             Console.WriteLine("");
         }
 
-        public static void showRoomInformation(Location location)
+        public static void ShowRoomInformation(Location location)
         {
-            Console.WriteLine(location.description);
+            Console.WriteLine(location.Description);
             foreach(var i in location.items)
             {
                 Console.WriteLine(i.title);
@@ -224,24 +224,24 @@ namespace swd_endaufgabe
         }
         public static bool setDirection(Location location, Avatar avatar)
         {
-            isGameFinsihed(location, avatar);
-            if(location.open == false && location.gameFinished == false)
+            CheckFinished(location, avatar);
+            if(location.Open == false && location.GameFinished == false)
             {
                 if(avatar.inventory.Exists(x => x.title == "Zentralschlüssel"))
                 {
-                    return Location.rooms["Büro Rektor"].open = true;
+                    return Location.rooms["Büro Rektor"].Open = true;
                 }
                 if(avatar.currentRoom != 0)
                 {
                     Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
                 }
-                return location.open = false;
+                return location.Open = false;
             }
-            return location.open = true;
+            return location.Open = true;
         }
-        public static bool isGameFinsihed(Location location, Avatar avatar)
+        public static bool CheckFinished(Location location, Avatar avatar)
         {
-            if(location.gameFinished == false)
+            if(location.GameFinished == false)
             {
                 if(avatar.inventory.Exists(x => x.title == "Akte1"))
                 {
@@ -284,7 +284,7 @@ namespace swd_endaufgabe
                     if(sizeOfList == 1)
                     {
                         Console.WriteLine("Boomb"); 
-                        return Location.rooms["Büro Rektor"].open = true;
+                        return Location.rooms["Büro Rektor"].Open = true;
                         
                     }
                 }
