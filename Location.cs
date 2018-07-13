@@ -233,13 +233,9 @@ namespace swd_endaufgabe
             isGameFinsihed(location, avatar);
             if(location.open == false && location.gameFinished == false)
             {
-                // Items findItem = avatar.inventory.Exist(x => x.title == "key");
                 if(avatar.inventory.Exists(x => x.title == "Zentralschlüssel"))
                 {
-                    if (avatar.currentRoom == 5)
-                    {
-                        return location.open = true;
-                    }
+                    return Location.rooms["Büro Rektor"].open = true;
                 }
                 if(avatar.currentRoom != 0)
                 {
@@ -257,7 +253,6 @@ namespace swd_endaufgabe
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
-                    // return location.gameFinished = true;
                 }
                 if(avatar.currentRoom == 0)
                 {
@@ -295,11 +290,12 @@ namespace swd_endaufgabe
                     if(sizeOfList == 1)
                     {
                         Console.WriteLine("Boomb"); 
-                        return location.east.open = true;
+                        return Location.rooms["Büro Rektor"].open = true;
+                        
                     }
                 }
             }
-            return location.east.open = false;
+            return false;
         }
     }
     
