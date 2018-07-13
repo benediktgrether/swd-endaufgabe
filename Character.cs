@@ -9,26 +9,34 @@ namespace swd_endaufgabe
         public int health;
         public List<Items> inventory = new List<Items>();
         public int currentRoom;
+        public Location room;
     }
 
     class Avatar : GameChar
     {
         //To Do - Methoden
-        public Avatar(string _name, int _health, int _currentRoom)
+        public static Dictionary<string, GameChar> characters;
+        public Avatar(string _name, int _health, int _currentRoom, Location _room)
         {
             name = _name;
             health = _health;
             currentRoom = _currentRoom;
+            room = _room;
         }
         public static Avatar setupAvatar()
         {
             Avatar max = new Avatar(
-                "Max ", 100, 0
+                "Max", 100, 0, Location.rooms["Aula"]
             );
+            characters = new Dictionary<string, GameChar>();
+            characters["Max"] = max;
             return max;
         }
+
+        
         public int setMaxRoom(Location location, Avatar avatar, Enemy enemy)
         {
+            // currentRoom = characters["Max"].currentRoom;
             currentRoom = location.roomNumber;
             enemy.randomRoom(location, avatar, enemy);
             

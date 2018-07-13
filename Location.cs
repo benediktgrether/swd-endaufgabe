@@ -256,8 +256,8 @@ namespace swd_endaufgabe
                 if(avatar.inventory.Exists(x => x.title == "Akte1"))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
-                    return location.gameFinished = true;
-                    // Environment.ExitCode(0);
+                    Environment.Exit(0);
+                    // return location.gameFinished = true;
                 }
                 if(avatar.currentRoom == 0)
                 {
@@ -270,11 +270,6 @@ namespace swd_endaufgabe
 
         public static bool usedItems(Location location, Avatar avatar, string _words)
         {  
-            
-            // To Do 
-            // Überprüfen ob die Bombe gebaut werden kann. 
-            // Schauen ob die Tür dann aufgeht. 
-            // Wo soll die Items abgelegt werden ? 
             List<Items> needForBomb = new List<Items>();
             Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
             if(findItem != null)
@@ -300,16 +295,11 @@ namespace swd_endaufgabe
                     if(sizeOfList == 1)
                     {
                         Console.WriteLine("Boomb"); 
-                        // return location.east.open = true;
-                        return rooms["Büro Rektor"].open = true;
-                        // foreach(var i in Location.rooms.Values)
-                        // {
-                        //     return rooms["Büro Rektor"].open = true;
-                        // }
+                        return location.east.open = true;
                     }
                 }
             }
-            return rooms["Büro Rektor"].open = false;
+            return location.east.open = false;
         }
     }
     
