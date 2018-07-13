@@ -20,12 +20,13 @@ namespace swd_endaufgabe
         public Location west;
 
         public List<Items> items = new List<Items>();
+        public static Dictionary<string, Location> rooms;
 
         public Location(int _roomNumber, string _title, string _description, bool _open, bool _gameFinished)
         {
+            roomNumber = _roomNumber;
             title = _title;
             description = _description;
-            roomNumber = _roomNumber;
             open = _open;
             gameFinished = _gameFinished;
 
@@ -180,6 +181,15 @@ namespace swd_endaufgabe
 
             Exit.north = Aula;
 
+            rooms = new Dictionary<string, Location>();
+            rooms["Aula"] = Aula;
+            rooms["WC"] = WC;
+            rooms["Seitengang"] = Seitengang;
+            rooms["Chemielabor"] = Chemielabor;
+            rooms["Sekretariat"] = Sekretariat;
+            rooms["Büro Rektor"] = BueroRektor;
+            rooms["Exit"] = Exit;
+
             return Aula;
         }
 
@@ -258,7 +268,7 @@ namespace swd_endaufgabe
             return true;
         }
 
-        public static void usedItems(Location location, Avatar avatar, string _words)
+        public static bool usedItems(Location location, Avatar avatar, string _words)
         {  
             
             // To Do 
@@ -289,21 +299,20 @@ namespace swd_endaufgabe
                     Console.WriteLine(sizeOfList);
                     if(sizeOfList == 1)
                     {
-                        Console.WriteLine("Boomb");
-                        foreach(var i in location.title)
-                        {
-                            Console.WriteLine(i);
-                            // if (i == "Sekretariat")
-                        }
+                        Console.WriteLine("Boomb"); 
+                        // return location.east.open = true;
+                        return rooms["Büro Rektor"].open = true;
+                        // foreach(var i in Location.rooms.Values)
+                        // {
+                        //     return rooms["Büro Rektor"].open = true;
+                        // }
                     }
                 }
             }
-            // if(location.open == false)// Geht nicht
-            // {
-
-            // }
+            return rooms["Büro Rektor"].open = false;
         }
     }
+    
 }
 
 
