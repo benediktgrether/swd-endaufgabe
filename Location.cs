@@ -260,6 +260,11 @@ namespace swd_endaufgabe
 
         public static void usedItems(Location location, Avatar avatar, string _words)
         {  
+            
+            // To Do 
+            // Überprüfen ob die Bombe gebaut werden kann. 
+            // Schauen ob die Tür dann aufgeht. 
+            // Wo soll die Items abgelegt werden ? 
             List<Items> needForBomb = new List<Items>();
             Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
             foreach(var i in avatar.inventory)

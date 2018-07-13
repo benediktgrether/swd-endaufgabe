@@ -45,11 +45,6 @@ namespace swd_endaufgabe
 
         public static void dropItem(string _words, Location location, Avatar avatar)
         {
-
-            // To Do 
-            // Überprüfen ob die Bombe gebaut werden kann. 
-            // Schauen ob die Tür dann aufgeht. 
-            // Wo soll die Items abgelegt werden ? 
             showInventory(avatar);
             Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
