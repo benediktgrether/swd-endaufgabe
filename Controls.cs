@@ -9,17 +9,18 @@ namespace swd_endaufgabe
         public static string input = "";
         public static string[] words;
 
+
         public static void gameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
             Enemy enemy = Enemy.setupEnemy();
+            Location.DescribeLocation(currentLocation);
             // SplitInput();
             // while (words[0] != "q")
             for(;;)
             {
-                Location.DescribeLocation(currentLocation);
                 Console.BackgroundColor = ConsoleColor.DarkGray;
                 SplitInput();
                 Console.ResetColor();
@@ -28,6 +29,7 @@ namespace swd_endaufgabe
                 {
                     case "north":
                     case "n":
+                        // testMethod(direction, avatar, enemy);
                         if (currentLocation.north != null)
                         {
                             if(Location.setDirection(currentLocation.north, avatar) == false)
@@ -56,7 +58,6 @@ namespace swd_endaufgabe
                             }
                             else
                             {
-                                // Location.setDirection(currentLocation.east);
                                 currentLocation = currentLocation.east;
                                 avatar.setMaxRoom(currentLocation, avatar, enemy);
                                 controlcounter ++;
@@ -150,8 +151,8 @@ namespace swd_endaufgabe
                         break;
                     case "look":
                     case "l":
-                        Location.showRoomInformation(currentLocation);
-                        // Location.DescribeLocation(currentLocation);
+                        // Location.showRoomInformation(currentLocation);
+                        Location.DescribeLocation(currentLocation);
                         break;
                     case "used":
                     case "u":
@@ -182,7 +183,7 @@ namespace swd_endaufgabe
                     case "a":
                         if(enemy.currentRoom == avatar.currentRoom)
                         {
-                            Attack.AttackNow(currentLocation, avatar, enemy);
+                            Attack.AttackNow(words[1] ,currentLocation, avatar, enemy);
                         }
                         else
                         {
@@ -207,6 +208,24 @@ namespace swd_endaufgabe
                 words = _input.Split(' ');
                 return words;
             }
+
+            // public Controls testMethod(Location Location, Avatar avatar, Enemy enemy)
+            // {
+            //     if (direction != null)
+            //     {
+            //         if(Location.setDirection(direction, avatar) == false)
+            //         {
+            //             return;
+            //         }
+            //         else
+            //         {
+            //         Controls.currentLocation = direction;
+            //         avatar.setMaxRoom(direction, avatar, enemy);
+            //         // controlcounter ++;
+            //         }
+            //     }
+
+            // }
 
     }
 

@@ -38,6 +38,7 @@ namespace swd_endaufgabe
         {
             // currentRoom = characters["Max"].currentRoom;
             currentRoom = location.roomNumber;
+            Location.DescribeLocation(location);
             enemy.randomRoom(location, avatar, enemy);
             
             return currentRoom;

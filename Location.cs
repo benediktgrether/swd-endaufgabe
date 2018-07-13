@@ -197,21 +197,15 @@ namespace swd_endaufgabe
 
         public static void DescribeLocation(Location location)
         {
-
-            // Console.WriteLine();
-            // Console.WriteLine(location.title + " " + location.roomNumber);
-            // Console.WriteLine();
-            // Console.WriteLine(location.description);
-            // Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("___________________________________________________________");
+            Console.WriteLine("_______________________________________________________________________________________________________________________");
             Console.WriteLine(location.description);
 
-            // foreach(var i in location.items)
-            // {
-            //     Console.WriteLine(i);
-            // }
-            Console.WriteLine("___________________________________________________________");
+            foreach(var i in location.items)
+            {
+                Console.WriteLine(i.title);
+            }
+            Console.WriteLine("_______________________________________________________________________________________________________________________");
             Console.ResetColor();
         }
 
