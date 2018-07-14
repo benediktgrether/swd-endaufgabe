@@ -131,27 +131,27 @@ namespace swd_endaufgabe
 
             Items fileRachel = new Items
             (
-                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
+                "Akte0", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
             );
 
             Items fileChloe = new Items
             (
-                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
+                "Akte1", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
             );
 
             Items fileMax = new Items
             (
-                "Akte3", "Akte über die Schullaufbahn von Max", true, false
+                "Akte2", "Akte über die Schullaufbahn von Max", true, false
             );
 
             Items fileWarren = new Items
             (
-                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
+                "Akte3", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
             );
 
             Items fileKate = new Items
             (
-                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
+                "Akte4", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
             );
             #endregion
 
@@ -202,60 +202,11 @@ namespace swd_endaufgabe
 
             return hallway;
         }
-        // public static void DescribeLocation(Location location)
-        // {
-        //     Console.ForegroundColor = ConsoleColor.Blue;
-        //     Console.WriteLine("_______________________________________________________________________________________________________________________");
-        //     Console.WriteLine(location.Description);
-
-        //     foreach(var i in location.Items)
-        //     {
-        //         Console.WriteLine(i.Title);
-        //     }
-        //     Console.WriteLine("_______________________________________________________________________________________________________________________");
-        //     Console.ResetColor();
-        // }
-
         public static void NeighborRoom(Location location)
         {
             Console.WriteLine("");
         }
-
-        // public static bool UsedItems(string _words)
-        // {  
-        //     List<Items> needForBomb = new List<Items>();
-        //     Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
-        //     if(findItem != null)
-        //     {
-        //         if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
-        //         {
-        //             foreach(var i in Avatar.Characters["Max"].Inventory)
-        //             {
-        //                 if(i.Bomb == true)
-        //                 {
-        //                     needForBomb.Add(i);
-        //                 }
-        //             }
-        //             foreach(var i in needForBomb)
-        //             {
-        //                 if (i.Bomb == findItem.Bomb)
-        //                 {
-        //                     Avatar.Characters["Max"].Inventory.Remove(findItem);
-        //                 }
-        //             }
-        //             int sizeOfList = needForBomb.Count;
-        //             if(sizeOfList == 1)
-        //             {
-        //                 Console.WriteLine("Bombe Explodiert"); 
-        //                 return Location.rooms["Büro Rektor"].Open = true;
-                        
-        //             }
-        //         }
-        //     }
-        //     return false;
-        // }
     }
-    
 }
 
 

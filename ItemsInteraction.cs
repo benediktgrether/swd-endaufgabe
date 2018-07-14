@@ -48,8 +48,15 @@ namespace swd_endaufgabe
 
         public static void FindFile()
         {
-            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1"));
-            if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1"))
+            int counter = 0;
+            int i = 0;
+            if (counter == 0)
+            {
+                i = RandomNumber.GetRandomFileNumber();
+                counter ++;
+            }
+            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte" + i));
+            if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte" + i))
             {
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
                 Console.WriteLine(findItem.Description);
