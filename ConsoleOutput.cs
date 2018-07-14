@@ -48,6 +48,13 @@ namespace swd_endaufgabe
             Console.ResetColor();   
         }
 
+        public static void AttackWrongInput()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("attack(a) ist noch nicht möglich");
+            Console.ResetColor();   
+        }
+
         public static void AttackDraw()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

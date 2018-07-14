@@ -165,7 +165,7 @@ namespace swd_endaufgabe
                         break;
                     case "help":
                     case "h":
-                        Console.WriteLine("help(h), look(l), inventory(i), take(t) item, drop(d) item, used(u) item, quit(q)");
+                        Console.WriteLine("help(h), look(l), inventory(i), take(t) item, drop(d) item, used(u) item,getinformation(g), quit(q)");
                         break;
                     case "quit":
                     case "q":
@@ -173,14 +173,42 @@ namespace swd_endaufgabe
                         break;
                     case "attack":
                     case "a":
-                        if(enemy.CurrentRoom == avatar.CurrentRoom)
+                        try
                         {
-                            Attack.AttackNow(words[1] ,currentLocation, avatar, enemy);
+                            if(words[1] != "")
+                            {
+                                if(enemy.CurrentRoom == avatar.CurrentRoom)
+                                {
+                                    Attack.AttackNow(words[1] ,currentLocation, avatar, enemy);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
+                                    break;
+                                }
+                            }
                         }
-                        else
+                        catch
                         {
-                            Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
-                            break;
+                            ConsoleOutput.AttackWrongInput();
+                        }
+                        break;
+                        case "getinformation":
+                        case "g":
+                        try
+                        {
+                            if(words[1] != "")
+                            {
+                                ItemsInteraction.GetInformation(words[1]);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Falsche eingabe");
+                            }
+                        }
+                        catch
+                        {
+
                         }
                         break;
                     default:

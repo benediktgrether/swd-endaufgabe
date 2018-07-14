@@ -12,7 +12,7 @@ namespace swd_endaufgabe
             {
                 if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Zentralschlüssel"))
                 {
-                    return Location.rooms["Büro Rektor"].Open = true;
+                    return Location.rooms["Büro Schulleiter"].Open = true;
                 }
                 if(Avatar.Characters["Max"].CurrentRoom != 0)
                 {

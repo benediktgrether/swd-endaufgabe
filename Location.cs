@@ -72,13 +72,13 @@ namespace swd_endaufgabe
             (
                 5,
                 "Sekretariat", 
-                "Du befindest dich im Sekretariat", true, true
+                "Du befindest dich im Sekretariat. In dem Raum befindet sich die Tür zum Büro des Schulleiters.\nDu siehst:", true, true
             );
             Location principal = new Location
             (
                 6,
-                "Büro Rektor", 
-                "Du befindest dich im Büro des Rektors", false , false
+                "Büro Schulleiter", 
+                "Du befindest dich im Büro des Schulleiters.\nAuf dem Schreibtisch steht ein Computer.\nDu siehst: ", false , false
             );
             Location exit = new Location
             (
@@ -99,7 +99,7 @@ namespace swd_endaufgabe
             Items paper = new Items
             (
                 "Papier", 
-                "Auf der vorderseite sieht man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du Folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n-Science Guy", 
+                "Auf der vorderseite sieht man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du Folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n- Science Guy", 
                 true, false
             );
 
@@ -131,35 +131,59 @@ namespace swd_endaufgabe
 
             Items fileRachel = new Items
             (
-                "Akte0", "-----------------\nRachel Amber - geboren am 22. Juli 1994 - \n-----------------\n(Notizzetel - Wird seit dem 22. April, 2013 vermisst)\n-----------------\nRachel Amber ist eine aufgeschlossen Schülerin. Sie hatte die letzten Jahre immer sehr gute Leistungen in allen Fächern. Ihre größte Stärke war das Schauspielen. Sie spielte die letzten Jahre immer die Hauptprotagonistin in unseren Sommerlichen Bühnenaufführung.\n-----------------\n1 Jahr vor ihrem verschwinden, veränderte sich Rachel als sie zusammen mit Chloe unterwegs war. Sie blieb öfters dem Unterricht fern und war eine Zeitlang in Behandlung.\n-----------------", true, false
+                "Akte1", "-----------------\nRachel Amber - geboren am 22. Juli 1994 - \n-----------------\n(Notizzetel - Wird seit dem 22. April, 2013 vermisst)\n-----------------\nRachel Amber ist eine aufgeschlossen Schülerin. Sie hatte die letzten Jahre immer sehr gute Leistungen in allen Fächern. Ihre größte Stärke war das Schauspielen. Sie spielte die letzten Jahre immer die Hauptprotagonistin in unseren Sommerlichen Bühnenaufführung.\n-----------------\n1 Jahr vor ihrem verschwinden, veränderte sich Rachel als sie zusammen mit Chloe unterwegs war. Sie blieb öfters dem Unterricht fern und war eine Zeitlang in Behandlung.\n-----------------", true, false
             );
 
             Items fileChloe = new Items
             (
-                "Akte1", "-----------------\nChloe Elizabeth Price - geboren am 11. März 1994 -\n-----------------\nChloe Elizabeth Price war zu beginn ihrer Schullaufbahn auf der Blackwell Academy eine ausgezeichnete Schülerin.\nNach dem Tod ihres Vaters - William Price - und der neuen Heirat ihrer Mutter mit unserem Wachmann David Madsen wurden ihre Schulischen Leistungen immer schlechter. Desweiteren blieb sie immer öfters der Schule fern. Nach dem letzten Fernbleiben zusammen mit Rachel Amber wurde Chloe Elizabeth Price von der Schule verwiesen\n-----------------", true, false
+                "Akte2", "-----------------\nChloe Elizabeth Price - geboren am 11. März 1994 -\n-----------------\nChloe Elizabeth Price war zu beginn ihrer Schullaufbahn auf der Blackwell Academy eine ausgezeichnete Schülerin.\nNach dem Tod ihres Vaters - William Price - und der neuen Heirat ihrer Mutter mit unserem Wachmann David Madsen wurden ihre Schulischen Leistungen immer schlechter. Desweiteren blieb sie immer öfters der Schule fern. Nach dem letzten Fernbleiben zusammen mit Rachel Amber wurde Chloe Elizabeth Price von der Schule verwiesen\n-----------------", true, false
             );
 
             Items fileMax = new Items
             (
-                "Akte2", "-----------------\nMaxine Caulfield - geboren 21. September 1995 -\n-----------------\nMaxine Caulfield ist zurück nach Arcadia Bay gezogen und hat sich in dem Kunstfach Fotografie eingeschrieben.\n-----------------", true, false
+                "Akte3", "-----------------\nMaxine Caulfield - geboren 21. September 1995 -\n-----------------\nMaxine Caulfield ist zurück nach Arcadia Bay gezogen und hat sich in dem Kunstfach Fotografie eingeschrieben.\n-----------------", true, false
             );
 
             Items fileWarren = new Items
             (
-                "Akte3", "-----------------\nWarren Graham - geboren am 20. November 1996 -\n-----------------\nWarren ist ein hochintelligenter Schüler der Blackwall Academy. Er hat schon einige Preise für unsere Schule bei nationalen Wissenschaftswettbewerben gewonnen.\n-----------------", true, false
+                "Akte4", "-----------------\nWarren Graham - geboren am 20. November 1996 -\n-----------------\nWarren ist ein hochintelligenter Schüler der Blackwall Academy. Er hat schon einige Preise für unsere Schule bei nationalen Wissenschaftswettbewerben gewonnen.\n-----------------", true, false
             );
 
             Items fileKate = new Items
             (
-                "Akte4", "-----------------\nKate Beverly Marsh - geboren am 12. September 1995 -\n-----------------\nKate Beverly Marsh wird wegen einem viralen Video zurzeit an unsere Schule gemobbt. Sie selber sagt über das geschehen aus das Sie keine erinnerung daran habe. Ein Drogentest im Krankenhaus hat ergeben das ihr Drogen verabreicht worden sind. Kate ist seit dem sehr introvertiert geworden.\n-----------------\nKate Beverly Marsh befindet sich nach einem Suizid versuch in psychologischer Behandlung.\n-----------------", true, false
+                "Akte5", "-----------------\nKate Beverly Marsh - geboren am 12. September 1995 -\n-----------------\nKate Beverly Marsh wird wegen einem viralen Video zurzeit an unsere Schule gemobbt. Sie selber sagt über das geschehen aus das Sie keine erinnerung daran habe. Ein Drogentest im Krankenhaus hat ergeben das ihr Drogen verabreicht worden sind. Kate ist seit dem sehr introvertiert geworden.\n-----------------\nKate Beverly Marsh befindet sich nach einem Suizid versuch in psychologischer Behandlung.\n-----------------", true, false
             );
+            #endregion
+
+            #region not usable Object Items
+            Items vendingMachine = new Items
+            (
+                "Getränke Automat", "",false , false
+            );
+            Items locker1 = new Items
+            (
+                "Spind Linkeseite", "", false, false
+            );
+            Items locker2 = new Items
+            (
+                "Spind Rechteseite", "", false, false
+            );
+            Items microscope = new Items
+            (
+                "Mikroskop", "", false, false
+            );
+
+            // Reagenzglässer Brenner 
             #endregion
 
             hallway.North= restroom;
             hallway.East= office;
             hallway.West = sidePassage;
             hallway.South= exit;
-            hallway.Items.Add(soda);
+            hallway.Items.AddRange(new List<Items>
+            {
+                soda, vendingMachine
+            });
 
             restroom.South= hallway;
             restroom.Items.Add(paper);
@@ -167,11 +191,15 @@ namespace swd_endaufgabe
             sidePassage.North= chemistryLab;
             sidePassage.East= hallway;
             sidePassage.South= security;
+            sidePassage.Items.AddRange(new List<Items>
+            {
+                locker1, locker2
+            });
 
             chemistryLab.South= sidePassage;
             chemistryLab.Items.AddRange(new List<Items>
             {
-                ductTape, sodiumChlorate
+                ductTape, sodiumChlorate, microscope
             });
 
             security.North= sidePassage;
@@ -197,7 +225,7 @@ namespace swd_endaufgabe
             rooms["Seitengang"] = sidePassage;
             rooms["Chemielabor"] = chemistryLab;
             rooms["Sekretariat"] = office;
-            rooms["Büro Rektor"] = principal;
+            rooms["Büro Schulleiter"] = principal;
             rooms["Exit"] = exit;
 
             return hallway;

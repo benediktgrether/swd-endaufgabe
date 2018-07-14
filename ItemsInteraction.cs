@@ -8,15 +8,19 @@ namespace swd_endaufgabe
         public static void TakeItem(string _words, Location location, Avatar avatar)
         {
             Items _findItem = location.Items.Find(x => x.Title.Contains(_words));
-            if(_findItem != null)
+            if(_findItem != null && _findItem.Used == true)
             {
                 Console.WriteLine("Du hast " + _findItem.Title + " zu deinem Inventar hinzugefügt.");
                 avatar.Inventory.Add(_findItem);
                 location.Items.Remove(_findItem);
             }
+            else if( _findItem.Used == false)
+            {
+                Console.WriteLine("Du kannst das Objekt nicht in deinem Inventar hinzufügen!");
+            }
             else
             {
-                Console.WriteLine("Nothing find");
+                Console.WriteLine("Falsche eingabe");
             }
             FindFile();
         } 
@@ -58,8 +62,11 @@ namespace swd_endaufgabe
             Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1"));
             if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1"))
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
+                Console.ResetColor();
                 Console.WriteLine(findItem.Description);
+                // Avatar.Characters["Max"].Inventory.Add(fileRach);
             }
         }
         public static void LootEnemy(string _words, Location location, Enemy enemy)
@@ -75,7 +82,7 @@ namespace swd_endaufgabe
         {  
             List<Items> needForBomb = new List<Items>();
             Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
-            Console.WriteLine(findItem.Title + "\n" + findItem.Description);
+            // Console.WriteLine(findItem.Title + "\n" + findItem.Description);
             if(findItem != null)
             {
                 if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
@@ -98,11 +105,16 @@ namespace swd_endaufgabe
                     if(sizeOfList == 1)
                     {
                         Console.WriteLine("Bombe Explodiert"); 
-                        return Location.rooms["Büro Rektor"].Open = true;   
+                        return Location.rooms["Büro Schulleiter"].Open = true;   
                     }
                 }
             }
             return false;
+        }
+        public static void GetInformation(string _words)
+        {
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+            Console.WriteLine(findItem.Title + "\n" + findItem.Description);
         }
     }
 
