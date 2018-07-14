@@ -226,11 +226,11 @@ namespace swd_endaufgabe
             CheckFinished(avatar);
             if(location.Open == false && location.GameFinished == false)
             {
-                if(avatar.Inventory.Exists(x => x.Title == "Zentralschlüssel"))
+                if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Zentralschlüssel"))
                 {
                     return Location.rooms["Büro Rektor"].Open = true;
                 }
-                if(avatar.CurrentRoom != 0)
+                if(Avatar.Characters["Max"].CurrentRoom != 0)
                 {
                     Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
                 }
