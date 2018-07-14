@@ -35,25 +35,19 @@ namespace swd_endaufgabe
                     
                     else if(Input == arr[i])
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("Draw");
-                        Console.ResetColor();
+                        ConsoleOutput.AttackDraw();
                     }
                     
                     else if((Input == arr[0]) && (arr[1] == arr[i]) || (Input == arr[1]) && (arr[2] == arr[i]) || (Input == arr[2]) && (arr[0] == arr[i]))
                     {
                         Enemy.Characters[_words].Health  = Enemy.Characters[_words].Health - 1;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(Input.ToUpper() + " schlägt " + arr[i].ToUpper());
-                        Console.ResetColor();
+                        ConsoleOutput.EnemyHit(Input, arr[i]);
                     }
                     
                     else
                     {
                         Avatar.Characters["Max"].Health = Avatar.Characters["Max"].Health - 1;
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
-                        Console.ResetColor();
+                        ConsoleOutput.AvatarHit(Input, arr[i]);
                     }
                     
                     Console.WriteLine("Enemy Health: " + enemy.Health );
@@ -62,14 +56,14 @@ namespace swd_endaufgabe
                     if (Enemy.Characters[_words].Health == 0)
                     {
                         enemy.Life = false;
-                        Console.WriteLine("Du hast den Wachmann besiegt.");
+                        ConsoleOutput.AvatarWin();
                         ItemsInteraction.LootEnemy(_words, location, enemy);
                         break;
                     }
                     
                     else if (Avatar.Characters["Max"].Health == 0)
                     {
-                        Console.WriteLine("Du wurdest besiegt");
+                        ConsoleOutput.AvatarLose();
                         Environment.Exit(1);
                     }
                 }

@@ -21,9 +21,9 @@ namespace swd_endaufgabe
             // while (words[0] != "q")
             for(;;)
             {
-                Console.BackgroundColor = ConsoleColor.DarkGray;
+                // Console.BackgroundColor = ConsoleColor.DarkGray;
                 SplitInput();
-                Console.ResetColor();
+                // Console.ResetColor();
 
                 switch (words[0])
                 {
