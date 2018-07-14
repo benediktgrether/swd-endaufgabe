@@ -5,7 +5,7 @@ namespace swd_endaufgabe
     class RandomNumber
     {
         public static Random rnd = new Random();
-        public static int getEnemyRandonRoom()
+        public static int GetEnemyRandomRoom()
         {
             int enemyRandomRoom = rnd.Next(0, 6);
             return enemyRandomRoom;

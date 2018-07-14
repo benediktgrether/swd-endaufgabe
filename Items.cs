@@ -25,7 +25,7 @@ namespace swd_endaufgabe
             if(findItem != null)
             {
                 Console.WriteLine("Find:" + findItem.title);
-                avatar.inventory.Add(findItem);
+                avatar.Inventory.Add(findItem);
                 location.items.Remove(findItem);
             }
             else
@@ -37,7 +37,7 @@ namespace swd_endaufgabe
 
         public static void showInventory(Avatar avatar)
         {
-            foreach (var i in avatar.inventory)
+            foreach (var i in avatar.Inventory)
             {
                 Console.WriteLine("Inventar: " + i.title);
             }
@@ -46,13 +46,13 @@ namespace swd_endaufgabe
         public static void dropItem(string _words, Location location, Avatar avatar)
         {
             showInventory(avatar);
-            Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
+            Items findItem = avatar.Inventory.Find(x => x.title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
             if(findItem != null)
             {
                 Console.WriteLine("Find:" + findItem.title);
                 location.items.Add(findItem);
-                avatar.inventory.Remove(findItem);
+                avatar.Inventory.Remove(findItem);
             }
             else
             {
@@ -62,8 +62,8 @@ namespace swd_endaufgabe
 
         public static void itemFinish(Location location, Avatar avatar)
         {
-            Items findItem = avatar.inventory.Find(x => x.title.Contains("fileRachel"));
-            if(avatar.inventory.Exists(x => x.title == "fileRachel"))
+            Items findItem = avatar.Inventory.Find(x => x.title.Contains("fileRachel"));
+            if(avatar.Inventory.Exists(x => x.title == "fileRachel"))
             {
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
                 Console.WriteLine(findItem.description);

@@ -15,7 +15,7 @@ namespace swd_endaufgabe
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
-            Enemy enemy = Enemy.setupEnemy();
+            Enemy enemy = Enemy.SetupEnemy();
             Location.DescribeLocation(currentLocation);
             // SplitInput();
             // while (words[0] != "q")
@@ -39,7 +39,7 @@ namespace swd_endaufgabe
                             else
                             {
                             currentLocation = currentLocation.North;
-                            avatar.setMaxRoom(currentLocation, avatar, enemy);
+                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -59,7 +59,7 @@ namespace swd_endaufgabe
                             else
                             {
                                 currentLocation = currentLocation.East;
-                                avatar.setMaxRoom(currentLocation, avatar, enemy);
+                                avatar.SetMaxRoom(currentLocation, avatar, enemy);
                                 ControlCounter ++;
                             }
                         }
@@ -79,7 +79,7 @@ namespace swd_endaufgabe
                             else
                             {
                             currentLocation = currentLocation.South;
-                            avatar.setMaxRoom(currentLocation, avatar, enemy);
+                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -99,7 +99,7 @@ namespace swd_endaufgabe
                             else
                             {
                             currentLocation = currentLocation.West;
-                            avatar.setMaxRoom(currentLocation, avatar, enemy);
+                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -145,7 +145,7 @@ namespace swd_endaufgabe
                             Console.WriteLine("Falsche Eingabe");
                         }
                         break;
-                    case "inventory":
+                    case "Inventory":
                     case "i":
                         Items.showInventory(avatar);
                         break;
@@ -173,7 +173,7 @@ namespace swd_endaufgabe
                         break;
                     case "help":
                     case "h":
-                        Console.WriteLine("help(h), look(l), inventory(i), take(t) item, drop(d) item, quit(q)");
+                        Console.WriteLine("help(h), look(l), Inventory(i), take(t) item, drop(d) item, quit(q)");
                         break;
                     case "quit":
                     case "q":
@@ -181,7 +181,7 @@ namespace swd_endaufgabe
                         break;
                     case "attack":
                     case "a":
-                        if(enemy.currentRoom == avatar.currentRoom)
+                        if(enemy.CurrentRoom == avatar.CurrentRoom)
                         {
                             Attack.AttackNow(words[1] ,currentLocation, avatar, enemy);
                         }
@@ -220,7 +220,7 @@ namespace swd_endaufgabe
             //         else
             //         {
             //         Controls.currentLocation = direction;
-            //         avatar.setMaxRoom(direction, avatar, enemy);
+            //         avatar.SetMaxRoom(direction, avatar, enemy);
             //         // ControlCounter ++;
             //         }
             //     }

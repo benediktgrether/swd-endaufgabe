@@ -227,11 +227,11 @@ namespace swd_endaufgabe
             CheckFinished(location, avatar);
             if(location.Open == false && location.GameFinished == false)
             {
-                if(avatar.inventory.Exists(x => x.title == "Zentralschlüssel"))
+                if(avatar.Inventory.Exists(x => x.title == "Zentralschlüssel"))
                 {
                     return Location.rooms["Büro Rektor"].Open = true;
                 }
-                if(avatar.currentRoom != 0)
+                if(avatar.CurrentRoom != 0)
                 {
                     Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
                 }
@@ -243,12 +243,12 @@ namespace swd_endaufgabe
         {
             if(location.GameFinished == false)
             {
-                if(avatar.inventory.Exists(x => x.title == "Akte1"))
+                if(avatar.Inventory.Exists(x => x.title == "Akte1"))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
                 }
-                if(avatar.currentRoom == 0)
+                if(avatar.CurrentRoom == 0)
                 {
                     Console.WriteLine("Du kannst hier noch nicht lang gehen.\nFinde die richtige Schulakte");
                 }
@@ -260,12 +260,12 @@ namespace swd_endaufgabe
         public static bool usedItems(Location location, Avatar avatar, string _words)
         {  
             List<Items> needForBomb = new List<Items>();
-            Items findItem = avatar.inventory.Find(x => x.title.Contains(_words));
+            Items findItem = avatar.Inventory.Find(x => x.title.Contains(_words));
             if(findItem != null)
             {
-                if (avatar.currentRoom == 5)
+                if (avatar.CurrentRoom == 5)
                 {
-                    foreach(var i in avatar.inventory)
+                    foreach(var i in avatar.Inventory)
                     {
                         if(i.bomb == true)
                         {
@@ -276,7 +276,7 @@ namespace swd_endaufgabe
                     {
                         if (i.bomb == findItem.bomb)
                         {
-                            avatar.inventory.Remove(findItem);
+                            avatar.Inventory.Remove(findItem);
                         }
                     }
                     int sizeOfList = needForBomb.Count;

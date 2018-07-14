@@ -5,45 +5,45 @@
 // {
 //     class GameChar
 //     {
-//         public static List <string> inventory = new List <string>();
-//         public int health;
+//         public static List <string> Inventory = new List <string>();
+//         public int Health;
 //         public static int counter = 0;
 //     }
 
 //     class Max : GameChar
 //     {
-//         // public static string currentRoom;
-//         public static int _currentRoom;
+//         // public static string CurrentRoom;
+//         public static int _CurrentRoom;
 
-//         public static int setMaxRoom(Location location)
+//         public static int SetMaxRoom(Location location)
 //         {
-//             _currentRoom = location.roomNumber;
-//             Console.WriteLine("Ich bin gerade im " + _currentRoom + " Raum");
-//             Security.randomRoom(location);
-//             return _currentRoom;
+//             _CurrentRoom = location.roomNumber;
+//             Console.WriteLine("Ich bin gerade im " + _CurrentRoom + " Raum");
+//             Security.RandomRoom(location);
+//             return _CurrentRoom;
 //         }
 
 //         public static int setMaxHealth(int health)
 //         {
-//             // avatar.health;
-//             return health;
+//             // avatar.Health;
+//             return Health;
 //         }
 //     } 
 
 //     class Security : GameChar
 //     {
-//         // public static int randomRoom;
-//         private static int _currentRoom;
+//         // public static int RandomRoom;
+//         private static int _CurrentRoom;
 //         public static bool active = true;
 //         public static bool Key = true;
         
 //         public Security(int _health)
 //         {
-//             health = _health;
+//             health = _Health;
 //         }
 //         // public static int setSecurityHealth(int health)
 //         // {
-//         //     return health;
+//         //     return Health;
 //         // }
 
 //         public static Security SetupGameChar()
@@ -52,7 +52,7 @@
 //             return test;
 //         }
 
-//         public static int randomRoom(Location location)
+//         public static int RandomRoom(Location location)
 //         {
 //             if(active == true)
 //             { 
@@ -63,15 +63,15 @@
 //                 {
 //                     if (counter == 0)
 //                     {
-//                         _currentRoom = 2;
+//                         _CurrentRoom = 2;
 //                         Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
 //                     }
 //                     else
 //                     {    
-//                         _currentRoom = enemyRandomRoom;
-//                         Console.WriteLine("Security is in Room :" + _currentRoom);
+//                         _CurrentRoom = enemyRandomRoom;
+//                         Console.WriteLine("Security is in Room :" + _CurrentRoom);
 
-//                         if (_currentRoom == Max._currentRoom)
+//                         if (_CurrentRoom == Max._CurrentRoom)
 //                         {
 //                             Attack.EnemyAttack();
 //                         } 

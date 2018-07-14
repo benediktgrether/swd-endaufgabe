@@ -5,63 +5,63 @@ namespace swd_endaufgabe
 {
     class GameChar
     {
-        public string name;
-        public int health;
-        public List<Items> inventory = new List<Items>();
-        public int currentRoom;
-        public Location room;
+        public string Name;
+        public int Health;
+        public List<Items> Inventory = new List<Items>();
+        public int CurrentRoom;
+        public Location Room;
     }
 
     class Avatar : GameChar
     {
         //To Do - Methoden
-        public static Dictionary<string, GameChar> characters;
+        public static Dictionary<string, GameChar> Characters;
         public Avatar(string _name, int _health, int _currentRoom, Location _room)
         {
-            name = _name;
-            health = _health;
-            currentRoom = _currentRoom;
-            room = _room;
+            Name = _name;
+            Health = _health;
+            CurrentRoom = _currentRoom;
+            Room = _room;
         }
         public static Avatar setupAvatar()
         {
             Avatar max = new Avatar(
                 "Max", 100, 0, Location.rooms["Aula"]
             );
-            characters = new Dictionary<string, GameChar>();
-            characters["Max"] = max;
+            Characters = new Dictionary<string, GameChar>();
+            Characters["Max"] = max;
             return max;
         }
 
         
-        public int setMaxRoom(Location location, Avatar avatar, Enemy enemy)
+        public int SetMaxRoom(Location location, Avatar avatar, Enemy enemy)
         {
-            // currentRoom = characters["Max"].currentRoom;
-            currentRoom = location.RoomNumber;
+            // CurrentRoom = characters["Max"].CurrentRoom;
+            CurrentRoom = location.RoomNumber;
             Location.DescribeLocation(location);
-            enemy.randomRoom(location, avatar, enemy);
+            enemy.RandomRoom(location, avatar, enemy);
             
-            return currentRoom;
+            return CurrentRoom;
         }
     }
 
     class Enemy : GameChar
     {
         private int counter;
-        public bool life;
-        public string title; 
-        public List<Items> loot = new List<Items>(); // Liste Inventory verwenden
+        public bool Life;
+        public string Title; 
+        public List<Items> Loot = new List<Items>(); // Liste Inventory verwenden
 
         public Enemy(string _name, int _health, int _currentRoom, bool _life, string _titel)
         {
-            name = _name;
-            health = _health;
-            currentRoom = _currentRoom;
-            life = _life;
-            title = _titel;
+            Name = _name;
+            Health = _health;
+            CurrentRoom = _currentRoom;
+            Life = _life;
+            Title = _titel;
         }
 
-        public static Enemy setupEnemy()
+        public static Enemy SetupEnemy()
         {
             Enemy david = new Enemy(
                 "David", 100, 5, true, "Wachmann"
@@ -78,31 +78,31 @@ namespace swd_endaufgabe
             (
                 "Autoschlüssel", "David fährt einen Blauen Ford Mustang Boss 429 (1969)", false, false
             );
-            david.loot.AddRange(new List<Items>
+            david.Loot.AddRange(new List<Items>
             {
                 centralKey, mobilePhone, carKey
             });
             return david;
         }
-        public int randomRoom(Location location, Avatar avatar, Enemy enemy)
+        public int RandomRoom(Location location, Avatar avatar, Enemy enemy)
         {
 
-            int randomnumber = RandomNumber.getEnemyRandonRoom();
-            if(life == true)
+            int _randomNumber = RandomNumber.GetEnemyRandomRoom();
+            if(Life == true)
             {
                 if(Controls.ControlCounter > 5)
                 {
                     if(counter == 0)
                     {
-                        currentRoom = 2;
+                        CurrentRoom = 2;
                         Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
                     }
                     else
                     {
-                        currentRoom = randomnumber;
-                        Console.WriteLine("Security is in Room :" + currentRoom);
+                        CurrentRoom = _randomNumber;
+                        Console.WriteLine("Security is in Room :" + CurrentRoom);
 
-                        if(currentRoom == avatar.currentRoom)
+                        if(CurrentRoom == avatar.CurrentRoom)
                         {
                             Attack.EnemyAttack(avatar, enemy);
                         }

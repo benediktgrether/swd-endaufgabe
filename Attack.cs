@@ -16,7 +16,7 @@ namespace swd_endaufgabe
             // int securityhealth = Security.setSecurityHealth(100);
             string []arr = new string[]{"stein","schere","papier"};
             Console.WriteLine("Dieser Kampf basiert auf Stein, Schere,Papier.");
-            if(_words == enemy.name)
+            if(_words == enemy.Name)
             {
                 for(;;)
                 {
@@ -37,28 +37,28 @@ namespace swd_endaufgabe
                     }
                     else if((Input == arr[0]) && (arr[1] == arr[i]) || (Input == arr[1]) && (arr[2] == arr[i]) || (Input == arr[2]) && (arr[0] == arr[i]))
                     {
-                        enemy.health  = enemy.health - 33;
+                        enemy.Health  = enemy.Health - 33;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(Input.ToUpper() + " schlägt " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
                     else
                     {
-                        avatar.health   = avatar.health - 33;
+                        avatar.Health   = avatar.Health - 33;
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
-                    Console.WriteLine("Enemy Health: " + enemy.health );
-                    Console.WriteLine("Max health : " + avatar.health  );
-                    if (enemy.health == 1)
+                    Console.WriteLine("Enemy Health: " + enemy.Health );
+                    Console.WriteLine("Max health : " + avatar.Health  );
+                    if (enemy.Health == 1)
                     {
-                        enemy.life = false;
+                        enemy.Life = false;
                         Console.WriteLine("Du hast den Wachmann besiegt.");
                         LootEnemy(location, enemy);
                         break;
                     }
-                    else if (avatar.health == 1)
+                    else if (avatar.Health == 1)
                     {
                         Console.WriteLine("Du wurdest besiegt");
                         Environment.Exit(1);
@@ -74,34 +74,34 @@ namespace swd_endaufgabe
         public static void LootEnemy(Location location, Enemy enemy)
         {
             Console.WriteLine("Der Gegener hat einige Items droppen lassen");
-            foreach(var i in enemy.loot)
+            foreach(var i in enemy.Loot)
             {
                 location.items.Add(i);
             }
-            // enemy.loot.Remove(items);
+            // enemy.Loot.Remove(items);
             
             
             // Console.WriteLine("In Davids Taschen befinden sich");
-            // foreach(var i in enemy.loot)
+            // foreach(var i in enemy.Loot)
             // {
             //     Console.WriteLine(i.title);
             // }
             // Console.WriteLine("Was möchten sie Looten?: ");
             // string Input = Console.ReadLine();
-            // Items findItem = enemy.loot.Find(x => x.title.Contains(Input));
+            // Items findItem = enemy.Loot.Find(x => x.title.Contains(Input));
             // if (findItem != null)
             // {
-            //     avatar.inventory.Add(findItem);
-            //     enemy.loot.Remove(findItem);
+            //     avatar.Inventory.Add(findItem);
+            //     enemy.Loot.Remove(findItem);
             // }
 
             
 
-            // Items showLoot = enemy.loot.Find(x => x.title == "Zentralschlüssel");
+            // Items showLoot = enemy.Loot.Find(x => x.title == "Zentralschlüssel");
             // Console.WriteLine("Loot enemy");
             // Console.WriteLine(showLoot.title);
             // Console.WriteLine();
-            // avatar.inventory.Add(showLoot);
+            // avatar.Inventory.Add(showLoot);
 
         }
     }
