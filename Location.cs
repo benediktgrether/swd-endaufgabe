@@ -33,6 +33,7 @@ namespace swd_endaufgabe
         }
         public static Location MapSetUp()
         {
+            #region Object Rooms
             Location aula = new Location
             (
                 0,
@@ -41,22 +42,11 @@ namespace swd_endaufgabe
                 true, true
             );
 
-            Items soda = new Items
-            (
-                "Soda", "xxx", true, true
-            ); 
-
             Location wc = new Location
             (
                 1,
                 "WC",
                 "Du Befindest dich in der Toilette", true ,true
-            );
-            Items anleitung = new Items
-            (
-                "Anleitung", 
-                "Hier ist eine Anleitung zum Bauen einer Bombe.\nDu benötigtst dafür\nZucker\nSoda Can\nPanzertape\nNatriumchlorat\n", 
-                true, false
             );
 
             Location seitengang = new Location
@@ -72,15 +62,6 @@ namespace swd_endaufgabe
                 "Chemielabor", 
                 "Du befindest dich im Chemielabor", true, true
             );
-            Items klebeband = new Items
-            (
-                "Klebeband", "xxx", true, true
-            );
-            Items sodiumChlorate = new Items
-            (
-                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true , true
-            );
-
             Location security = new Location
             (
                 4,
@@ -93,46 +74,12 @@ namespace swd_endaufgabe
                 "Sekretariat", 
                 "Du befindest dich im Sekretariat", true, true
             );
-            Items suggar = new Items
-            (
-                "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
-                true, true
-            );
-            Items money = new Items
-            (
-                "1€", "Geldmünze mit dem Wert von 1 €", true , false
-            );
-            Items key = new Items
-            (
-                "Schlüssel", "Schlüssel", true , false
-            );
             Location bueroRektor = new Location
             (
                 6,
                 "Büro Rektor", 
                 "Du befindest dich im Büro des Rektors", false , false
             );
-            Items fileRachel = new Items
-            (
-                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
-            );
-            Items fileChloe = new Items
-            (
-                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
-            );
-            Items fileMax = new Items
-            (
-                "Akte3", "Akte über die Schullaufbahn von Max", true, false
-            );
-            Items fileWarren = new Items
-            (
-                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
-            );
-            Items fileKate = new Items
-            (
-                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
-            );
-
             Location exit = new Location
             (
                 7, 
@@ -141,14 +88,77 @@ namespace swd_endaufgabe
                 false, 
                 false
             );
+            #endregion
 
+            #region Object Items
+            Items soda = new Items
+            (
+                "Soda", "xxx", true, true
+            ); 
+
+            Items anleitung = new Items
+            (
+                "Anleitung", 
+                "Hier ist eine Anleitung zum Bauen einer Bombe.\nDu benötigtst dafür\nZucker\nSoda Can\nPanzertape\nNatriumchlorat\n", 
+                true, false
+            );
+
+            Items klebeband = new Items
+            (
+                "Klebeband", "xxx", true, true
+            );
+
+            Items sodiumChlorate = new Items
+            (
+                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true , true
+            );
+
+            Items suggar = new Items
+            (
+                "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
+                true, true
+            );
+
+            Items money = new Items
+            (
+                "1€", "Geldmünze mit dem Wert von 1 €", true , false
+            );
+
+            Items key = new Items
+            (
+                "Schlüssel", "Schlüssel", true , false
+            );
+
+            Items fileRachel = new Items
+            (
+                "Akte1", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
+            );
+
+            Items fileChloe = new Items
+            (
+                "Akte2", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
+            );
+
+            Items fileMax = new Items
+            (
+                "Akte3", "Akte über die Schullaufbahn von Max", true, false
+            );
+
+            Items fileWarren = new Items
+            (
+                "Akte4", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
+            );
+
+            Items fileKate = new Items
+            (
+                "Akte5", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
+            );
+            #endregion
 
             aula.North= wc;
             aula.East= sekretariat;
             aula.West = seitengang;
             aula.South= exit;
-            // Aula.items.AddRange(new List<string>
-            // {"Soda", "Taschentücher"});
             aula.Items.Add(soda);
 
             wc.South= aula;
@@ -192,9 +202,6 @@ namespace swd_endaufgabe
 
             return aula;
         }
-
-
-
         public static void DescribeLocation(Location location)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -222,7 +229,7 @@ namespace swd_endaufgabe
                 Console.WriteLine(i.Title);
             }
         }
-        public static bool setDirection(Location location, Avatar avatar)
+        public static bool SetDirection(Location location, Avatar avatar)
         {
             CheckFinished(location, avatar);
             if(location.Open == false && location.GameFinished == false)

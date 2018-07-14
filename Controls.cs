@@ -32,7 +32,7 @@ namespace swd_endaufgabe
                         // testMethod(direction, avatar, enemy);
                         if (currentLocation.North!= null)
                         {
-                            if(Location.setDirection(currentLocation.North, avatar) == false)
+                            if(Location.SetDirection(currentLocation.North, avatar) == false)
                             {
                                 break;
                             }
@@ -52,7 +52,7 @@ namespace swd_endaufgabe
                     case "e":
                         if (currentLocation.East!= null)
                         {
-                            if(Location.setDirection(currentLocation.East, avatar) == false)
+                            if(Location.SetDirection(currentLocation.East, avatar) == false)
                             {
                                 break;
                             }
@@ -72,7 +72,7 @@ namespace swd_endaufgabe
                     case "s":
                         if (currentLocation.South!= null)
                         {
-                            if(Location.setDirection(currentLocation.South, avatar) == false)
+                            if(Location.SetDirection(currentLocation.South, avatar) == false)
                             {
                                 break;
                             }
@@ -92,7 +92,7 @@ namespace swd_endaufgabe
                     case "w":
                         if (currentLocation.West != null)
                         {
-                            if(Location.setDirection(currentLocation.West, avatar) == false)
+                            if(Location.SetDirection(currentLocation.West, avatar) == false)
                             {
                                 break;
                             }
@@ -213,7 +213,7 @@ namespace swd_endaufgabe
             // {
             //     if (direction != null)
             //     {
-            //         if(Location.setDirection(direction, avatar) == false)
+            //         if(Location.SetDirection(direction, avatar) == false)
             //         {
             //             return;
             //         }
