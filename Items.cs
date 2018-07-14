@@ -32,10 +32,10 @@ namespace swd_endaufgabe
             {
                 Console.WriteLine("Nothing find");
             }
-            itemFinish(location, avatar);
+            FindFile(location, avatar);
         }
 
-        public static void showInventory(Avatar avatar)
+        public static void ShowInventory(Avatar avatar)
         {
             foreach (var i in avatar.Inventory)
             {
@@ -43,9 +43,9 @@ namespace swd_endaufgabe
             }
         }
 
-        public static void dropItem(string _words, Location location, Avatar avatar)
+        public static void DropItem(string _words, Location location, Avatar avatar)
         {
-            showInventory(avatar);
+            ShowInventory(avatar);
             Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
             if(findItem != null)
@@ -60,7 +60,7 @@ namespace swd_endaufgabe
             }
         }
 
-        public static void itemFinish(Location location, Avatar avatar)
+        public static void FindFile(Location location, Avatar avatar)
         {
             Items findItem = avatar.Inventory.Find(x => x.Title.Contains("fileRachel"));
             if(avatar.Inventory.Exists(x => x.Title == "fileRachel"))

@@ -133,7 +133,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                Items.dropItem(words[1],currentLocation, avatar);
+                                Items.DropItem(words[1],currentLocation, avatar);
                             }
                             else
                             {
@@ -147,7 +147,7 @@ namespace swd_endaufgabe
                         break;
                     case "Inventory":
                     case "i":
-                        Items.showInventory(avatar);
+                        Items.ShowInventory(avatar);
                         break;
                     case "look":
                     case "l":
