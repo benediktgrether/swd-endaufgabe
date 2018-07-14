@@ -12,18 +12,14 @@ namespace swd_endaufgabe
 
         public static void GameControls()
         {
-            Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
+            ConsoleOutput.GameDescription();
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
             Enemy enemy = Enemy.SetupEnemy();
             Location.DescribeLocation(currentLocation);
-            // SplitInput();
-            // while (words[0] != "q")
             for(;;)
             {
-                // Console.BackgroundColor = ConsoleColor.DarkGray;
                 SplitInput();
-                // Console.ResetColor();
 
                 switch (words[0])
                 {

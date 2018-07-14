@@ -5,6 +5,11 @@ namespace swd_endaufgabe
 {
     class ConsoleOutput
     {
+        public static void GameDescription()
+        {
+            Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
+        }
+
         public static void AttackDraw()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
