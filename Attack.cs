@@ -33,32 +33,34 @@ namespace swd_endaufgabe
                     }
                     else if(Input == arr[i])
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Draw");
+                        Console.ResetColor();
                     }
                     else if((Input == arr[0]) && (arr[1] == arr[i]) || (Input == arr[1]) && (arr[2] == arr[i]) || (Input == arr[2]) && (arr[0] == arr[i]))
                     {
-                        enemy.Health  = enemy.Health - 33;
+                        Enemy.Characters[_words].Health  = Enemy.Characters[_words].Health - 1;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(Input.ToUpper() + " schlägt " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
                     else
                     {
-                        avatar.Health   = avatar.Health - 33;
+                        Avatar.Characters["Max"].Health = Avatar.Characters["Max"].Health - 1;
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
                     Console.WriteLine("Enemy Health: " + enemy.Health );
                     Console.WriteLine("Max health : " + avatar.Health  );
-                    if (enemy.Health == 1)
+                    if (enemy.Health == 0)
                     {
                         enemy.Life = false;
                         Console.WriteLine("Du hast den Wachmann besiegt.");
-                        LootEnemy(location, enemy);
+                        LootEnemy(_words, location, enemy);
                         break;
                     }
-                    else if (avatar.Health == 1)
+                    else if (avatar.Health == 0)
                     {
                         Console.WriteLine("Du wurdest besiegt");
                         Environment.Exit(1);
@@ -71,38 +73,13 @@ namespace swd_endaufgabe
                 Console.WriteLine("Du hast einen Falschen Namen eingegeben");
             }
         }
-        public static void LootEnemy(Location location, Enemy enemy)
+        public static void LootEnemy(string _words, Location location, Enemy enemy)
         {
             Console.WriteLine("Der Gegener hat einige Items droppen lassen");
-            foreach(var i in enemy.Loot)
+            foreach(var i in Enemy.Characters[_words].Inventory)
             {
                 location.Items.Add(i);
             }
-            // enemy.Loot.Remove(items);
-            
-            
-            // Console.WriteLine("In Davids Taschen befinden sich");
-            // foreach(var i in enemy.Loot)
-            // {
-            //     Console.WriteLine(i.title);
-            // }
-            // Console.WriteLine("Was möchten sie Looten?: ");
-            // string Input = Console.ReadLine();
-            // Items findItem = enemy.Loot.Find(x => x.title.Contains(Input));
-            // if (findItem != null)
-            // {
-            //     avatar.Inventory.Add(findItem);
-            //     enemy.Loot.Remove(findItem);
-            // }
-
-            
-
-            // Items showLoot = enemy.Loot.Find(x => x.title == "Zentralschlüssel");
-            // Console.WriteLine("Loot enemy");
-            // Console.WriteLine(showLoot.title);
-            // Console.WriteLine();
-            // avatar.Inventory.Add(showLoot);
-
         }
     }
 }

@@ -196,7 +196,7 @@ namespace swd_endaufgabe
                         break;
 
                     case "test":
-                        Attack.LootEnemy(currentLocation, enemy);
+                        Attack.LootEnemy(words[1], currentLocation, enemy);
                         break;
                 }
             }

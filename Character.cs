@@ -26,7 +26,7 @@ namespace swd_endaufgabe
         public static Avatar setupAvatar()
         {
             Avatar max = new Avatar(
-                "Max", 100, 0, Location.rooms["Aula"]
+                "Max", 3, 0, Location.rooms["Aula"]
             );
             Characters = new Dictionary<string, GameChar>();
             Characters["Max"] = max;
@@ -50,7 +50,7 @@ namespace swd_endaufgabe
         private int counter;
         public bool Life;
         public string Title; 
-        public List<Items> Loot = new List<Items>(); // Liste Inventory verwenden
+        public static Dictionary<string, GameChar> Characters;
 
         public Enemy(string _name, int _health, int _currentRoom, bool _life, string _titel)
         {
@@ -64,7 +64,7 @@ namespace swd_endaufgabe
         public static Enemy SetupEnemy()
         {
             Enemy david = new Enemy(
-                "David", 100, 5, true, "Wachmann"
+                "David", 3, 5, true, "Wachmann"
             );
             Items centralKey = new Items
             (
@@ -78,10 +78,13 @@ namespace swd_endaufgabe
             (
                 "Autoschlüssel", "David fährt einen Blauen Ford Mustang Boss 429 (1969)", false, false
             );
-            david.Loot.AddRange(new List<Items>
+            david.Inventory.AddRange(new List<Items>
             {
                 centralKey, mobilePhone, carKey
             });
+
+            Characters = new Dictionary<string, GameChar>();
+            Characters["David"] = david;
             return david;
         }
         public int RandomRoom(Location location, Avatar avatar, Enemy enemy)

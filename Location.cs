@@ -85,7 +85,7 @@ namespace swd_endaufgabe
             (
                 4,
                 "Security", 
-                "Du befindest dich im Security", true, true
+                "Du befindest dich im Security", false, false
             );
             Location sekretariat = new Location
             (
@@ -197,7 +197,7 @@ namespace swd_endaufgabe
 
         public static void DescribeLocation(Location location)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("_______________________________________________________________________________________________________________________");
             Console.WriteLine(location.Description);
 
@@ -241,9 +241,10 @@ namespace swd_endaufgabe
         }
         public static bool CheckFinished(Location location, Avatar avatar)
         {
-            if(location.GameFinished == false)
+            // if(location.GameFinished == false)
+            if(Location.rooms["Exit"].GameFinished == false)
             {
-                if(avatar.Inventory.Exists(x => x.Title == "Akte1"))
+                if((avatar.Inventory.Exists(x => x.Title == "Akte1")) && (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Aula"].RoomNumber))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
@@ -263,7 +264,7 @@ namespace swd_endaufgabe
             Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
             if(findItem != null)
             {
-                if (avatar.CurrentRoom == 5)
+                if (avatar.CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
                 {
                     foreach(var i in avatar.Inventory)
                     {
@@ -283,7 +284,7 @@ namespace swd_endaufgabe
                     Console.WriteLine(sizeOfList);
                     if(sizeOfList == 1)
                     {
-                        Console.WriteLine("Boomb"); 
+                        Console.WriteLine("Bombe Explodiert"); 
                         return Location.rooms["Büro Rektor"].Open = true;
                         
                     }
