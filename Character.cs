@@ -90,7 +90,7 @@ namespace swd_endaufgabe
             int randomnumber = RandomNumber.getEnemyRandonRoom();
             if(life == true)
             {
-                if(Controls.controlcounter > 5)
+                if(Controls.ControlCounter > 5)
                 {
                     if(counter == 0)
                     {

@@ -22,31 +22,31 @@ namespace swd_endaufgabe
                 {
                     int i = RandomNumber.getAttackRandomNumber();
                     Console.WriteLine("Wähle weise: ");
-                    string input = Console.ReadLine().ToLower();
-                    if(input == "q" || input == "quit")
+                    string Input = Console.ReadLine().ToLower();
+                    if(Input == "q" || Input == "quit")
                     {
                         Environment.Exit(0);
                     }
-                    else if(input != arr[0] && input != arr[1] && input != arr[2])
+                    else if(Input != arr[0] && Input != arr[1] && Input != arr[2])
                     {
                         Console.WriteLine("Wrong Input.");
                     }
-                    else if(input == arr[i])
+                    else if(Input == arr[i])
                     {
                         Console.WriteLine("Draw");
                     }
-                    else if(input == arr[0] && arr[1] == arr[i] || input == arr[1] && arr[2] == arr[i] || input == arr[2] && arr[0] == arr[i])
+                    else if((Input == arr[0]) && (arr[1] == arr[i]) || (Input == arr[1]) && (arr[2] == arr[i]) || (Input == arr[2]) && (arr[0] == arr[i]))
                     {
                         enemy.health  = enemy.health - 33;
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(input.ToUpper() + " schlägt " + arr[i].ToUpper());
+                        Console.WriteLine(Input.ToUpper() + " schlägt " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
                     else
                     {
                         avatar.health   = avatar.health - 33;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
+                        Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr[i].ToUpper());
                         Console.ResetColor();
                     }
                     Console.WriteLine("Enemy Health: " + enemy.health );
@@ -87,8 +87,8 @@ namespace swd_endaufgabe
             //     Console.WriteLine(i.title);
             // }
             // Console.WriteLine("Was möchten sie Looten?: ");
-            // string input = Console.ReadLine();
-            // Items findItem = enemy.loot.Find(x => x.title.Contains(input));
+            // string Input = Console.ReadLine();
+            // Items findItem = enemy.loot.Find(x => x.title.Contains(Input));
             // if (findItem != null)
             // {
             //     avatar.inventory.Add(findItem);

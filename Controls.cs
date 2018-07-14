@@ -5,8 +5,8 @@ namespace swd_endaufgabe
 {
     class Controls
     {
-        public static int controlcounter = 0;
-        public static string input = "";
+        public static int ControlCounter = 0;
+        public static string Input = "";
         public static string[] words;
 
 
@@ -40,7 +40,7 @@ namespace swd_endaufgabe
                             {
                             currentLocation = currentLocation.North;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
-                            controlcounter ++;
+                            ControlCounter ++;
                             }
                         }
                         else
@@ -60,7 +60,7 @@ namespace swd_endaufgabe
                             {
                                 currentLocation = currentLocation.East;
                                 avatar.setMaxRoom(currentLocation, avatar, enemy);
-                                controlcounter ++;
+                                ControlCounter ++;
                             }
                         }
                         else
@@ -80,7 +80,7 @@ namespace swd_endaufgabe
                             {
                             currentLocation = currentLocation.South;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
-                            controlcounter ++;
+                            ControlCounter ++;
                             }
                         }
                         else
@@ -100,7 +100,7 @@ namespace swd_endaufgabe
                             {
                             currentLocation = currentLocation.West;
                             avatar.setMaxRoom(currentLocation, avatar, enemy);
-                            controlcounter ++;
+                            ControlCounter ++;
                             }
                         }
                         else
@@ -221,7 +221,7 @@ namespace swd_endaufgabe
             //         {
             //         Controls.currentLocation = direction;
             //         avatar.setMaxRoom(direction, avatar, enemy);
-            //         // controlcounter ++;
+            //         // ControlCounter ++;
             //         }
             //     }
 

@@ -59,7 +59,7 @@
 //                 Random rnd = new Random();
 //                 int enemyRandomRoom = rnd.Next(0, 6);
 //                 // In dem Raum wo er schon drin war, darf er nicht mehr rein.
-//                 if(Controls.controlcounter > 2)
+//                 if(Controls.ControlCounter > 2)
 //                 {
 //                     if (counter == 0)
 //                     {
