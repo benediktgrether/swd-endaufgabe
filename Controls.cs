@@ -114,11 +114,11 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                Items.takeItem(words[1],currentLocation, avatar);
+                                Items.TakeItem(words[1],currentLocation, avatar);
                             }
                             else
                             {
-                                // Items.takeItem(words[1],currentLocation, avatar);
+                                // Items.TakeItem(words[1],currentLocation, avatar);
                                 Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
                             }
                         }
@@ -159,7 +159,7 @@ namespace swd_endaufgabe
                     try{
                         if(words[1] != "")
                         {
-                            Location.usedItems(currentLocation, avatar, words[1]);
+                            Location.UsedItems(words[1]);
                         }
                         else 
                         {

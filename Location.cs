@@ -221,17 +221,9 @@ namespace swd_endaufgabe
             Console.WriteLine("");
         }
 
-        public static void ShowRoomInformation(Location location)
-        {
-            Console.WriteLine(location.Description);
-            foreach(var i in location.Items)
-            {
-                Console.WriteLine(i.Title);
-            }
-        }
         public static bool SetDirection(Location location, Avatar avatar)
         {
-            CheckFinished(location, avatar);
+            CheckFinished(avatar);
             if(location.Open == false && location.GameFinished == false)
             {
                 if(avatar.Inventory.Exists(x => x.Title == "Zentralschlüssel"))
@@ -246,17 +238,17 @@ namespace swd_endaufgabe
             }
             return location.Open = true;
         }
-        public static bool CheckFinished(Location location, Avatar avatar)
+        public static bool CheckFinished(Avatar avatar)
         {
             // if(location.GameFinished == false)
             if(Location.rooms["Exit"].GameFinished == false)
             {
-                if((avatar.Inventory.Exists(x => x.Title == "Akte1")) && (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Aula"].RoomNumber))
+                if((Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1")) && (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Aula"].RoomNumber))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
                 }
-                if(avatar.CurrentRoom == 0)
+                if(Avatar.Characters["Max"].CurrentRoom == Location.rooms["Exit"].RoomNumber)
                 {
                     Console.WriteLine("Du kannst hier noch nicht lang gehen.\nFinde die richtige Schulakte");
                 }
@@ -265,15 +257,15 @@ namespace swd_endaufgabe
             return true;
         }
 
-        public static bool usedItems(Location location, Avatar avatar, string _words)
+        public static bool UsedItems(string _words)
         {  
             List<Items> needForBomb = new List<Items>();
-            Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
             if(findItem != null)
             {
-                if (avatar.CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
+                if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
                 {
-                    foreach(var i in avatar.Inventory)
+                    foreach(var i in Avatar.Characters["Max"].Inventory)
                     {
                         if(i.Bomb == true)
                         {
@@ -284,11 +276,10 @@ namespace swd_endaufgabe
                     {
                         if (i.Bomb == findItem.Bomb)
                         {
-                            avatar.Inventory.Remove(findItem);
+                            Avatar.Characters["Max"].Inventory.Remove(findItem);
                         }
                     }
                     int sizeOfList = needForBomb.Count;
-                    Console.WriteLine(sizeOfList);
                     if(sizeOfList == 1)
                     {
                         Console.WriteLine("Bombe Explodiert"); 

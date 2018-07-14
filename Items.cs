@@ -18,7 +18,7 @@ namespace swd_endaufgabe
             Bomb = _bomb;
         }
         
-        public static void takeItem(string _words, Location location, Avatar avatar)
+        public static void TakeItem(string _words, Location location, Avatar avatar)
         {
             Items _findItem = location.Items.Find(x => x.Title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
