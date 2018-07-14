@@ -9,7 +9,7 @@ namespace swd_endaufgabe
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("_______________________________________________________________________________________________________________________");
-            Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
+            Console.WriteLine("Willkommen in der Blackwall Academy.\nEine berühmte Universität in Arcadia Bay.\nAn der Blackwall Academy wird in Richtung Kunst mit schwerpunkt Fotografie und in Richtung Naturwissenschaften unterrichtet.\nSeit Jahren erhält die Blackwell Academy finanzielle zuwendung der Prescott-Familie denen halb Arcadia Bay gehört.\nAußerdem gibt es seit Jahrzehnten den Vortex Club, wo nur die angesagtesten Schüler und reichen Schüler rein kommen.\nDer Vortex Club Veranstaltet immer wieder Partys bei der es letztes mal zu einem Zwischenfall kam. Eine Schülerin der Blackwell Academy wurde unter Drogen gesetzt und ein Dubioses Video mit ihr online gestellt, über das auch außerhalb von Arcadia Bay geredet wird.\nDas ist aber nicht das einzige traurige Ereignis aus der Blackwell Academy. Rachel Amber , Chloes beste Freundin wird seit dem Sommer vermisst.\nNun möchtest Chloe und du rausfinden was in der Schule vor sich geht und musst dafür in das Büro des Schulleiters gelangen.\nPass aber besser auf denn, Chloes Stiefvater der als Wachman an der Blackwell Academy arbeitet hat heute Nachtschicht und könnte dir zufällig über den Weg laufen.");
             Console.ResetColor();
         }
 
