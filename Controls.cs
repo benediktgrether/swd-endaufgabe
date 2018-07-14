@@ -165,7 +165,7 @@ namespace swd_endaufgabe
                         break;
                     case "help":
                     case "h":
-                        Console.WriteLine("help(h), look(l), Inventory(i), take(t) item, drop(d) item, quit(q)");
+                        Console.WriteLine("help(h), look(l), inventory(i), take(t) item, drop(d) item, used(u) item, quit(q)");
                         break;
                     case "quit":
                     case "q":
