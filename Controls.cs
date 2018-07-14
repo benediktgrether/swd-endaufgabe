@@ -126,7 +126,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                ItemsInteraction.DropItem(words[1],currentLocation, avatar);
+                                ItemsInteraction.DropItem(words[1],currentLocation);
                             }
                             else
                             {

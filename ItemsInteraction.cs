@@ -30,15 +30,15 @@ namespace swd_endaufgabe
             Console.WriteLine();
         }
 
-        public static void DropItem(string _words, Location location, Avatar avatar)
+        public static void DropItem(string _words, Location location)
         {
-            ShowInventory(avatar);
-            Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
+            // ShowInventory(avatar);
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
             if(findItem != null)
             {
                 Console.WriteLine("Du hast " + findItem.Title + " aus deinem Inventar entfernt.");
                 location.Items.Add(findItem);
-                avatar.Inventory.Remove(findItem);
+                Avatar.Characters["Max"].Inventory.Remove(findItem);
             }
             else
             {
