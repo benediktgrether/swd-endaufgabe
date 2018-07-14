@@ -22,7 +22,7 @@ namespace swd_endaufgabe
             {
                 Console.WriteLine("Falsche eingabe");
             }
-            FindFile();
+            FindFile(_words);
         } 
         public static void ShowInventory(Avatar avatar)
         {
@@ -50,23 +50,20 @@ namespace swd_endaufgabe
             }
         }
 
-        public static void FindFile()
+        public static void FindFile(string _words)
         {
-            // int counter = 0;
-            // int i = 0;
-            // if (counter == 0)
-            // {
-            //     i = RandomNumber.GetRandomFileNumber();
-            //     counter ++;
-            // }
-            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1"));
-            if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1"))
+            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+            Avatar.Characters["Max"].Inventory.Add(findItem);           
+            if (Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words)) == Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1")))
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
                 Console.ResetColor();
                 Console.WriteLine(findItem.Description);
-                // Avatar.Characters["Max"].Inventory.Add(fileRach);
+            }
+            else
+            {
+                Console.WriteLine(findItem.Description);  
             }
         }
         public static void LootEnemy(string _words, Location location, Enemy enemy)

@@ -173,7 +173,11 @@ namespace swd_endaufgabe
                 "Mikroskop", "", false, false
             );
 
-            // Reagenzglässer Brenner 
+            // Reagenzglässer, Brenner, Formelsammlung, Brief an Kate , Feuerlöscher, 
+            Items testTubes = new Items
+            (
+                "Reagenzgläser", "", false, false
+            );
             #endregion
 
             hallway.North= restroom;
@@ -199,7 +203,7 @@ namespace swd_endaufgabe
             chemistryLab.South= sidePassage;
             chemistryLab.Items.AddRange(new List<Items>
             {
-                ductTape, sodiumChlorate, microscope
+                ductTape, sodiumChlorate, microscope, testTubes
             });
 
             security.North= sidePassage;
