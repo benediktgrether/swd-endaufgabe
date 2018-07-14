@@ -32,14 +32,14 @@ namespace swd_endaufgabe
                         // testMethod(direction, avatar, enemy);
                         if (currentLocation.North!= null)
                         {
-                            if(Location.SetDirection(currentLocation.North, avatar) == false)
+                            if(Move.SetDirection(currentLocation.North, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.North;
-                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
+                            Move.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -52,14 +52,14 @@ namespace swd_endaufgabe
                     case "e":
                         if (currentLocation.East!= null)
                         {
-                            if(Location.SetDirection(currentLocation.East, avatar) == false)
+                            if(Move.SetDirection(currentLocation.East, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                                 currentLocation = currentLocation.East;
-                                avatar.SetMaxRoom(currentLocation, avatar, enemy);
+                                Move.SetMaxRoom(currentLocation, avatar, enemy);
                                 ControlCounter ++;
                             }
                         }
@@ -72,14 +72,14 @@ namespace swd_endaufgabe
                     case "s":
                         if (currentLocation.South!= null)
                         {
-                            if(Location.SetDirection(currentLocation.South, avatar) == false)
+                            if(Move.SetDirection(currentLocation.South, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.South;
-                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
+                            Move.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -92,14 +92,14 @@ namespace swd_endaufgabe
                     case "w":
                         if (currentLocation.West != null)
                         {
-                            if(Location.SetDirection(currentLocation.West, avatar) == false)
+                            if(Move.SetDirection(currentLocation.West, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.West;
-                            avatar.SetMaxRoom(currentLocation, avatar, enemy);
+                            Move.SetMaxRoom(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }

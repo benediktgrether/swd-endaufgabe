@@ -34,20 +34,20 @@ namespace swd_endaufgabe
         }
 
         
-        public int SetMaxRoom(Location location, Avatar avatar, Enemy enemy)
-        {
-            // CurrentRoom = characters["Max"].CurrentRoom;
-            CurrentRoom = location.RoomNumber;
-            Location.DescribeLocation(location);
-            enemy.RandomRoom(location, avatar, enemy);
+        // public int SetMaxRoom(Location location, Avatar avatar, Enemy enemy)
+        // {
+        //     // CurrentRoom = characters["Max"].CurrentRoom;
+        //     CurrentRoom = location.RoomNumber;
+        //     Location.DescribeLocation(location);
+        //     enemy.RandomRoom(location, avatar, enemy);
             
-            return CurrentRoom;
-        }
+        //     return CurrentRoom;
+        // }
     }
 
     class Enemy : GameChar
     {
-        private int counter;
+        public int counter;
         public bool Life;
         public string Title; 
         public static Dictionary<string, GameChar> Characters;
@@ -87,33 +87,33 @@ namespace swd_endaufgabe
             Characters["David"] = david;
             return david;
         }
-        public int RandomRoom(Location location, Avatar avatar, Enemy enemy)
-        {
+        // public int RandomRoom(Location location, Avatar avatar, Enemy enemy)
+        // {
 
-            int _randomNumber = RandomNumber.GetEnemyRandomRoom();
-            if(Life == true)
-            {
-                if(Controls.ControlCounter > 5)
-                {
-                    if(counter == 0)
-                    {
-                        CurrentRoom = 2;
-                        Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
-                    }
-                    else
-                    {
-                        CurrentRoom = _randomNumber;
-                        Console.WriteLine("Security is in Room :" + CurrentRoom);
+        //     int _randomNumber = RandomNumber.GetEnemyRandomRoom();
+        //     if(Life == true)
+        //     {
+        //         if(Controls.ControlCounter > 5)
+        //         {
+        //             if(counter == 0)
+        //             {
+        //                 CurrentRoom = 2;
+        //                 Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
+        //             }
+        //             else
+        //             {
+        //                 CurrentRoom = _randomNumber;
+        //                 Console.WriteLine("Security is in Room :" + CurrentRoom);
 
-                        if(CurrentRoom == avatar.CurrentRoom)
-                        {
-                            Attack.EnemyAttack(avatar, enemy);
-                        }
-                    }
-                    return counter ++;
-                }
-            }
-            return counter = 0;
-        }
+        //                 if(CurrentRoom == avatar.CurrentRoom)
+        //                 {
+        //                     Attack.EnemyAttack(avatar, enemy);
+        //                 }
+        //             }
+        //             return counter ++;
+        //         }
+        //     }
+        //     return counter = 0;
+        // }
     }
 }
