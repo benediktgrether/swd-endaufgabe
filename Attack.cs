@@ -76,7 +76,7 @@ namespace swd_endaufgabe
             Console.WriteLine("Der Gegener hat einige Items droppen lassen");
             foreach(var i in enemy.Loot)
             {
-                location.items.Add(i);
+                location.Items.Add(i);
             }
             // enemy.Loot.Remove(items);
             

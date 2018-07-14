@@ -19,7 +19,7 @@ namespace swd_endaufgabe
         public Location South;
         public Location West;
 
-        public List<Items> items = new List<Items>();
+        public List<Items> Items = new List<Items>();
         public static Dictionary<string, Location> rooms;
 
         public Location(int _roomNumber, string _title, string _description, bool _open, bool _GameFinished)
@@ -149,17 +149,17 @@ namespace swd_endaufgabe
             aula.South= exit;
             // Aula.items.AddRange(new List<string>
             // {"Soda", "Taschentücher"});
-            aula.items.Add(soda);
+            aula.Items.Add(soda);
 
             wc.South= aula;
-            wc.items.Add(anleitung);
+            wc.Items.Add(anleitung);
 
             seitengang.North= chemielabor;
             seitengang.East= aula;
             seitengang.South= security;
 
             chemielabor.South= seitengang;
-            chemielabor.items.AddRange(new List<Items>
+            chemielabor.Items.AddRange(new List<Items>
             {
                 klebeband, sodiumChlorate
             });
@@ -168,13 +168,13 @@ namespace swd_endaufgabe
 
             sekretariat.West = aula;
             sekretariat.East= bueroRektor;
-            sekretariat.items.AddRange(new List<Items>
+            sekretariat.Items.AddRange(new List<Items>
             {
                 suggar, money, key
             });
 
             bueroRektor.West = sekretariat;
-            bueroRektor.items.AddRange(new List<Items>
+            bueroRektor.Items.AddRange(new List<Items>
             {
                 fileRachel, fileKate, fileChloe, fileMax, fileWarren
             });
@@ -201,9 +201,9 @@ namespace swd_endaufgabe
             Console.WriteLine("_______________________________________________________________________________________________________________________");
             Console.WriteLine(location.Description);
 
-            foreach(var i in location.items)
+            foreach(var i in location.Items)
             {
-                Console.WriteLine(i.title);
+                Console.WriteLine(i.Title);
             }
             Console.WriteLine("_______________________________________________________________________________________________________________________");
             Console.ResetColor();
@@ -217,9 +217,9 @@ namespace swd_endaufgabe
         public static void ShowRoomInformation(Location location)
         {
             Console.WriteLine(location.Description);
-            foreach(var i in location.items)
+            foreach(var i in location.Items)
             {
-                Console.WriteLine(i.title);
+                Console.WriteLine(i.Title);
             }
         }
         public static bool setDirection(Location location, Avatar avatar)
@@ -227,7 +227,7 @@ namespace swd_endaufgabe
             CheckFinished(location, avatar);
             if(location.Open == false && location.GameFinished == false)
             {
-                if(avatar.Inventory.Exists(x => x.title == "Zentralschlüssel"))
+                if(avatar.Inventory.Exists(x => x.Title == "Zentralschlüssel"))
                 {
                     return Location.rooms["Büro Rektor"].Open = true;
                 }
@@ -243,7 +243,7 @@ namespace swd_endaufgabe
         {
             if(location.GameFinished == false)
             {
-                if(avatar.Inventory.Exists(x => x.title == "Akte1"))
+                if(avatar.Inventory.Exists(x => x.Title == "Akte1"))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
@@ -260,21 +260,21 @@ namespace swd_endaufgabe
         public static bool usedItems(Location location, Avatar avatar, string _words)
         {  
             List<Items> needForBomb = new List<Items>();
-            Items findItem = avatar.Inventory.Find(x => x.title.Contains(_words));
+            Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
             if(findItem != null)
             {
                 if (avatar.CurrentRoom == 5)
                 {
                     foreach(var i in avatar.Inventory)
                     {
-                        if(i.bomb == true)
+                        if(i.Bomb == true)
                         {
                             needForBomb.Add(i);
                         }
                     }
                     foreach(var i in needForBomb)
                     {
-                        if (i.bomb == findItem.bomb)
+                        if (i.Bomb == findItem.Bomb)
                         {
                             avatar.Inventory.Remove(findItem);
                         }

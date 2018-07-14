@@ -5,28 +5,28 @@ namespace swd_endaufgabe
 {
     class Items
     {
-        public string description;
-        public string title;
-        public bool used;
-        public bool bomb;
+        public string Description;
+        public string Title;
+        public bool Used;
+        public bool Bomb;
 
         public Items(string _title, string _description, bool _used, bool _bomb)
         {
-            title = _title;
-            description = _description;
-            used = _used;
-            bomb = _bomb;
+            Title = _title;
+            Description = _description;
+            Used = _used;
+            Bomb = _bomb;
         }
         
         public static void takeItem(string _words, Location location, Avatar avatar)
         {
-            Items findItem = location.items.Find(x => x.title.Contains(_words));
+            Items _findItem = location.Items.Find(x => x.Title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
-            if(findItem != null)
+            if(_findItem != null)
             {
-                Console.WriteLine("Find:" + findItem.title);
-                avatar.Inventory.Add(findItem);
-                location.items.Remove(findItem);
+                Console.WriteLine("Find:" + _findItem.Title);
+                avatar.Inventory.Add(_findItem);
+                location.Items.Remove(_findItem);
             }
             else
             {
@@ -39,19 +39,19 @@ namespace swd_endaufgabe
         {
             foreach (var i in avatar.Inventory)
             {
-                Console.WriteLine("Inventar: " + i.title);
+                Console.WriteLine("Inventar: " + i.Title);
             }
         }
 
         public static void dropItem(string _words, Location location, Avatar avatar)
         {
             showInventory(avatar);
-            Items findItem = avatar.Inventory.Find(x => x.title.Contains(_words));
+            Items findItem = avatar.Inventory.Find(x => x.Title.Contains(_words));
             // Items findSpecialItem = location.items.Find(x => x.title.Contains());
             if(findItem != null)
             {
-                Console.WriteLine("Find:" + findItem.title);
-                location.items.Add(findItem);
+                Console.WriteLine("Find:" + findItem.Title);
+                location.Items.Add(findItem);
                 avatar.Inventory.Remove(findItem);
             }
             else
@@ -62,11 +62,11 @@ namespace swd_endaufgabe
 
         public static void itemFinish(Location location, Avatar avatar)
         {
-            Items findItem = avatar.Inventory.Find(x => x.title.Contains("fileRachel"));
-            if(avatar.Inventory.Exists(x => x.title == "fileRachel"))
+            Items findItem = avatar.Inventory.Find(x => x.Title.Contains("fileRachel"));
+            if(avatar.Inventory.Exists(x => x.Title == "fileRachel"))
             {
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
-                Console.WriteLine(findItem.description);
+                Console.WriteLine(findItem.Description);
             }
         }
     }
