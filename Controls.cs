@@ -8,8 +8,6 @@ namespace swd_endaufgabe
         public static int ControlCounter = 0;
         public static string Input = "";
         public static string[] words;
-
-
         public static void GameControls()
         {
             ConsoleOutput.GameDescription();
@@ -153,7 +151,7 @@ namespace swd_endaufgabe
                     try{
                         if(words[1] != "")
                         {
-                            Location.UsedItems(words[1]);
+                            ItemsInteraction.UsedItems(words[1]);
                         }
                         else 
                         {
@@ -194,14 +192,13 @@ namespace swd_endaufgabe
                         break;
                 }
             }
-
         }
-            public static Array SplitInput()
-            {
-                string _input = Console.ReadLine();
-                words = _input.Split(' ');
-                return words;
-            }
+        public static Array SplitInput()
+        {
+            string _input = Console.ReadLine();
+            words = _input.Split(' ');
+            return words;
+        }
     }
 
 }

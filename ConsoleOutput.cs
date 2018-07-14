@@ -80,7 +80,8 @@ namespace swd_endaufgabe
         
         public static void AvatarLose()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Du wurdest besiegt");
             Console.ResetColor();  
         }

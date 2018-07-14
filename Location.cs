@@ -221,39 +221,39 @@ namespace swd_endaufgabe
             Console.WriteLine("");
         }
 
-        public static bool UsedItems(string _words)
-        {  
-            List<Items> needForBomb = new List<Items>();
-            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
-            if(findItem != null)
-            {
-                if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
-                {
-                    foreach(var i in Avatar.Characters["Max"].Inventory)
-                    {
-                        if(i.Bomb == true)
-                        {
-                            needForBomb.Add(i);
-                        }
-                    }
-                    foreach(var i in needForBomb)
-                    {
-                        if (i.Bomb == findItem.Bomb)
-                        {
-                            Avatar.Characters["Max"].Inventory.Remove(findItem);
-                        }
-                    }
-                    int sizeOfList = needForBomb.Count;
-                    if(sizeOfList == 1)
-                    {
-                        Console.WriteLine("Bombe Explodiert"); 
-                        return Location.rooms["Büro Rektor"].Open = true;
+        // public static bool UsedItems(string _words)
+        // {  
+        //     List<Items> needForBomb = new List<Items>();
+        //     Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+        //     if(findItem != null)
+        //     {
+        //         if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Sekretariat"].RoomNumber)
+        //         {
+        //             foreach(var i in Avatar.Characters["Max"].Inventory)
+        //             {
+        //                 if(i.Bomb == true)
+        //                 {
+        //                     needForBomb.Add(i);
+        //                 }
+        //             }
+        //             foreach(var i in needForBomb)
+        //             {
+        //                 if (i.Bomb == findItem.Bomb)
+        //                 {
+        //                     Avatar.Characters["Max"].Inventory.Remove(findItem);
+        //                 }
+        //             }
+        //             int sizeOfList = needForBomb.Count;
+        //             if(sizeOfList == 1)
+        //             {
+        //                 Console.WriteLine("Bombe Explodiert"); 
+        //                 return Location.rooms["Büro Rektor"].Open = true;
                         
-                    }
-                }
-            }
-            return false;
-        }
+        //             }
+        //         }
+        //     }
+        //     return false;
+        // }
     }
     
 }
