@@ -34,7 +34,7 @@ namespace swd_endaufgabe
         public static Location MapSetUp()
         {
             #region Object Rooms
-            Location aula = new Location
+            Location hallway = new Location
             (
                 0,
                 "Aula",
@@ -42,21 +42,21 @@ namespace swd_endaufgabe
                 true, true
             );
 
-            Location wc = new Location
+            Location restroom = new Location
             (
                 1,
                 "WC",
                 "Du Befindest dich in der Toilette", true ,true
             );
 
-            Location seitengang = new Location
+            Location sidePassage = new Location
             (
                 2,
                 "Seitengang", 
                 "Du befindest dich im Seitengang", true, true
             );
             
-            Location chemielabor = new Location
+            Location chemistryLab = new Location
             (
                 3,
                 "Chemielabor", 
@@ -68,13 +68,13 @@ namespace swd_endaufgabe
                 "Security", 
                 "Du befindest dich im Security", false, false
             );
-            Location sekretariat = new Location
+            Location office = new Location
             (
                 5,
                 "Sekretariat", 
                 "Du befindest dich im Sekretariat", true, true
             );
-            Location bueroRektor = new Location
+            Location principal = new Location
             (
                 6,
                 "Büro Rektor", 
@@ -155,66 +155,66 @@ namespace swd_endaufgabe
             );
             #endregion
 
-            aula.North= wc;
-            aula.East= sekretariat;
-            aula.West = seitengang;
-            aula.South= exit;
-            aula.Items.Add(soda);
+            hallway.North= restroom;
+            hallway.East= office;
+            hallway.West = sidePassage;
+            hallway.South= exit;
+            hallway.Items.Add(soda);
 
-            wc.South= aula;
-            wc.Items.Add(anleitung);
+            restroom.South= hallway;
+            restroom.Items.Add(anleitung);
 
-            seitengang.North= chemielabor;
-            seitengang.East= aula;
-            seitengang.South= security;
+            sidePassage.North= chemistryLab;
+            sidePassage.East= hallway;
+            sidePassage.South= security;
 
-            chemielabor.South= seitengang;
-            chemielabor.Items.AddRange(new List<Items>
+            chemistryLab.South= sidePassage;
+            chemistryLab.Items.AddRange(new List<Items>
             {
                 klebeband, sodiumChlorate
             });
 
-            security.North= seitengang;
+            security.North= sidePassage;
 
-            sekretariat.West = aula;
-            sekretariat.East= bueroRektor;
-            sekretariat.Items.AddRange(new List<Items>
+            office.West = hallway;
+            office.East= principal;
+            office.Items.AddRange(new List<Items>
             {
                 suggar, money, key
             });
 
-            bueroRektor.West = sekretariat;
-            bueroRektor.Items.AddRange(new List<Items>
+            principal.West = office;
+            principal.Items.AddRange(new List<Items>
             {
                 fileRachel, fileKate, fileChloe, fileMax, fileWarren
             });
 
-            exit.North= aula;
+            exit.North= hallway;
 
             rooms = new Dictionary<string, Location>();
-            rooms["Aula"] = aula;
-            rooms["WC"] = wc;
-            rooms["Seitengang"] = seitengang;
-            rooms["Chemielabor"] = chemielabor;
-            rooms["Sekretariat"] = sekretariat;
-            rooms["Büro Rektor"] = bueroRektor;
+            rooms["hallway"] = hallway;
+            rooms["WC"] = restroom;
+            rooms["Seitengang"] = sidePassage;
+            rooms["Chemielabor"] = chemistryLab;
+            rooms["Sekretariat"] = office;
+            rooms["Büro Rektor"] = principal;
             rooms["Exit"] = exit;
 
-            return aula;
+            return hallway;
         }
-        public static void DescribeLocation(Location location)
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("_______________________________________________________________________________________________________________________");
-            Console.WriteLine(location.Description);
+        // public static void DescribeLocation(Location location)
+        // {
+        //     Console.ForegroundColor = ConsoleColor.Blue;
+        //     Console.WriteLine("_______________________________________________________________________________________________________________________");
+        //     Console.WriteLine(location.Description);
 
-            foreach(var i in location.Items)
-            {
-                Console.WriteLine(i.Title);
-            }
-            Console.WriteLine("_______________________________________________________________________________________________________________________");
-            Console.ResetColor();
-        }
+        //     foreach(var i in location.Items)
+        //     {
+        //         Console.WriteLine(i.Title);
+        //     }
+        //     Console.WriteLine("_______________________________________________________________________________________________________________________");
+        //     Console.ResetColor();
+        // }
 
         public static void NeighborRoom(Location location)
         {

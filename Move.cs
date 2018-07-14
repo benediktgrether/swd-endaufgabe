@@ -27,7 +27,7 @@ namespace swd_endaufgabe
             // if(location.GameFinished == false)
             if(Location.rooms["Exit"].GameFinished == false)
             {
-                if((Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1")) && (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Aula"].RoomNumber))
+                if((Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Akte1")) && (Avatar.Characters["Max"].CurrentRoom == Location.rooms["hallway"].RoomNumber))
                 {
                     Console.WriteLine("Herzlichen Glückwunsch, du hast die Akte über Rachel gefunden. Das Spiel wird nun beendet.");
                     Environment.Exit(0);
@@ -44,7 +44,7 @@ namespace swd_endaufgabe
         {
             // CurrentRoom = characters["Max"].CurrentRoom;
             Avatar.Characters["Max"].CurrentRoom = location.RoomNumber;
-            Location.DescribeLocation(location);
+            ConsoleOutput.DescribeLocation(location);
             RandomRoom(location, avatar, enemy);
             
             return Avatar.Characters["Max"].CurrentRoom;

@@ -16,7 +16,7 @@ namespace swd_endaufgabe
             Location currentLocation = Location.MapSetUp();
             Avatar avatar = Avatar.setupAvatar();
             Enemy enemy = Enemy.SetupEnemy();
-            Location.DescribeLocation(currentLocation);
+            ConsoleOutput.DescribeLocation(currentLocation);
             for(;;)
             {
                 SplitInput();
@@ -114,13 +114,12 @@ namespace swd_endaufgabe
                             }
                             else
                             {
-                                // Items.TakeItem(words[1],currentLocation, avatar);
-                                Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
+                                ConsoleOutput.TakeWrongInput();
                             }
                         }
                         catch
                         {
-                            Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
+                            ConsoleOutput.TakeWrongInput();
                         }
                         break;
                     case "drop":
@@ -133,12 +132,12 @@ namespace swd_endaufgabe
                             }
                             else
                             {
-                                Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.");
+                                ConsoleOutput.DropWrongInput();
                             }
                         }
                         catch
                         {
-                            Console.WriteLine("Falsche Eingabe");
+                            ConsoleOutput.DropWrongInput();
                         }
                         break;
                     case "Inventory":
@@ -147,8 +146,7 @@ namespace swd_endaufgabe
                         break;
                     case "look":
                     case "l":
-                        // Location.ShowRoomInformation(currentLocation);
-                        Location.DescribeLocation(currentLocation);
+                        ConsoleOutput.DescribeLocation(currentLocation);
                         break;
                     case "used":
                     case "u":
@@ -159,12 +157,12 @@ namespace swd_endaufgabe
                         }
                         else 
                         {
-                            Console.WriteLine("Bitte Eintragen was Sie gerne benützen wollen. Mit i können Sie schauen was in Ihrem Inventar drin ist.");
+                            ConsoleOutput.UsedWrongInput();
                         }
                     }
                     catch
                     {
-                        Console.WriteLine("Falsche Eingabe");
+                        ConsoleOutput.UsedWrongInput();
                     }
                         break;
                     case "help":

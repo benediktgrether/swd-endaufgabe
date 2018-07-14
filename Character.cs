@@ -25,7 +25,7 @@ namespace swd_endaufgabe
         public static Avatar setupAvatar()
         {
             Avatar max = new Avatar(
-                "Max", 3, 0, Location.rooms["Aula"]
+                "Max", 3, 0, Location.rooms["hallway"]
             );
             Characters = new Dictionary<string, GameChar>();
             Characters["Max"] = max;
