@@ -38,7 +38,7 @@ namespace swd_endaufgabe
             (
                 0,
                 "Aula",
-                "Du befindest dich gerade in der Aula",
+                "Du befindest dich gerade in der Aula der Blackwall Academy. Du siehst:",
                 true, true
             );
 
@@ -46,21 +46,21 @@ namespace swd_endaufgabe
             (
                 1,
                 "WC",
-                "Du Befindest dich in der Toilette", true ,true
+                "Du Befindest dich in der Frauen Toilette. In dem Raum siehst du folgende Sachen:", true ,true
             );
 
             Location sidePassage = new Location
             (
                 2,
                 "Seitengang", 
-                "Du befindest dich im Seitengang", true, true
+                "Du befindest dich im linken Seitenflügel der Aula. Hier gibt es verbindungen zu den Unterrichtsräumen und zum Aufenthaltsraum der Wachmänner. Du siehst:", true, true
             );
             
             Location chemistryLab = new Location
             (
                 3,
                 "Chemielabor", 
-                "Du befindest dich im Chemielabor", true, true
+                "Der Chemielabor der Blackwall Academy besitzt über die neusten Gerätschaften. Diese wurden von den Finanziellen Spenden der Familie Prescott gekauft. Du siehst: ", true, true
             );
             Location security = new Location
             (
@@ -93,27 +93,27 @@ namespace swd_endaufgabe
             #region Object Items
             Items soda = new Items
             (
-                "Soda", "xxx", true, true
+                "Limonade", "Eine Limonade, umgangssprachlich auch kurz Limo, ist ein alkoholfreies, gesüßtes und meist mit Kohlensäure versetztes Erfrischungsgetränk mit Fruchtauszügen auf Basis von Wasser.\nIm ursprünglichen Wortsinn ist Limonade ein Getränk aus mit Wasser verdünntem Zitronensaft.\nZu den Limonaden gehören auch die coffeinhaltigen Colagetränke und die meisten Energy-Drinks. Oft werden Limonaden zudem mit anderen Getränken gemischt. Verwandt mit der Limonade ist die Brause, die aber auch künstliche oder naturidentische Aroma- und Farbstoffe enthalten darf.", true, true
             ); 
 
-            Items anleitung = new Items
+            Items paper = new Items
             (
-                "Anleitung", 
-                "Hier ist eine Anleitung zum Bauen einer Bombe.\nDu benötigtst dafür\nZucker\nSoda Can\nPanzertape\nNatriumchlorat\n", 
+                "Papier", 
+                "Auf der vorderseite sieht man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du Folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n-Science Guy", 
                 true, false
             );
 
-            Items klebeband = new Items
+            Items ductTape = new Items
             (
-                "Klebeband", "xxx", true, true
+                "Klebeband", "Klebeband ist eine Sammelbezeichnung für ein- oder beidseitig mit Haftklebstoffen beschichtete, streifenförmige Trägermaterialien, z. B. aus Kunststofffolien bzw. -schäumen, Papier, Metallfolien oder Textilgewebe.\nIn der industriellen Fertigung kommen auch sogenannte Transferklebebänder zum Einsatz: trägerfreie, dünne Haftklebstofffilme, die vor der Verarbeitung beidseitig mit gewachstem oder silikonisiertem Schutzpapier abgedeckt werden", true, true
             );
 
             Items sodiumChlorate = new Items
             (
-                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.", true , true
+                "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.\nNatriumchlorid bildet farblose Kristalle, die eine kubische Natriumchlorid-Struktur ausbilden. Sie sind, im Gegensatz zu vielen anderen Kristallen, nicht doppelbrechend. Hierbei ist jeder Natrium- sowie jeder Chlorkern oktaedrisch vom jeweils anderen Kern umgeben. Es ist sehr gut wasserlöslich. Natriumchlorid besitzt den typischen Salzgeschmack.", true , true
             );
 
-            Items suggar = new Items
+            Items sugar = new Items
             (
                 "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
                 true, true
@@ -121,37 +121,37 @@ namespace swd_endaufgabe
 
             Items money = new Items
             (
-                "1€", "Geldmünze mit dem Wert von 1 €", true , false
+                "1$", "Geldmünze mit dem Wert von 1$ die von der Federal Reserve System (Zentralbank-System der Vereinigten Staaten) herrausgegeben wird.", true , false
             );
 
             Items key = new Items
             (
-                "Schlüssel", "Schlüssel", true , false
+                "Schlüssel", "Schlüssel zum Aufschließen eines Raumes\nVielleicht ist das der Schlüssel um in den Raum des Schulleiters zu kommen.", true , false
             );
 
             Items fileRachel = new Items
             (
-                "Akte0", "Akte über die Schullaufbahn von Rachel mit dem verweis das Sie vermisst wird.", true, false
+                "Akte0", "-----------------\nRachel Amber - geboren am 22. Juli 1994 - \n-----------------\n(Notizzetel - Wird seit dem 22. April, 2013 vermisst)\n-----------------\nRachel Amber ist eine aufgeschlossen Schülerin. Sie hatte die letzten Jahre immer sehr gute Leistungen in allen Fächern. Ihre größte Stärke war das Schauspielen. Sie spielte die letzten Jahre immer die Hauptprotagonistin in unseren Sommerlichen Bühnenaufführung.\n-----------------\n1 Jahr vor ihrem verschwinden, veränderte sich Rachel als sie zusammen mit Chloe unterwegs war. Sie blieb öfters dem Unterricht fern und war eine Zeitlang in Behandlung.\n-----------------", true, false
             );
 
             Items fileChloe = new Items
             (
-                "Akte1", "Akte über die Schullaufbahn von Chloe und ein vermerk das Sie von der Schule geflogen ist.", true, false
+                "Akte1", "-----------------\nChloe Elizabeth Price - geboren am 11. März 1994 -\n-----------------\nChloe Elizabeth Price war zu beginn ihrer Schullaufbahn auf der Blackwell Academy eine ausgezeichnete Schülerin.\nNach dem Tod ihres Vaters - William Price - und der neuen Heirat ihrer Mutter mit unserem Wachmann David Madsen wurden ihre Schulischen Leistungen immer schlechter. Desweiteren blieb sie immer öfters der Schule fern. Nach dem letzten Fernbleiben zusammen mit Rachel Amber wurde Chloe Elizabeth Price von der Schule verwiesen\n-----------------", true, false
             );
 
             Items fileMax = new Items
             (
-                "Akte2", "Akte über die Schullaufbahn von Max", true, false
+                "Akte2", "-----------------\nMaxine Caulfield - geboren 21. September 1995 -\n-----------------\nMaxine Caulfield ist zurück nach Arcadia Bay gezogen und hat sich in dem Kunstfach Fotografie eingeschrieben.\n-----------------", true, false
             );
 
             Items fileWarren = new Items
             (
-                "Akte3", "Akte über die Schullaufbahn von Warren und ein vermerk über seine besonderen Leistung im Chemiefach", true, false
+                "Akte3", "-----------------\nWarren Graham - geboren am 20. November 1996 -\n-----------------\nWarren ist ein hochintelligenter Schüler der Blackwall Academy. Er hat schon einige Preise für unsere Schule bei nationalen Wissenschaftswettbewerben gewonnen.\n-----------------", true, false
             );
 
             Items fileKate = new Items
             (
-                "Akte4", "Akte über die Schullaufbahn von Kate, mit dem verweis das sie gemobbt worden ist.", true, false
+                "Akte4", "-----------------\nKate Beverly Marsh - geboren am 12. September 1995 -\n-----------------\nKate Beverly Marsh wird wegen einem viralen Video zurzeit an unsere Schule gemobbt. Sie selber sagt über das geschehen aus das Sie keine erinnerung daran habe. Ein Drogentest im Krankenhaus hat ergeben das ihr Drogen verabreicht worden sind. Kate ist seit dem sehr introvertiert geworden.\n-----------------\nKate Beverly Marsh befindet sich nach einem Suizid versuch in psychologischer Behandlung.\n-----------------", true, false
             );
             #endregion
 
@@ -162,7 +162,7 @@ namespace swd_endaufgabe
             hallway.Items.Add(soda);
 
             restroom.South= hallway;
-            restroom.Items.Add(anleitung);
+            restroom.Items.Add(paper);
 
             sidePassage.North= chemistryLab;
             sidePassage.East= hallway;
@@ -171,7 +171,7 @@ namespace swd_endaufgabe
             chemistryLab.South= sidePassage;
             chemistryLab.Items.AddRange(new List<Items>
             {
-                klebeband, sodiumChlorate
+                ductTape, sodiumChlorate
             });
 
             security.North= sidePassage;
@@ -180,7 +180,7 @@ namespace swd_endaufgabe
             office.East= principal;
             office.Items.AddRange(new List<Items>
             {
-                suggar, money, key
+                sugar, money, key
             });
 
             principal.West = office;
