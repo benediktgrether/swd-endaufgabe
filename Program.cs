@@ -7,7 +7,7 @@ namespace swd_endaufgabe
     {
         static void Main(string[] args)
         {
-            Controls.gameControls();
+            Controls.GameControls();
         }
     }
 }

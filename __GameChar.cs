@@ -57,7 +57,7 @@
 //             if(active == true)
 //             { 
 //                 Random rnd = new Random();
-//                 int enemyRandomRoom = rnd.Next(0, 6);
+//                 int EnemyRandomRoom = rnd.Next(0, 6);
 //                 // In dem Raum wo er schon drin war, darf er nicht mehr rein.
 //                 if(Controls.ControlCounter > 2)
 //                 {
@@ -68,7 +68,7 @@
 //                     }
 //                     else
 //                     {    
-//                         _CurrentRoom = enemyRandomRoom;
+//                         _CurrentRoom = EnemyRandomRoom;
 //                         Console.WriteLine("Security is in Room :" + _CurrentRoom);
 
 //                         if (_CurrentRoom == Max._CurrentRoom)

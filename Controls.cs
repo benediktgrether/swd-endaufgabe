@@ -10,7 +10,7 @@ namespace swd_endaufgabe
         public static string[] words;
 
 
-        public static void gameControls()
+        public static void GameControls()
         {
             Console.WriteLine("Willkommen in der Blackwall Academy\nDu befindest dich gerade im Eingangsbereich der Schule.\nDu sollst in das Büro der Rektors einbrechen. Viel erfolg dabei");
             Location currentLocation = Location.MapSetUp();

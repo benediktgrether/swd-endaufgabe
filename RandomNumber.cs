@@ -7,14 +7,14 @@ namespace swd_endaufgabe
         public static Random rnd = new Random();
         public static int GetEnemyRandomRoom()
         {
-            int enemyRandomRoom = rnd.Next(0, 6);
-            return enemyRandomRoom;
+            int EnemyRandomRoom = rnd.Next(0, 6);
+            return EnemyRandomRoom;
         }
 
         public static int getAttackRandomNumber()
         {
-            int attackRandomNumber = rnd.Next(0,3);
-            return attackRandomNumber;
+            int AttackRandomNumber = rnd.Next(0,3);
+            return AttackRandomNumber;
         }
     }
 }
