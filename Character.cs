@@ -14,7 +14,6 @@ namespace swd_endaufgabe
 
     class Avatar : GameChar
     {
-        //To Do - Methoden
         public static Dictionary<string, GameChar> Characters;
         public Avatar(string _name, int _health, int _currentRoom, Location _room)
         {
@@ -32,17 +31,6 @@ namespace swd_endaufgabe
             Characters["Max"] = max;
             return max;
         }
-
-        
-        // public int SetMaxRoom(Location location, Avatar avatar, Enemy enemy)
-        // {
-        //     // CurrentRoom = characters["Max"].CurrentRoom;
-        //     CurrentRoom = location.RoomNumber;
-        //     Location.DescribeLocation(location);
-        //     enemy.RandomRoom(location, avatar, enemy);
-            
-        //     return CurrentRoom;
-        // }
     }
 
     class Enemy : GameChar
@@ -87,33 +75,5 @@ namespace swd_endaufgabe
             Characters["David"] = david;
             return david;
         }
-        // public int RandomRoom(Location location, Avatar avatar, Enemy enemy)
-        // {
-
-        //     int _randomNumber = RandomNumber.GetEnemyRandomRoom();
-        //     if(Life == true)
-        //     {
-        //         if(Controls.ControlCounter > 5)
-        //         {
-        //             if(counter == 0)
-        //             {
-        //                 CurrentRoom = 2;
-        //                 Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
-        //             }
-        //             else
-        //             {
-        //                 CurrentRoom = _randomNumber;
-        //                 Console.WriteLine("Security is in Room :" + CurrentRoom);
-
-        //                 if(CurrentRoom == avatar.CurrentRoom)
-        //                 {
-        //                     Attack.EnemyAttack(avatar, enemy);
-        //                 }
-        //             }
-        //             return counter ++;
-        //         }
-        //     }
-        //     return counter = 0;
-        // }
     }
 }

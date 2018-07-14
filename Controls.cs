@@ -114,7 +114,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                Items.TakeItem(words[1],currentLocation, avatar);
+                                ItemsInteraction.TakeItem(words[1],currentLocation, avatar);
                             }
                             else
                             {
@@ -133,7 +133,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                Items.DropItem(words[1],currentLocation, avatar);
+                                ItemsInteraction.DropItem(words[1],currentLocation, avatar);
                             }
                             else
                             {
@@ -147,7 +147,7 @@ namespace swd_endaufgabe
                         break;
                     case "Inventory":
                     case "i":
-                        Items.ShowInventory(avatar);
+                        ItemsInteraction.ShowInventory(avatar);
                         break;
                     case "look":
                     case "l":
@@ -196,7 +196,7 @@ namespace swd_endaufgabe
                         break;
 
                     case "test":
-                        Attack.LootEnemy(words[1], currentLocation, enemy);
+                        ItemsInteraction.LootEnemy(words[1], currentLocation, enemy);
                         break;
                 }
             }
@@ -208,25 +208,6 @@ namespace swd_endaufgabe
                 words = _input.Split(' ');
                 return words;
             }
-
-            // public Controls testMethod(Location Location, Avatar avatar, Enemy enemy)
-            // {
-            //     if (direction != null)
-            //     {
-            //         if(Location.SetDirection(direction, avatar) == false)
-            //         {
-            //             return;
-            //         }
-            //         else
-            //         {
-            //         Controls.currentLocation = direction;
-            //         avatar.SetMaxRoom(direction, avatar, enemy);
-            //         // ControlCounter ++;
-            //         }
-            //     }
-
-            // }
-
     }
 
 }

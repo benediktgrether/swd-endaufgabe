@@ -11,7 +11,7 @@ namespace swd_endaufgabe
             return EnemyRandomRoom;
         }
 
-        public static int getAttackRandomNumber()
+        public static int GetAttackRandomNumber()
         {
             int AttackRandomNumber = rnd.Next(0,3);
             return AttackRandomNumber;
