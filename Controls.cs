@@ -182,7 +182,7 @@ namespace swd_endaufgabe
                                 }
                                 else
                                 {
-                                    Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
+                                    Console.WriteLine("Du kannst diesen Knopf nicht benützten. Bitte drücke h für Hilfe!");
                                     break;
                                 }
                             }
@@ -211,7 +211,7 @@ namespace swd_endaufgabe
                         }
                         break;
                     default:
-                        Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
+                        Console.WriteLine("Du kannst diesen Knopf nicht benützten. Bitte drücke h für Hilfe!");
                         break;
                 }
             }
