@@ -190,6 +190,10 @@ namespace swd_endaufgabe
             (
                 "Brief an Kate", "...", true, false
             );
+            Items extinguisher = new Items
+            (
+                "Feuerlöscher", "Feuerlöscher", true, false
+            );
             #endregion
 
             hallway.North= restroom;
