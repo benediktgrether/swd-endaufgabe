@@ -17,11 +17,11 @@ namespace swd_endaufgabe
             return AttackRandomNumber;
         }
 
-        public static int GetRandomFileNumber()
-        {
-            int RandomFileNumber = rnd.Next(0,5);
-            return RandomFileNumber;
+        // public static int GetRandomFileNumber()
+        // {
+        //     int RandomFileNumber = rnd.Next(0,5);
+        //     return RandomFileNumber;
 
-        }
+        // }
     }
 }
