@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>0</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>GameCharacter
+-
++ Name : string
++ Health : int 
++ Inventory : List &lt;Items&gt;
++ CurrentRoom : int 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>240</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Enemy
+-
+- count : int
++ Life: bool
++ JobTitle : string
++ Character: Dictionary
+-
++ SetUp Enemy(): Enemy
++ Enemy RandomMove(): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>110</y>
+      <w>110</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>240</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Avatar
+-
++ Characters : Dictionary
+-
++ AvatarSetUp(): Avater
++ AvatarMove(): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>110</y>
+      <w>100</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>510</y>
+      <w>240</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Attack
+-
++ EnemyCurrentRoom(): void
++ Attack Enemy(): void
++ CheckWin(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>320</y>
+      <w>170</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=0
+m2=1..n
+startet Angriff v</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;190.0</additional_attributes>
+  </element>
+</diagram>
