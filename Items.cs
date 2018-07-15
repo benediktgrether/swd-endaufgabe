@@ -11,13 +11,13 @@ namespace swd_endaufgabe
         public bool Used;
         public bool Bomb;
 
-        public Items(string _interactionName, string _title, string _description, bool _used, bool _bomb)
+        public Items(string interactionName, string title, string description, bool used, bool bomb)
         {
-            InteractionName = _interactionName;
-            Title = _title;
-            Description = _description;
-            Used = _used;
-            Bomb = _bomb;
+            InteractionName = interactionName;
+            Title = title;
+            Description = description;
+            Used = used;
+            Bomb = bomb;
         }
         public static void TakeItem(string _words, Location location, Avatar avatar)
         {

@@ -15,11 +15,11 @@ namespace swd_endaufgabe
     class Avatar : GameChar
     {
         public static Dictionary<string, GameChar> Characters;
-        public Avatar(string _name, int _health, int _currentRoom)
+        public Avatar(string name, int health, int currentRoom)
         {
-            Name = _name;
-            Health = _health;
-            CurrentRoom = _currentRoom;
+            Name = name;
+            Health = health;
+            CurrentRoom = currentRoom;
 
         }
         public static Avatar setupAvatar()
@@ -33,7 +33,6 @@ namespace swd_endaufgabe
         }
         public static int AvatarMove(Location location, Avatar avatar, Enemy enemy)
         {
-            // CurrentRoom = characters["Max"].CurrentRoom;
             Avatar.Characters["Max"].CurrentRoom = location.RoomNumber;
             ConsoleOutput.DescribeLocation(location);
             Enemy.EnemyMoveRandomRoom(location, avatar, enemy);
@@ -44,18 +43,18 @@ namespace swd_endaufgabe
 
     class Enemy : GameChar
     {
-        private int counter;
+        private int _counter;
         public bool Life;
         public string JobTitle; 
         public static Dictionary<string, GameChar> Characters;
 
-        public Enemy(string _name, int _health, int _currentRoom, bool _life, string _jobTitel)
+        public Enemy(string name, int health, int currentRoom, bool life, string jobTitel)
         {
-            Name = _name;
-            Health = _health;
-            CurrentRoom = _currentRoom;
-            Life = _life;
-            JobTitle = _jobTitel;
+            Name = name;
+            Health = health;
+            CurrentRoom = currentRoom;
+            Life = life;
+            JobTitle = jobTitel;
         }
 
         public static Enemy SetupEnemy()
@@ -86,28 +85,28 @@ namespace swd_endaufgabe
         }
         public static int EnemyMoveRandomRoom(Location location, Avatar avatar, Enemy enemy)
         {
-            int _randomNumber = RandomNumber.GetEnemyRandomRoom();
+            // int _randomNumber = RandomNumber.GetEnemyRandomRoom();
             if(enemy.Life == true)
             {
                 if(Controls.ControlCounter > 5)
                 {
-                    if(enemy.counter == 0)
+                    if(enemy._counter == 0)
                     {
                         Enemy.Characters["David"].CurrentRoom = 2;
                         Console.WriteLine("Die Tür des Sicherheitsbüro öffnet sich und der Wachman tritt heraus.\nEr befindet sich nun im Seitengang, und macht einen zufälligen Rundgang durch die Schule.");
                     }
                     else
                     {
-                        Enemy.Characters["David"].CurrentRoom = _randomNumber;
+                        Enemy.Characters["David"].CurrentRoom = RandomNumber.GetEnemyRandomRoom();
                         if(Enemy.Characters["David"].CurrentRoom == Avatar.Characters["Max"].CurrentRoom)
                         {
                             Attack.EnemyCurrentRoom(avatar, enemy);
                         }
                     }
-                    return enemy.counter ++;
+                    return enemy._counter ++;
                 }
             }
-            return enemy.counter = 0;
+            return enemy._counter = 0;
         }
     }
 }

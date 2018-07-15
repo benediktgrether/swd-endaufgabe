@@ -22,13 +22,13 @@ namespace swd_endaufgabe
         public List<Items> Items = new List<Items>();
         public static Dictionary<string, Location> rooms;
 
-        public Location(int _roomNumber, string _title, string _description, bool _open, bool _GameFinished)
+        public Location(int roomNumber, string title, string description, bool open, bool gameFinished)
         {
-            RoomNumber = _roomNumber;
-            Title = _title;
-            Description = _description;
-            Open = _open;
-            GameFinished = _GameFinished;
+            RoomNumber = roomNumber;
+            Title = title;
+            Description = description;
+            Open = open;
+            GameFinished = gameFinished;
 
         }
         public static Location MapSetUp()

@@ -13,7 +13,7 @@ namespace swd_endaufgabe
             Console.WriteLine("attack (a) <name>");
         }
         public static void AttackEnemy(string _words, Location location, Avatar avatar, Enemy enemy){
-            string []arr = new string[]{"stein","schere","papier"};
+            string []_arr = new string[]{"stein","schere","papier"};
             Console.WriteLine("Dieser Kampf basiert auf Stein, Schere,Papier.");
             if(_words.ToLower() == enemy.Name.ToLower())
             {
@@ -28,26 +28,26 @@ namespace swd_endaufgabe
                         Environment.Exit(0);
                     }
                     
-                    else if(Input != arr[0] && Input != arr[1] && Input != arr[2])
+                    else if(Input != _arr[0] && Input != _arr[1] && Input != _arr[2])
                     {
                         Console.WriteLine("Wrong Input.");
                     }
                     
-                    else if(Input == arr[i])
+                    else if(Input == _arr[i])
                     {
                         ConsoleOutput.AttackDraw();
                     }
                     
-                    else if((Input == arr[0]) && (arr[1] == arr[i]) || (Input == arr[1]) && (arr[2] == arr[i]) || (Input == arr[2]) && (arr[0] == arr[i]))
+                    else if((Input == _arr[0]) && (_arr[1] == _arr[i]) || (Input == _arr[1]) && (_arr[2] == _arr[i]) || (Input == _arr[2]) && (_arr[0] == _arr[i]))
                     {
                         Enemy.Characters[_words].Health  = Enemy.Characters[_words].Health - 1;
-                        ConsoleOutput.EnemyHit(Input, arr[i]);
+                        ConsoleOutput.EnemyHit(Input, _arr[i]);
                     }
                     
                     else
                     {
                         Avatar.Characters["Max"].Health = Avatar.Characters["Max"].Health - 1;
-                        ConsoleOutput.AvatarHit(Input, arr[i]);
+                        ConsoleOutput.AvatarHit(Input, _arr[i]);
                     }
                     checkWin(_words, location, enemy);
                 return;
