@@ -93,24 +93,24 @@ namespace swd_endaufgabe
             #region Object Items
             Items soda = new Items
             (
-                "limonade", "Limonade", "Eine Limonade, umgangssprachlich auch kurz Limo, ist ein alkoholfreies, gesüßtes und meist mit Kohlensäure versetztes Erfrischungsgetränk mit Fruchtauszügen auf Basis von Wasser.\nIm ursprünglichen Wortsinn ist Limonade ein Getränk aus mit Wasser verdünntem Zitronensaft.\nZu den Limonaden gehören auch die coffeinhaltigen Colagetränke und die meisten Energy-Drinks. Oft werden Limonaden zudem mit anderen Getränken gemischt. Verwandt mit der Limonade ist die Brause, die aber auch künstliche oder naturidentische Aroma- und Farbstoffe enthalten darf.", true, true
+                "limonade", "Limonade", "-----------------\nEine Limonade, umgangssprachlich auch kurz Limo, ist ein alkoholfreies, gesüßtes und meist mit Kohlensäure versetztes Erfrischungsgetränk mit Fruchtauszügen auf Basis von Wasser.\nIm ursprünglichen Wortsinn ist Limonade ein Getränk aus mit Wasser verdünntem Zitronensaft.\nZu den Limonaden gehören auch die coffeinhaltigen Colagetränke und die meisten Energy-Drinks. Oft werden Limonaden zudem mit anderen Getränken gemischt. Verwandt mit der Limonade ist die Brause, die aber auch künstliche oder naturidentische Aroma- und Farbstoffe enthalten darf.\n-----------------", true, true
             ); 
 
             Items paper = new Items
             (
                 "papier", "Papier", 
-                "Auf der Vorderseite erkennt man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n- Science Guy", 
+                "\n-----------------Auf der Vorderseite erkennt man eine Zeichnung einer Bombe\n-----------------\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir\n-----------------. \n- Science Guy", 
                 true, false
             );
 
             Items ductTape = new Items
             (
-                "klebeband", "Klebeband", "Klebeband ist eine Sammelbezeichnung für ein- oder beidseitig mit Haftklebstoffen beschichtete, streifenförmige Trägermaterialien, z. B. aus Kunststofffolien bzw. -schäumen, Papier, Metallfolien oder Textilgewebe.\nIn der industriellen Fertigung kommen auch sogenannte Transferklebebänder zum Einsatz: trägerfreie, dünne Haftklebstofffilme, die vor der Verarbeitung beidseitig mit gewachstem oder silikonisiertem Schutzpapier abgedeckt werden", true, true
+                "klebeband", "Klebeband", "-----------------\nKlebeband ist eine Sammelbezeichnung für ein- oder beidseitig mit Haftklebstoffen beschichtete, streifenförmige Trägermaterialien, z. B. aus Kunststofffolien bzw. -schäumen, Papier, Metallfolien oder Textilgewebe.\nIn der industriellen Fertigung kommen auch sogenannte Transferklebebänder zum Einsatz: trägerfreie, dünne Haftklebstofffilme, die vor der Verarbeitung beidseitig mit gewachstem oder silikonisiertem Schutzpapier abgedeckt werden\n-----------------", true, true
             );
 
             Items sodiumChlorate = new Items
             (
-                "natriumchlorid","Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.\nNatriumchlorid bildet farblose Kristalle, die eine kubische Natriumchlorid-Struktur ausbilden. Sie sind, im Gegensatz zu vielen anderen Kristallen, nicht doppelbrechend. Hierbei ist jeder Natrium- sowie jeder Chlorkern oktaedrisch vom jeweils anderen Kern umgeben. Es ist sehr gut wasserlöslich. Natriumchlorid besitzt den typischen Salzgeschmack.", true , true
+                "natriumchlorid","Natriumchlorid", "-----------------\nNatriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.\nNatriumchlorid bildet farblose Kristalle, die eine kubische Natriumchlorid-Struktur ausbilden. Sie sind, im Gegensatz zu vielen anderen Kristallen, nicht doppelbrechend. Hierbei ist jeder Natrium- sowie jeder Chlorkern oktaedrisch vom jeweils anderen Kern umgeben. Es ist sehr gut wasserlöslich. Natriumchlorid besitzt den typischen Salzgeschmack.\n-----------------", true , true
             );
             
             Items letterForKate = new Items
@@ -124,18 +124,18 @@ namespace swd_endaufgabe
 
             Items sugar = new Items
             (
-                "zucker", "Zucker", "Als Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.",
+                "zucker", "Zucker", "-----------------\nAls Zucker wird neben verschiedenen anderen Zuckerarten ein süß schmeckendes, kristallines Lebensmittel bezeichnet, das aus Pflanzen gewonnen wird und hauptsächlich aus Saccharose besteht.\n-----------------",
                 true, true
             );
 
             Items money = new Items
             (
-                "1$", "1$", "Geldmünze mit dem Wert von 1$ die von der Federal Reserve System (Zentralbank-System der Vereinigten Staaten) herrausgegeben wird.", true , false
+                "1$", "1$", "-----------------\nGeldmünze mit dem Wert von 1$ die von der Federal Reserve System (Zentralbank-System der Vereinigten Staaten) herrausgegeben wird.\n-----------------", true , false
             );
 
             Items key = new Items
             (
-                "schlüssel", "Schlüssel", "Schlüssel zum Aufschließen eines Raumes\nVielleicht ist das der Schlüssel um in den Raum des Schulleiters zu kommen.", true , false
+                "schlüssel", "Schlüssel", "-----------------\nSchlüssel zum Aufschließen eines Raumes\nVielleicht ist das der Schlüssel um in den Raum des Schulleiters zu kommen.\n-----------------", true , false
             );
 
             Items fileRachel = new Items

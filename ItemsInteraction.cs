@@ -10,13 +10,13 @@ namespace swd_endaufgabe
             Items _findItem = location.Items.Find(x => x.InteractionName.Contains(_words.ToLower()));
             if(_findItem != null && _findItem.Used == true)
             {
-                Console.WriteLine("Du hast " + _findItem.Title + " zu deinem Inventar hinzugefügt.");
+                Console.WriteLine("Du hast " + _findItem.Title + " zu deinem Inventar hinzugefügt.\n-----------------");
                 avatar.Inventory.Add(_findItem);
                 location.Items.Remove(_findItem);
             }
             else if( _findItem.Used == false)
             {
-                Console.WriteLine("Du kannst das Objekt nicht in deinem Inventar hinzufügen!");
+                Console.WriteLine("Du kannst das Objekt nicht in deinem Inventar hinzufügen!\n-----------------");
             }
             else
             {
@@ -31,7 +31,7 @@ namespace swd_endaufgabe
             {
                 Console.Write(i.Title + " | ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n-----------------");
         }
 
         public static void DropItem(string _words, Location location)
@@ -40,7 +40,7 @@ namespace swd_endaufgabe
             Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.InteractionName.Contains(_words.ToLower()));
             if(findItem != null)
             {
-                Console.WriteLine("Du hast " + findItem.Title + " aus deinem Inventar entfernt.");
+                Console.WriteLine("Du hast " + findItem.Title + " aus deinem Inventar entfernt.\n-----------------");
                 location.Items.Add(findItem);
                 Avatar.Characters["Max"].Inventory.Remove(findItem);
             }
@@ -57,7 +57,7 @@ namespace swd_endaufgabe
                 if (Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words)) == Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1")))
                 { 
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine("Du hast die Richtige Akte gefunden");
+                    Console.WriteLine("-----------------\nDu hast die Richtige Akte gefunden\n-----------------");
                     Console.ResetColor();
                     Console.WriteLine(findItem.Description);
                 }
@@ -69,7 +69,7 @@ namespace swd_endaufgabe
         }
         public static void LootEnemy(string _words, Location location)
         {
-            Console.WriteLine("Der Gegener hat einige Items droppen lassen");
+            Console.WriteLine("Der Gegener hat einige Items droppen lassen\n-----------------");
             foreach(var i in Enemy.Characters[_words].Inventory)
             {
                 location.Items.Add(i);
@@ -99,13 +99,19 @@ namespace swd_endaufgabe
                             Avatar.Characters["Max"].Inventory.Remove(findItem);
                         }
                     }
-                    int sizeOfList = needForBomb.Count;
-                    if(sizeOfList == 1)
+                    int _sizeOfList = needForBomb.Count;
+                    if(_sizeOfList == 1)
                     {
-                        Console.WriteLine(sizeOfList);
-                        Console.WriteLine("Bombe Explodiert"); 
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("-----------------\nBombe Explodiert\n-----------------"); 
+                        Console.ResetColor();
+                        Console.WriteLine("Die Tür ist nun offen und du kannst rein gehen.");
                         return Location.rooms["Büro Schulleiter"].Open = true;   
                     }
+                }
+                else
+                {
+                    Console.WriteLine("used (u) kann nur im Sektretariat angewendet werden.\n-----------------");
                 }
             }
             return false;

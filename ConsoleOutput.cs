@@ -30,21 +30,21 @@ namespace swd_endaufgabe
         public static void TakeWrongInput()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.");
+            Console.WriteLine("Bitte Eintragen was Sie gerne aufnehmen möchten. Mit look(l) können Sie sich umschauen.Mit take <item> können Sie etwas aufnehmen.\n-----------------");
             Console.ResetColor();
         }
 
         public static void DropWrongInput()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Bitte Eintragen was Sie gerne in den Raum legen möchten. Mit inventory(i) können Sie schauen was alles im Inventar vorhanden ist.\nMit drop(d) <item> können Sie das Item hier ablegen.");
+            Console.WriteLine("Bitte Eintragen was Sie gerne in den Raum legen möchten. Mit inventory(i) können Sie schauen was alles im Inventar vorhanden ist.\nMit drop(d) <item> können Sie das Item hier ablegen.\n-----------------");
             Console.ResetColor();
         }
 
         public static void UsedWrongInput()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Bitte Eintragen was Sie gerne benützen möchten. Mit inventory(i) können Sie schauen was alles im Inventar vorhanden ist.\nMit used(u) <item> können Sie das Item benützen.");
+            Console.WriteLine("Bitte Eintragen was Sie gerne benützen möchten. Mit inventory(i) können Sie schauen was alles im Inventar vorhanden ist.\nMit used(u) <item> können Sie das Item benützen.\n-----------------");
             Console.ResetColor();   
         }
 
@@ -58,21 +58,21 @@ namespace swd_endaufgabe
         public static void AttackDraw()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Draw");
+            Console.WriteLine("Draw\n-----------------");
             Console.ResetColor();
         }
 
         public static void EnemyHit(string Input, string arr)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Input.ToUpper() + " schlägt " + arr.ToUpper());
+            Console.WriteLine(Input.ToUpper() + " schlägt " + arr.ToUpper() + "\n-----------------");
             Console.ResetColor();
         }
 
         public static void AvatarHit(string Input, string arr)
         {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr.ToUpper());
+        Console.WriteLine(Input.ToUpper() + " verliert gegen " + arr.ToUpper() + "\n-----------------");
         Console.ResetColor();
         }
 
@@ -88,7 +88,7 @@ namespace swd_endaufgabe
         public static void AvatarLose()
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Du wurdest besiegt");
             Console.ResetColor();  
         }
