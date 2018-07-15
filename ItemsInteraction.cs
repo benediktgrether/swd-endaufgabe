@@ -52,10 +52,9 @@ namespace swd_endaufgabe
 
         public static void FindFile(string _words)
         {
-            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
-            Avatar.Characters["Max"].Inventory.Add(findItem);           
+            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));          
             if (Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words)) == Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1")))
-            {
+            { 
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Du hast die Richtige Akte gefunden");
                 Console.ResetColor();
