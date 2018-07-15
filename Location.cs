@@ -178,6 +178,18 @@ namespace swd_endaufgabe
             (
                 "Reagenzgläser", "", false, false
             );
+            Items chemistryBurner = new Items
+            (
+                "Bunsenbrenner", "", false, false
+            );
+            Items formulary = new Items
+            (
+                "Formelsammlung", "", false, false
+            );
+            Items letterForKate = new Items
+            (
+                "Brief an Kate", "...", true, false
+            );
             #endregion
 
             hallway.North= restroom;
@@ -203,7 +215,7 @@ namespace swd_endaufgabe
             chemistryLab.South= sidePassage;
             chemistryLab.Items.AddRange(new List<Items>
             {
-                ductTape, sodiumChlorate, microscope, testTubes
+                ductTape, sodiumChlorate, microscope, testTubes, chemistryBurner,  formulary, letterForKate
             });
 
             security.North= sidePassage;
