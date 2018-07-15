@@ -7,7 +7,7 @@ namespace swd_endaufgabe
     {
         public static void TakeItem(string _words, Location location, Avatar avatar)
         {
-            Items _findItem = location.Items.Find(x => x.Title.Contains(_words));
+            Items _findItem = location.Items.Find(x => x.InteractionName.Contains(_words.ToLower()));
             if(_findItem != null && _findItem.Used == true)
             {
                 Console.WriteLine("Du hast " + _findItem.Title + " zu deinem Inventar hinzugefügt.");
@@ -37,7 +37,7 @@ namespace swd_endaufgabe
         public static void DropItem(string _words, Location location)
         {
             // ShowInventory(avatar);
-            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.InteractionName.Contains(_words.ToLower()));
             if(findItem != null)
             {
                 Console.WriteLine("Du hast " + findItem.Title + " aus deinem Inventar entfernt.");
@@ -49,20 +49,22 @@ namespace swd_endaufgabe
                 Console.WriteLine("Nothing find");
             }
         }
-
         public static void FindFile(string _words)
         {
-            Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));          
-            if (Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words)) == Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1")))
-            { 
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("Du hast die Richtige Akte gefunden");
-                Console.ResetColor();
-                Console.WriteLine(findItem.Description);
-            }
-            else
+            if (Avatar.Characters["Max"].CurrentRoom == Location.rooms["Büro Schulleiter"].RoomNumber)
             {
-                Console.WriteLine(findItem.Description);  
+                Items findItem =  Avatar.Characters["Max"].Inventory.Find(x => x.InteractionName.Contains(_words.ToLower()));          
+                if (Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words)) == Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains("Akte1")))
+                { 
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Du hast die Richtige Akte gefunden");
+                    Console.ResetColor();
+                    Console.WriteLine(findItem.Description);
+                }
+                else
+                {
+                    Console.WriteLine(findItem.Description);  
+                }
             }
         }
         public static void LootEnemy(string _words, Location location)
@@ -77,7 +79,7 @@ namespace swd_endaufgabe
         public static bool UsedItems(string _words)
         {  
             List<Items> needForBomb = new List<Items>();
-            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.InteractionName.Contains(_words.ToLower()));
             // Console.WriteLine(findItem.Title + "\n" + findItem.Description);
             if(findItem != null)
             {
@@ -100,6 +102,7 @@ namespace swd_endaufgabe
                     int sizeOfList = needForBomb.Count;
                     if(sizeOfList == 1)
                     {
+                        Console.WriteLine(sizeOfList);
                         Console.WriteLine("Bombe Explodiert"); 
                         return Location.rooms["Büro Schulleiter"].Open = true;   
                     }
@@ -109,7 +112,7 @@ namespace swd_endaufgabe
         }
         public static void GetInformation(string _words)
         {
-            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.Title.Contains(_words));
+            Items findItem = Avatar.Characters["Max"].Inventory.Find(x => x.InteractionName.Contains(_words.ToLower()));
             Console.WriteLine(findItem.Title + "\n" + findItem.Description);
         }
     }
