@@ -38,7 +38,7 @@ namespace swd_endaufgabe
                         }
                         else
                         {
-                            Console.WriteLine("There is no way! Choose another one!");
+                            Console.WriteLine("In diese Richtung gibt es keinen Weg! Bitte gehe in eine andere Richtung!");
                         }
                         break;
                     case "east":
@@ -58,7 +58,7 @@ namespace swd_endaufgabe
                         }
                         else
                         {
-                            Console.WriteLine("There is no way! Choose another one!");
+                            Console.WriteLine("In diese Richtung gibt es keinen Weg! Bitte gehe in eine andere Richtung!");
                         }
                         break;
                     case "south":
@@ -78,7 +78,7 @@ namespace swd_endaufgabe
                         }
                         else
                         {
-                            Console.WriteLine("There is no way! Choose another one!");
+                            Console.WriteLine("In diese Richtung gibt es keinen Weg! Bitte gehe in eine andere Richtung!");
                         }
                         break;
                     case "west":
@@ -98,7 +98,7 @@ namespace swd_endaufgabe
                         }
                         else
                         {
-                            Console.WriteLine("There is no way! Choose another one!");
+                            Console.WriteLine("In diese Richtung gibt es keinen Weg! Bitte gehe in eine andere Richtung!");
                         }
                         break;
                     case "take":
