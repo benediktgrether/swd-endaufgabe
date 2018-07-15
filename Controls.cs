@@ -216,7 +216,7 @@ namespace swd_endaufgabe
                         break;
 
                     case "test":
-                        ItemsInteraction.LootEnemy(words[1], currentLocation, enemy);
+                        ItemsInteraction.LootEnemy(words[1], currentLocation);
                         break;
                 }
             }

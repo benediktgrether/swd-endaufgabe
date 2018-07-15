@@ -66,7 +66,7 @@ namespace swd_endaufgabe
                 Console.WriteLine(findItem.Description);  
             }
         }
-        public static void LootEnemy(string _words, Location location, Enemy enemy)
+        public static void LootEnemy(string _words, Location location)
         {
             Console.WriteLine("Der Gegener hat einige Items droppen lassen");
             foreach(var i in Enemy.Characters[_words].Inventory)

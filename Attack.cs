@@ -57,7 +57,7 @@ namespace swd_endaufgabe
                     {
                         enemy.Life = false;
                         ConsoleOutput.AvatarWin();
-                        ItemsInteraction.LootEnemy(_words, location, enemy);
+                        ItemsInteraction.LootEnemy(_words, location);
                         break;
                     }
                     
