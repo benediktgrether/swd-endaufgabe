@@ -8,7 +8,7 @@ namespace swd_endaufgabe
         public static void EnemyCurrentRoom(Avatar avatar, Enemy enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Die Tür öffnet sich und David steht nun bei dir im Raum. Was willst du machen?");
+            Console.WriteLine("Der Wachmann David betritt das Zimmer in dem du dich gerade Befindest.");
             Console.ResetColor();
             Console.WriteLine("attack (a) <name>");
         }
