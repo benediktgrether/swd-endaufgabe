@@ -12,7 +12,8 @@ namespace swd_endaufgabe
             Console.ResetColor();
             Console.WriteLine("attack (a) <name>");
         }
-        public static void AttackEnemy(string _words, Location location, Avatar avatar, Enemy enemy){
+        public static void AttackEnemy(string _words, Location location, Avatar avatar, Enemy enemy)
+        {
             string []_arr = new string[]{"stein","schere","papier"};
             Console.WriteLine("Dieser Kampf basiert auf Stein, Schere,Papier.");
             if(_words.ToLower() == enemy.Name.ToLower())
