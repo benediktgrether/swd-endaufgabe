@@ -6,7 +6,6 @@ namespace swd_endaufgabe
     class Controls
     {
         public static int ControlCounter = 0;
-        public static string Input = "";
         public static string[] words;
         public static void GameControls()
         {
@@ -26,14 +25,14 @@ namespace swd_endaufgabe
                         // testMethod(direction, avatar, enemy);
                         if (currentLocation.North!= null)
                         {
-                            if(Move.SetDirection(currentLocation.North, avatar) == false)
+                            if(Location.RoomOpen(currentLocation.North, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.North;
-                            Move.SetMaxRoom(currentLocation, avatar, enemy);
+                            Avatar.AvatarMove(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -46,14 +45,14 @@ namespace swd_endaufgabe
                     case "e":
                         if (currentLocation.East!= null)
                         {
-                            if(Move.SetDirection(currentLocation.East, avatar) == false)
+                            if(Location.RoomOpen(currentLocation.East, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                                 currentLocation = currentLocation.East;
-                                Move.SetMaxRoom(currentLocation, avatar, enemy);
+                                Avatar.AvatarMove(currentLocation, avatar, enemy);
                                 ControlCounter ++;
                             }
                         }
@@ -66,14 +65,14 @@ namespace swd_endaufgabe
                     case "s":
                         if (currentLocation.South!= null)
                         {
-                            if(Move.SetDirection(currentLocation.South, avatar) == false)
+                            if(Location.RoomOpen(currentLocation.South, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.South;
-                            Move.SetMaxRoom(currentLocation, avatar, enemy);
+                            Avatar.AvatarMove(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -86,14 +85,14 @@ namespace swd_endaufgabe
                     case "w":
                         if (currentLocation.West != null)
                         {
-                            if(Move.SetDirection(currentLocation.West, avatar) == false)
+                            if(Location.RoomOpen(currentLocation.West, avatar) == false)
                             {
                                 break;
                             }
                             else
                             {
                             currentLocation = currentLocation.West;
-                            Move.SetMaxRoom(currentLocation, avatar, enemy);
+                            Avatar.AvatarMove(currentLocation, avatar, enemy);
                             ControlCounter ++;
                             }
                         }
@@ -108,7 +107,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                ItemsInteraction.TakeItem(words[1],currentLocation, avatar);
+                                Items.TakeItem(words[1],currentLocation, avatar);
                             }
                             else
                             {
@@ -126,7 +125,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                ItemsInteraction.DropItem(words[1],currentLocation);
+                                Items.DropItem(words[1],currentLocation);
                             }
                             else
                             {
@@ -140,7 +139,7 @@ namespace swd_endaufgabe
                         break;
                     case "Inventory":
                     case "i":
-                        ItemsInteraction.ShowInventory(avatar);
+                            Items.ShowInventory(avatar);
                         break;
                     case "look":
                     case "l":
@@ -151,7 +150,7 @@ namespace swd_endaufgabe
                     try{
                         if(words[1] != "")
                         {
-                            ItemsInteraction.UsedItems(words[1]);
+                            Items.UseItem(words[1]);
                         }
                         else 
                         {
@@ -179,7 +178,7 @@ namespace swd_endaufgabe
                             {
                                 if(enemy.CurrentRoom == avatar.CurrentRoom)
                                 {
-                                    Attack.AttackNow(words[1] ,currentLocation, avatar, enemy);
+                                    Attack.AttackEnemy(words[1] ,currentLocation, avatar, enemy);
                                 }
                                 else
                                 {
@@ -199,7 +198,7 @@ namespace swd_endaufgabe
                         {
                             if(words[1] != "")
                             {
-                                ItemsInteraction.GetInformation(words[1]);
+                                Items.GetInformation(words[1]);
                             }
                             else
                             {

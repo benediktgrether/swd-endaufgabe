@@ -5,14 +5,14 @@ namespace swd_endaufgabe
 {
     class Attack
     {
-        public static void EnemyAttack(Avatar avatar, Enemy enemy)
+        public static void EnemyCurrentRoom(Avatar avatar, Enemy enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Die Tür öffnet sich und David steht nun bei dir im Raum. Was willst du machen?");
             Console.ResetColor();
             Console.WriteLine("attack (a) <name>");
         }
-        public static void AttackNow(string _words, Location location, Avatar avatar, Enemy enemy){
+        public static void AttackEnemy(string _words, Location location, Avatar avatar, Enemy enemy){
             string []arr = new string[]{"stein","schere","papier"};
             Console.WriteLine("Dieser Kampf basiert auf Stein, Schere,Papier.");
             if(_words.ToLower() == enemy.Name.ToLower())
@@ -49,30 +49,33 @@ namespace swd_endaufgabe
                         Avatar.Characters["Max"].Health = Avatar.Characters["Max"].Health - 1;
                         ConsoleOutput.AvatarHit(Input, arr[i]);
                     }
-                    
-                    Console.WriteLine("Enemy Health: " + enemy.Health );
-                    Console.WriteLine("Max health : " + avatar.Health  );
-                    
-                    if (Enemy.Characters[_words].Health == 0)
-                    {
-                        enemy.Life = false;
-                        ConsoleOutput.AvatarWin();
-                        ItemsInteraction.LootEnemy(_words, location);
-                        break;
-                    }
-                    
-                    else if (Avatar.Characters["Max"].Health == 0)
-                    {
-                        ConsoleOutput.AvatarLose();
-                        Environment.Exit(1);
-                    }
-                }
+                    checkWin(_words, location, enemy);
                 return;
+                }
             }
             else
             {
                 Console.WriteLine("Du hast einen Falschen Namen eingegeben");
             }
+        }
+        public static void checkWin(string _words,Location location, Enemy enemy)
+        {
+                                
+            Console.WriteLine(Enemy.Characters[_words].Name + " Lebenspunkte: " + Enemy.Characters[_words].Health);
+            Console.WriteLine(Avatar.Characters["Max"].Name + " Lebenspunkte: " + Avatar.Characters["Max"].Health);
+            if (Enemy.Characters[_words].Health == 0)
+            {
+                enemy.Life = false;
+                ConsoleOutput.AvatarWin();
+                Items.DropLoot(_words, location);
+                return;
+            }
+            else if (Avatar.Characters["Max"].Health == 0)
+            {
+                ConsoleOutput.AvatarLose();
+                Environment.Exit(1);
+            }
+
         }
     }
 }

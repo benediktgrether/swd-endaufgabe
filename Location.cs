@@ -252,6 +252,23 @@ namespace swd_endaufgabe
 
             return hallway;
         }
+        public static bool RoomOpen(Location location, Avatar avatar)
+        {
+            WinConditions.CheckFinished(avatar);
+            if(location.Open == false && location.GameFinished == false)
+            {
+                if(Avatar.Characters["Max"].Inventory.Exists(x => x.Title == "Zentralschlüssel"))
+                {
+                    return Location.rooms["Büro Schulleiter"].Open = true;
+                }
+                if(Avatar.Characters["Max"].CurrentRoom != 0)
+                {
+                    Console.WriteLine("Das Zimmer ist verschlossen. Finde einen weg hinein.");
+                }
+                return location.Open = false;
+            }
+            return location.Open = true;
+        }
         public static void NeighborRoom(Location location)
         {
             Console.WriteLine("");
