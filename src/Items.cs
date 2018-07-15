@@ -93,6 +93,7 @@ namespace swd_endaufgabe
                         if(i.Bomb == true)
                         {
                             needForBomb.Add(i);
+                            Console.WriteLine("Du benützt gerade " + i.Title);
                         }
                     }
                     foreach(var i in needForBomb)
