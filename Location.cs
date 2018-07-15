@@ -99,7 +99,7 @@ namespace swd_endaufgabe
             Items paper = new Items
             (
                 "Papier", 
-                "Auf der vorderseite sieht man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du Folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n- Science Guy", 
+                "Auf der Vorderseite erkennt man eine Zeichnung einer Bombe\nAuf der Rückseite steht diese Beschreibung\nUm eine Rohrbombe zu bauen benötigst du folgende Zutaten.\n-Zucker\n-Limonade\n-Klebeband\n-Natriumchlorid\nSchütte den Zucker zusammen mit dem Natriumchlorid in die Limonade und befestige die Rohrbombe nun mit dem Klebeband an dem zu sprengenden Objekt\nPS: Ihr habt diese Information nicht von mir. \n- Science Guy", 
                 true, false
             );
 
@@ -111,6 +111,15 @@ namespace swd_endaufgabe
             Items sodiumChlorate = new Items
             (
                 "Natriumchlorid", "Natriumchlorid (Kochsalz) ist das Natriumsalz der Salzsäure mit der chemischen Formel NaCl.\nNatriumchlorid bildet farblose Kristalle, die eine kubische Natriumchlorid-Struktur ausbilden. Sie sind, im Gegensatz zu vielen anderen Kristallen, nicht doppelbrechend. Hierbei ist jeder Natrium- sowie jeder Chlorkern oktaedrisch vom jeweils anderen Kern umgeben. Es ist sehr gut wasserlöslich. Natriumchlorid besitzt den typischen Salzgeschmack.", true , true
+            );
+            
+            Items letterForKate = new Items
+            (
+                "Brief an Kate", "...", true, false
+            );
+            Items extinguisher = new Items
+            (
+                "Feuerlöscher", "Feuerlöscher", true, false
             );
 
             Items sugar = new Items
@@ -131,12 +140,12 @@ namespace swd_endaufgabe
 
             Items fileRachel = new Items
             (
-                "Akte1", "-----------------\nRachel Amber - geboren am 22. Juli 1994 - \n-----------------\n(Notizzetel - Wird seit dem 22. April, 2013 vermisst)\n-----------------\nRachel Amber ist eine aufgeschlossen Schülerin. Sie hatte die letzten Jahre immer sehr gute Leistungen in allen Fächern. Ihre größte Stärke war das Schauspielen. Sie spielte die letzten Jahre immer die Hauptprotagonistin in unseren Sommerlichen Bühnenaufführung.\n-----------------\n1 Jahr vor ihrem verschwinden, veränderte sich Rachel als sie zusammen mit Chloe unterwegs war. Sie blieb öfters dem Unterricht fern und war eine Zeitlang in Behandlung.\n-----------------", true, false
+                "Akte1", "-----------------\nRachel Amber - geboren am 22. Juli 1994 - \n-----------------\n(Notizettel - Wird seit dem 22. April, 2013 vermisst)\n-----------------\nRachel Amber ist eine aufgeschlossen Schülerin. Sie erbrachte die letzten Jahre in allen Fächern stets sehr gute Leistungen. Ihre größte Stärke war das Schauspielern. Sie spielte die letzten Jahre immer die Hauptprotagonistin in unseren sommerlichen Bühnenaufführungen.\n-----------------\n1 Jahr vor ihrem Verschwinden, veränderte sich Rachel, als sie zusammen mit Chloe unterwegs war. Sie blieb öfters dem Unterricht fern und war eine zeitlang in Behandlung.\n-----------------", true, false
             );
 
             Items fileChloe = new Items
             (
-                "Akte2", "-----------------\nChloe Elizabeth Price - geboren am 11. März 1994 -\n-----------------\nChloe Elizabeth Price war zu beginn ihrer Schullaufbahn auf der Blackwell Academy eine ausgezeichnete Schülerin.\nNach dem Tod ihres Vaters - William Price - und der neuen Heirat ihrer Mutter mit unserem Wachmann David Madsen wurden ihre Schulischen Leistungen immer schlechter. Desweiteren blieb sie immer öfters der Schule fern. Nach dem letzten Fernbleiben zusammen mit Rachel Amber wurde Chloe Elizabeth Price von der Schule verwiesen\n-----------------", true, false
+                "Akte2", "-----------------\nChloe Elizabeth Price - geboren am 11. März 1994 -\n-----------------\nChloe Elizabeth Price war zu Beginn ihrer Schullaufbahn auf der Blackwell Academy eine ausgezeichnete Schülerin.\nNach dem Tod ihres Vaters - William Price - und der neuen Heirat ihrer Mutter mit unserem Wachmann David Madsen wurden ihre schulischen Leistungen immer schlechter. Des Weiteren blieb sie immer öfters der Schule fern. Nach dem letzten Fernbleiben zusammen mit Rachel Amber wurde Chloe Elizabeth Price von der Schule verwiesen\n-----------------", true, false
             );
 
             Items fileMax = new Items
@@ -151,7 +160,7 @@ namespace swd_endaufgabe
 
             Items fileKate = new Items
             (
-                "Akte5", "-----------------\nKate Beverly Marsh - geboren am 12. September 1995 -\n-----------------\nKate Beverly Marsh wird wegen einem viralen Video zurzeit an unsere Schule gemobbt. Sie selber sagt über das geschehen aus das Sie keine erinnerung daran habe. Ein Drogentest im Krankenhaus hat ergeben das ihr Drogen verabreicht worden sind. Kate ist seit dem sehr introvertiert geworden.\n-----------------\nKate Beverly Marsh befindet sich nach einem Suizid versuch in psychologischer Behandlung.\n-----------------", true, false
+                "Akte5", "-----------------\nKate Beverly Marsh - geboren am 12. September 1995 -\n-----------------\nKate Beverly Marsh wird wegen einem viralen Video zurzeit an unsere Schule gemobbt. Laut ihrer Aussage habe sie vom Geschehen keine Erinnerung mehr. Ein Drogentest im Krankenhaus hat ergeben, dass ihr Drogen verabreicht worden sind. Kate ist seit dem sehr introvertiert geworden.\n-----------------\nKate Beverly Marsh befindet sich nach einem Suizidversuch in psychologischer Behandlung.\n-----------------", true, false
             );
             #endregion
 
@@ -186,14 +195,7 @@ namespace swd_endaufgabe
             (
                 "Formelsammlung", "", false, false
             );
-            Items letterForKate = new Items
-            (
-                "Brief an Kate", "...", true, false
-            );
-            Items extinguisher = new Items
-            (
-                "Feuerlöscher", "Feuerlöscher", true, false
-            );
+
             #endregion
 
             hallway.North= restroom;
