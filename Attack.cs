@@ -15,7 +15,7 @@ namespace swd_endaufgabe
         public static void AttackNow(string _words, Location location, Avatar avatar, Enemy enemy){
             string []arr = new string[]{"stein","schere","papier"};
             Console.WriteLine("Dieser Kampf basiert auf Stein, Schere,Papier.");
-            if(_words == enemy.Name)
+            if(_words.ToLower() == enemy.Name.ToLower())
             {
                 for(;;)
                 {

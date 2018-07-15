@@ -214,10 +214,6 @@ namespace swd_endaufgabe
                     default:
                         Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
                         break;
-
-                    case "test":
-                        ItemsInteraction.LootEnemy(words[1], currentLocation);
-                        break;
                 }
             }
         }
