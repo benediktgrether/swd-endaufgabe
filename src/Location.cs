@@ -242,7 +242,7 @@ namespace swd_endaufgabe
             exit.North= hallway;
 
             rooms = new Dictionary<string, Location>();
-            rooms["hallway"] = hallway;
+            rooms["Aula"] = hallway;
             rooms["WC"] = restroom;
             rooms["Seitengang"] = sidePassage;
             rooms["Chemielabor"] = chemistryLab;
