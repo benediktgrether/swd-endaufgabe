@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace swd_endaufgabe
 {
-    class GameChar
+    class GameCharacter
     {
         public string Name;
         public int Health;
@@ -12,9 +12,9 @@ namespace swd_endaufgabe
 
     }
 
-    class Avatar : GameChar
+    class Avatar : GameCharacter
     {
-        public static Dictionary<string, GameChar> Characters;
+        public static Dictionary<string, GameCharacter> Characters;
         public Avatar(string name, int health, int currentRoom)
         {
             Name = name;
@@ -27,7 +27,7 @@ namespace swd_endaufgabe
             Avatar max = new Avatar(
                 "Max", 3, 0
             );
-            Characters = new Dictionary<string, GameChar>();
+            Characters = new Dictionary<string, GameCharacter>();
             Characters["Max"] = max;
             return max;
         }
@@ -41,12 +41,12 @@ namespace swd_endaufgabe
         }
     }
 
-    class Enemy : GameChar
+    class Enemy : GameCharacter
     {
         private int _counter;
         public bool Life;
         public string JobTitle; 
-        public static Dictionary<string, GameChar> Characters;
+        public static Dictionary<string, GameCharacter> Characters;
 
         public Enemy(string name, int health, int currentRoom, bool life, string jobTitel)
         {
@@ -79,7 +79,7 @@ namespace swd_endaufgabe
                 centralKey, mobilePhone, carKey
             });
 
-            Characters = new Dictionary<string, GameChar>();
+            Characters = new Dictionary<string, GameCharacter>();
             Characters["David"] = david;
             return david;
         }
