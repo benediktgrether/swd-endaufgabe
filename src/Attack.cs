@@ -41,7 +41,7 @@ namespace swd_endaufgabe
                     
                     else if((Input == _arr[0]) && (_arr[1] == _arr[i]) || (Input == _arr[1]) && (_arr[2] == _arr[i]) || (Input == _arr[2]) && (_arr[0] == _arr[i]))
                     {
-                        Enemy.Characters[_words].Health  = Enemy.Characters[_words].Health - 1;
+                        enemy.Health  = enemy.Health - 1;
                         ConsoleOutput.EnemyHit(Input, _arr[i]);
                     }
                     
@@ -50,10 +50,10 @@ namespace swd_endaufgabe
                         Avatar.Characters["Max"].Health = Avatar.Characters["Max"].Health - 1;
                         ConsoleOutput.AvatarHit(Input, _arr[i]);
                     }
-                    Console.WriteLine(Enemy.Characters[_words].Name + " Lebenspunkte: " + Enemy.Characters[_words].Health);
+                    Console.WriteLine(enemy.Name + " Lebenspunkte: " + enemy.Health);
                     Console.WriteLine(Avatar.Characters["Max"].Name + " Lebenspunkte: " + Avatar.Characters["Max"].Health);
                     
-                    if (Enemy.Characters[_words].Health == 0)
+                    if (enemy.Health == 0)
                     {
                         enemy.Life = false;
                         ConsoleOutput.AvatarWin();
